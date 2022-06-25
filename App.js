@@ -1,15 +1,18 @@
-import { View, Text } from "react-native";
+ import { View, Text, StatusBar, SafeAreaView} from 'react-native'
+ import React from 'react'
+//import Home from './screens/Settings'
+import RootNavigation from './navigation'
+ 
+ export default function App() {
+   return (
+    <SafeAreaView style={{
+      paddingTop: Platform.OS === "android" ? StatusBar.currentHeight : 0,
+      backgroundColor: "#eee",
+      flex: 1
+    }}>
 
-export default function App() {
-  return (
-    <View
-      style={{
-        flex: 1,
-        justifyContent: "center",
-        alignItems: "center",
-      }}
-    >
-      <Text>Universal React with Expo</Text>
-    </View>
-  );
-}
+     <RootNavigation />
+
+    </SafeAreaView>
+   )
+ }
