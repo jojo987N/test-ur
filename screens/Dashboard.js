@@ -1,12 +1,19 @@
+
 import { View, Text, Switch, StyleSheet} from 'react-native'
 import React, {useState} from 'react'
+import DashboardComponent from '../components/DashboardComponent'
+import MenuNavigation from '../components/MenuNavigation'
 
-export default function Dashboard() {
+export default function Dashboard({navigation}) {
   const [isEnabled, setIsEnabled] = useState(false)
    
   return (
     <View style={styles.container}>
-      
+
+      <View style={styles.header}>
+          <MenuNavigation navigation={navigation}/>
+          <Text style={styles.titleHeader}>Dashboard</Text>
+        </View>
       <View style={styles.title_switch}>
         <Text style={styles.title}>Restaurant Open Now</Text>
         <View style={styles.switchContainer}>
@@ -17,7 +24,8 @@ export default function Dashboard() {
             value={isEnabled}/>
         </View>
       </View>
-      <View style={styles.row1}>
+      <DashboardComponent />
+      {/* <View style={styles.row1}>
         <View style={styles.orders}>
           <Text>1</Text>
         </View>
@@ -27,12 +35,23 @@ export default function Dashboard() {
         <View>
           
         </View>
-      </View>
+      </View> */}
     </View>
   )
 }
 
 const styles = StyleSheet.create({
+  header: {
+    flexDirection: "row",
+    marginTop: 10,
+    alignItems: "center",
+    marginLeft: 10,
+  },
+  titleHeader: {
+    marginLeft: 10,
+    fontSize: 20,
+    fontWeight: "bold"
+  },
   container:{
     flex: 1,
    // alignItems: "center"

@@ -19,11 +19,12 @@ export default function RootNavigation() {
         <Stack.Navigator
          screenOptions={{headerShown: false }}>
         
-        {/* <Stack.Screen name="CategoriesNavigator" component={CategoriesNavigator}/> */}
+         
         {/* <Stack.Screen name="Home" component={Home}/> */}
         {/* <Stack.Screen name="UpdateCategory" component={UpdateCategory}/> */}
         <Stack.Screen name="SignIn" component={SignIn}/>
         <Stack.Screen name="DrawerNavigator" component={DrawerNavigator}/>
+        <Stack.Screen name="CategoriesNavigator" component={CategoriesNavigator}/>
         <Stack.Screen name="Upload" component={Upload}/>
 
          

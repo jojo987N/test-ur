@@ -38,12 +38,12 @@ export default function AddFood() {
            }}>
              <Button title='Add' onPress={
                  ()=>{
-                     //console.log(name, description, price)
-                    addProduct(name, description, price)
-                    .then(productRef => navigation.navigate("Upload", {
-                      product_id: productRef.id
-                    }))
-                   // navigation.navigate("Upload")
+                      
+                    // addProduct(name, description, price)
+                    // .then(productRef => navigation.navigate("Upload", {
+                    //   product_id: productRef.id
+                    // }))
+                    navigation.navigate("Upload")
                  }
              }/>
              </View>

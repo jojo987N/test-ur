@@ -15,6 +15,7 @@ export default function DrawerNavigator() {
   return (
      <Drawer.Navigator
       screenOptions={{headerShown: false }}
+      useLegacyImplementation={true}
      >
        <Drawer.Screen 
             name = "Dashboard"
@@ -51,9 +52,10 @@ export default function DrawerNavigator() {
           <Drawer.Screen 
             name = "Categories"
             component={Categories}
+             
             options={{
                 title: "Categories",
-                headerShown: true,
+                // headerShown: true,
                 drawerIcon: ({focussed, size}) =>(
                   <MaterialIcons 
                     name="category"

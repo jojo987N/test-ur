@@ -11,7 +11,7 @@ import { language, currency } from '../global';
 import { FlatList } from 'react-native-gesture-handler'
 import OrderCountDown from '../components/OrderCountDown'
 import { Feather } from '@expo/vector-icons'
-
+import Loading from '../components/Loading'
 
   
 
@@ -19,7 +19,8 @@ export default function Orders() {
 
   const navigation = useNavigation() 
 
-  const [orders, setOrders] = useState([])
+ // const [orders, setOrders] = useState([])
+ const [orders, setOrders] = useState()
   
   useEffect(()=>{
 
@@ -37,6 +38,9 @@ export default function Orders() {
     })
      
   }, [])
+
+   
+
   return (
       <>
         <View style={styles.header}>
@@ -47,13 +51,13 @@ export default function Orders() {
               <Text style={styles.headerTitle}>Online</Text>
           </View>
           <View style={styles.container}>
-
+         {orders?<> 
          <DisplayOrders orders={orders} status="new" navigation={navigation}/>
         
          <DisplayOrders orders={orders} status="InProgress" navigation={navigation}/>
 
          <DisplayOrders orders={orders} status="ready" navigation={navigation}/>
-
+         </>:<Loading />}
 
 
       </View>

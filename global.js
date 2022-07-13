@@ -12,3 +12,5 @@ export const APP_CONSTANT = {
 
 export const language = "en"
 export const currency = "USD"
+
+

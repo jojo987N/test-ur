@@ -2,7 +2,7 @@ import { View, Text} from 'react-native'
 import React from 'react'
 import {createStackNavigator} from '@react-navigation/stack'
 import Categories from '../screens/Categories'
-import UpdateCategory from '../screens/Categories'
+import UpdateCategory from '../screens/UpdateCategory'
 import Foods from '../screens/Foods'
 import AddFood from '../screens/AddFood'
 import Orders from '../screens/Orders'
@@ -40,7 +40,8 @@ export  function FoodNavigator() {
           <FoodStack.Screen 
           name="Foods"
           component={Foods}
-          options={{headerShown: true, headerLeft: null}}/>
+          //options={{headerShown: true, headerLeft: null}} 
+          options={{headerShown: false}}/>
 
            <FoodStack.Screen 
           name="AddFood"
@@ -50,6 +51,8 @@ export  function FoodNavigator() {
       </FoodStack.Navigator>
     )
   }
+
+  
 
   const  OrdersStack = createStackNavigator()
 
