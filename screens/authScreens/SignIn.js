@@ -133,22 +133,3 @@ useEffect(()=>{
   )
 }
 
-const styles = StyleSheet.create({
-  textInputContainer: {
-    flexDirection: "row",
-    //borderWidth : 1,
-     backgroundColor: "white",
-     marginHorizontal: 25,
-     //padding: 10,
-    borderRadius: 5,
-     marginTop: 20,
-     alignItems: "center"
-    //marginT
-     
-  },
-  textInput: {
-   // borderWidth : 1,
-    width: "90%",
-    padding: 10
-  }
-})
