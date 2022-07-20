@@ -4,18 +4,19 @@ import { MaterialIcons } from '@expo/vector-icons'
 import { auth, getDriverInfos} from '../firebase'
 import { signInWithEmailAndPassword, onAuthStateChanged} from 'firebase/auth'
 import AsyncStorage from '@react-native-async-storage/async-storage'
-import { UserContext } from '../context/UserContext'
+import { RestaurantContext } from '../context/RestaurantContext'
 
 export default function SettingsComponent({navigation, bs}) {
 
- const {setUserData, userData} = useContext(UserContext)
+ const {restaurantData} = useContext(RestaurantContext)
 
+ console.log(restaurantData)
 
-  const [email, setEmail] = useState(userData.email)
-  const [name, setName] = useState(userData.name)
-  const [phone, setPhone] = useState(userData.phone)
-  const [carNumber, setCarNumber] = useState(userData.carNumber)
-  const [carName, setCarName] = useState(userData.Car)
+  const [email, setEmail] = useState(restaurantData.email)
+  const [name, setName] = useState(restaurantData.name)
+  const [phone, setPhone] = useState(restaurantData.phone)
+  const [address, setAddress] = useState(restaurantData.location.display_address[0])
+  const [image, setImage] = useState(restaurantData.image_url)
   const [password, setPassword] = useState('')
 
     
@@ -77,7 +78,7 @@ export default function SettingsComponent({navigation, bs}) {
             bs.current.snapTo(0)}
       }>
              <Image 
-       source={require('../assets/images/shopping-bag.png')} 
+       source={{uri: restaurantData.image_url}} 
        style={{
          width: 100,
          height: 100
@@ -112,37 +113,25 @@ export default function SettingsComponent({navigation, bs}) {
            marginLeft: 6,
          }}/>
           <TextInput 
-          placeholder='Email' 
-          value={password}
-          onChangeText={(text)=>setEmail(text)}
-          style={styles.textInput}/>
-           
-         </View>
-
-         
-
-         
-
-         <View style={styles.textInputContainer}>
-         <MaterialIcons name="person" size={20} color="#3d5c5c" style={{
-           marginLeft: 6,
-         }}/>
-          <TextInput 
-          placeholder='Email' 
+          placeholder='Name' 
           value={name}
-          onChangeText={(text)=>setEmail(text)}
+          onChangeText={(text)=>setName(text)}
           style={styles.textInput}/>
            
          </View>
+
+         
+
+         
 
          <View style={styles.textInputContainer}>
          <MaterialIcons name="person" size={20} color="#3d5c5c" style={{
            marginLeft: 6,
          }}/>
           <TextInput 
-          placeholder='Email' 
+          placeholder='Phone' 
           value={phone}
-          onChangeText={(text)=>setEmail(text)}
+          onChangeText={(text)=>setPhone(text)}
           style={styles.textInput}/>
            
          </View>
@@ -152,13 +141,25 @@ export default function SettingsComponent({navigation, bs}) {
            marginLeft: 6,
          }}/>
           <TextInput 
-          placeholder='Email' 
-          value={carName}
-          onChangeText={(text)=>setEmail(text)}
+          placeholder='Address' 
+          value={address}
+          onChangeText={(text)=>setAddress(text)}
           style={styles.textInput}/>
            
          </View>
+
          <View style={styles.textInputContainer}>
+         <MaterialIcons name="person" size={20} color="#3d5c5c" style={{
+           marginLeft: 6,
+         }}/>
+          <TextInput 
+          placeholder='Image' 
+          value={image}
+          onChangeText={(text)=>setImage(text)}
+          style={styles.textInput}/>
+           
+         </View>
+         {/* <View style={styles.textInputContainer}>
          <MaterialIcons name="person" size={20} color="#3d5c5c" style={{
            marginLeft: 6,
          }}/>
@@ -168,7 +169,7 @@ export default function SettingsComponent({navigation, bs}) {
           onChangeText={(text)=>setEmail(text)}
           style={styles.textInput}/>
            
-         </View>
+         </View> */}
 
          <TouchableOpacity  onPress={()=>SignInUser()}>
            <View style={{

@@ -1,14 +1,17 @@
 import { View, Text, SafeAreaView, StatusBar, Image, TextInput, StyleSheet, TouchableOpacity} from 'react-native'
-import React, {useState, useEffect} from 'react'
+import React, {useState, useEffect, useContext} from 'react'
 import { MaterialIcons } from '@expo/vector-icons'
 import { auth, getRestaurantId} from '../../firebase'
 import { signInWithEmailAndPassword, onAuthStateChanged} from 'firebase/auth'
 import AsyncStorage from '@react-native-async-storage/async-storage'
+import { RestaurantContext } from '../../context/RestaurantContext'
 
 export default function SignIn({navigation}) {
 
   const [email, setEmail] = useState('')
   const [password, setPassword] = useState('')
+  const {setRestaurantData} = useContext(RestaurantContext)
+
 
 
   const SignInUser =  ()=>{
@@ -20,9 +23,15 @@ export default function SignIn({navigation}) {
       .then(snapshot => {
 
         if(snapshot.docs[0]){
+
+          setRestaurantData({...snapshot.docs[0].data(), email: re.user.email})
+
+          AsyncStorage.setItem('managerId', re.user.uid)
+         .then(()=> navigation.navigate('DrawerNavigator'))
       
-        AsyncStorage.setItem('managerId', snapshot.docs[0].id)
-        .then(()=> navigation.navigate('DrawerNavigator'))
+        // AsyncStorage.setItem('managerId', snapshot.docs[0].id)
+        // .then(()=> navigation.navigate('DrawerNavigator'))
+
         }
          
         
@@ -37,11 +46,11 @@ export default function SignIn({navigation}) {
 
 useEffect(()=>{
 
-  AsyncStorage.getItem("managerId")
-  .then((value)=>{
-    if(value)
-    navigation.navigate('DrawerNavigator')
-  })
+  // AsyncStorage.getItem("managerId")
+  // .then((value)=>{
+  //   if(value)
+  //   navigation.navigate('DrawerNavigator')
+  // })
    
 }, [])
 
