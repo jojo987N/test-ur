@@ -16,7 +16,7 @@ export default function SignIn({navigation, route}) {
 
   const [email, setEmail] = useState('')
   const [password, setPassword] = useState('')
-  const {setRestaurantData} = useContext(RestaurantContext)
+  const {restaurantData,setRestaurantData} = useContext(RestaurantContext)
   const [loading, setLoading] = useState(false)
 
 
@@ -36,26 +36,7 @@ export default function SignIn({navigation, route}) {
     signInWithEmailAndPassword(auth, email, password)
     .then((re)=>{
 
-      getRestaurantId(re.user.uid)
-      .then(snapshot => {
-
-        if(snapshot.docs[0]){
-
-          setRestaurantData({...snapshot.docs[0].data(), email: re.user.email})
-
-          AsyncStorage.setItem('managerId', re.user.uid)
-         .then(()=> {
-           setLoading(false)
-           navigation.navigate('DrawerNavigator')
-          })
       
-        // AsyncStorage.setItem('managerId', snapshot.docs[0].id)
-        // .then(()=> navigation.navigate('DrawerNavigator'))
-
-        }
-         
-        
-      })
         //  
          //console.log(re.user.uid)
           
@@ -72,16 +53,47 @@ export default function SignIn({navigation, route}) {
 
 useEffect(()=>{
 
-  AsyncStorage.getItem("managerId")
-  .then((value)=>{
-    if(value)
-    navigation.navigate('DrawerNavigator')
+  // AsyncStorage.getItem("managerId")
+  // .then((value)=>{
+  //   if(value)
+  //   navigation.navigate('DrawerNavigator')
+  // })
+
+  const checkAuth = onAuthStateChanged(auth, (user)=>{
+       
+      if(user){
+       // navigation.navigate('OrdersScreen')
+       getRestaurantId(user.uid)
+       .then(snapshot => {
+ 
+         if(snapshot.docs[0]){
+ 
+           setRestaurantData({...snapshot.docs[0].data(), email: user.email})
+ 
+           AsyncStorage.setItem('managerId', user.uid)
+          .then(()=> {
+            setLoading(false)
+            navigation.navigate('DrawerNavigator')
+           })
+       
+         // AsyncStorage.setItem('managerId', snapshot.docs[0].id)
+         // .then(()=> navigation.navigate('DrawerNavigator'))
+ 
+         }
+          
+         
+       })
+        
+
+
+      }
   })
+  return checkAuth
    
 }, [])
 
-  // if(loading)
-  // return <Loading />
+  if(loading)
+  return <Loading />
 
   return (
       <View style={styles.container}>
@@ -118,12 +130,11 @@ useEffect(()=>{
 
               <TouchableOpacity onPress={() => SignInUser()}>
 
-              {!loading?<LinearGradient
+              <LinearGradient
                           colors={['#948E99', '#2E1437']}
                           style={styles.signInButton} >
                           <Text style={{...styles.signInText, color: 'white'}}>Sign In</Text>
-              </LinearGradient>:
-              <Loading />}
+              </LinearGradient>
                   {/* <View style={styles.signUpButton}>
                       <Text style={{
                           padding: 16,
@@ -136,7 +147,7 @@ useEffect(()=>{
                   </View> */}
               </TouchableOpacity>
 
-              {/* <TouchableOpacity onPress={() => navigation.navigate("SignUp")}>
+              <TouchableOpacity onPress={() => navigation.navigate("SignUp")}>
 
               <LinearGradient
                           colors={['#ada996', '#f2f2f2', '#dbdbdb', '#eaeaea']}
@@ -144,7 +155,7 @@ useEffect(()=>{
                           <Text style={styles.signInText}>Sign Up</Text>
               </LinearGradient>
               
-              </TouchableOpacity> */}
+              </TouchableOpacity>
 
 
           </Animatable.View>
