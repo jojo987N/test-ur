@@ -1,21 +1,28 @@
 import { View, Text, SafeAreaView, StatusBar, Image, TextInput, StyleSheet, TouchableOpacity} from 'react-native'
 import React, {useState, useEffect, useContext} from 'react'
 import { MaterialIcons } from '@expo/vector-icons'
-import { auth, getRestaurantId} from '../../firebase'
+import { auth, getRestaurantId, userInfos} from '../../firebase'
 import { signInWithEmailAndPassword, onAuthStateChanged} from 'firebase/auth'
+import { LinearGradient } from 'expo-linear-gradient'
+import * as Animatable from "react-native-animatable"
 import AsyncStorage from '@react-native-async-storage/async-storage'
 import { RestaurantContext } from '../../context/RestaurantContext'
+import Loading from '../../components/Loading'
+
+
+
 
 export default function SignIn({navigation}) {
 
   const [email, setEmail] = useState('')
   const [password, setPassword] = useState('')
   const {setRestaurantData} = useContext(RestaurantContext)
+  const [loading, setLoading] = useState(false)
 
 
 
   const SignInUser =  ()=>{
-    
+    setLoading(true)
     signInWithEmailAndPassword(auth, email, password)
     .then((re)=>{
 
@@ -27,7 +34,10 @@ export default function SignIn({navigation}) {
           setRestaurantData({...snapshot.docs[0].data(), email: re.user.email})
 
           AsyncStorage.setItem('managerId', re.user.uid)
-         .then(()=> navigation.navigate('DrawerNavigator'))
+         .then(()=> {
+           setLoading(false)
+           navigation.navigate('DrawerNavigator')
+          })
       
         // AsyncStorage.setItem('managerId', snapshot.docs[0].id)
         // .then(()=> navigation.navigate('DrawerNavigator'))
@@ -54,80 +64,75 @@ useEffect(()=>{
    
 }, [])
 
+  if(loading)
+  return <Loading />
+
   return (
-    <SafeAreaView style={{
-      paddingTop: Platform.OS === "android" ? StatusBar.currentHeight : 0,
-      backgroundColor: "#e0ebeb",
-      flex: 1
-    }}>
-       <View style={{
-         alignItems: "center",
-         marginTop: 50
-       }}>
+      <View style={styles.container}>
+          <View style={styles.header}>
+              <Text style={styles.title}>Welcome !</Text>
+          </View>
 
-       {/* <Image 
-       source={require('../../assets/images/shopping-bag.png')} 
-       style={{
-         width: 100,
-         height: 100
-       }}/> */}
+          <Animatable.View style={styles.footer} animation="fadeInUpBig">
 
-       <Text style={{fontSize: 25, fontWeight: "bold", color: "#3d5c5c",
-      letterSpacing: 5}}>Delivery App</Text>
+              <View style={styles.textInputContainer}>
+                  <MaterialIcons name="person" size={20} color="#3d5c5c" style={{
+                      marginLeft: 6,
+                  }} />
+                  <TextInput
+                      placeholder='Email'
+                      value={email}
+                      onChangeText={(text) => setEmail(text)}
+                      style={styles.textInput} />
 
-       </View>
-       <View style={{
-         marginTop: 40
-       }}>
+              </View>
 
-         <View style={styles.textInputContainer}>
-         <MaterialIcons name="person" size={20} color="#3d5c5c" style={{
-           marginLeft: 6,
-         }}/>
-          <TextInput 
-          placeholder='Email' 
-          value={email}
-          onChangeText={(text)=>setEmail(text)}
-          style={styles.textInput}/>
-           
-         </View>
+              <View style={styles.textInputContainer}>
+                  <MaterialIcons name="lock" size={20} color="#3d5c5c" style={{
+                      marginLeft: 6,
+                  }} />
+                  <TextInput
+                      placeholder='Password'
+                      value={password}
+                      onChangeText={(text) => setPassword(text)}
+                      style={styles.textInput}
+                      secureTextEntry />
 
-         <View style={styles.textInputContainer}>
-         <MaterialIcons name="lock" size={20} color="#3d5c5c" style={{
-           marginLeft: 6,
-         }}/>
-          <TextInput 
-          placeholder='Password' 
-          value={password}
-          onChangeText={(text)=>setPassword(text)}
-          style={styles.textInput}
-          secureTextEntry/>
-           
-         </View>
+              </View>
 
-         <TouchableOpacity  onPress={()=>SignInUser()}>
-           <View style={{
-             backgroundColor: "#0080ff",
-             marginHorizontal: 25,
-             borderRadius: 5,
-             marginTop: 20
-           
-           }}>
-             <Text style={{
-               padding: 16,
-               textAlign: "center",
-               color: "white",
-               fontWeight: "bold",
-               fontSize: 15,
-               letterSpacing: 2
-             }}>Sign In</Text>
-           </View>
-         </TouchableOpacity>
-         
+              <TouchableOpacity onPress={() => SignInUser()}>
 
-       </View>
- 
-    </SafeAreaView>
+              <LinearGradient
+                          colors={['#948E99', '#2E1437']}
+                          style={styles.signInButton} >
+                          <Text style={{...styles.signInText, color: 'white'}}>Sign In</Text>
+              </LinearGradient>
+                  {/* <View style={styles.signUpButton}>
+                      <Text style={{
+                          padding: 16,
+                          textAlign: "center",
+                          color: "white",
+                          fontWeight: "bold",
+                          fontSize: 15,
+                          letterSpacing: 2
+                      }}>Sign In</Text>
+                  </View> */}
+              </TouchableOpacity>
+
+              <TouchableOpacity onPress={() => navigation.navigate("SignUp")}>
+
+              <LinearGradient
+                          colors={['#ada996', '#f2f2f2', '#dbdbdb', '#eaeaea']}
+                          style={styles.signInButton} >
+                          <Text style={styles.signInText}>Sign Up</Text>
+              </LinearGradient>
+              
+              </TouchableOpacity>
+
+
+          </Animatable.View>
+
+      </View>
       
      
   )
@@ -135,64 +140,64 @@ useEffect(()=>{
 
 const styles = StyleSheet.create({
 
-  container: {
-    flex: 1,
-    backgroundColor: "#b3b3b3"
-  },
+    container: {
+      flex: 1,
+      backgroundColor: "#b3b3b3"
+    },
 
-  header: {
-      alignItems: "center",
-     // marginTop: 50
-     flex: 1,
-     paddingBottom: 50,
-     justifyContent: "flex-end"
+    header: {
+        alignItems: "center",
+       // marginTop: 50
+       flex: 1,
+       paddingBottom: 50,
+       justifyContent: "flex-end"
+    },
+    title: {
+        fontSize: 25, fontWeight: "bold", color: "#3d5c5c",
+        letterSpacing: 5
+    },
+    footer: {
+      flex: 3,
+      backgroundColor: "#fff",
+      borderTopLeftRadius: 30,
+      borderTopRightRadius: 30,
+      paddingHorizontal: 20,
+      paddingVertical: 30,
+    },
+  textInputContainer: {
+    flexDirection: "row",
+    //borderWidth : 1,
+     backgroundColor: "white",
+     marginHorizontal: 25,
+     //padding: 10,
+    borderRadius: 5,
+     marginTop: 20,
+     alignItems: "center",
+     borderBottomWidth: 0.3,
+     borderBottomColor: "grey"
+    //marginT
+     
   },
-  title: {
-      fontSize: 25, fontWeight: "bold", color: "#3d5c5c",
-      letterSpacing: 5
+  textInput: {
+   // borderWidth : 1,
+    width: "90%",
+    padding: 10
   },
-  footer: {
-    flex: 3,
-    backgroundColor: "#fff",
-    borderTopLeftRadius: 30,
-    borderTopRightRadius: 30,
-    paddingHorizontal: 20,
-    paddingVertical: 30,
-  },
-textInputContainer: {
-  flexDirection: "row",
-  //borderWidth : 1,
-   backgroundColor: "white",
-   marginHorizontal: 25,
-   //padding: 10,
-  borderRadius: 5,
-   marginTop: 20,
-   alignItems: "center",
-   borderBottomWidth: 0.3,
-   borderBottomColor: "grey"
-  //marginT
-   
+  signInButton: {
+    width: "100%",
+    height: 50,
+    justifyContent: "center",
+    alignItems: "center",
+    borderRadius: 10,
+    //flexDirection: "row"
+    marginTop: 50
+    
 },
-textInput: {
- // borderWidth : 1,
-  width: "90%",
-  padding: 10
-},
-signInButton: {
-  width: "100%",
-  height: 50,
-  justifyContent: "center",
-  alignItems: "center",
-  borderRadius: 10,
-  //flexDirection: "row"
-  marginTop: 50
-  
-},
- signInText: {
-     fontSize: 18,
-     fontWeight: "bold",
-     color: "#3d5c5c",
-     letterSpacing: 1
- },
-
+   signInText: {
+       fontSize: 18,
+       fontWeight: "bold",
+       color: "#3d5c5c",
+       letterSpacing: 1
+   },
+ 
 })
