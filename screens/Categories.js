@@ -7,10 +7,10 @@ import MenuNavigation from '../components/MenuNavigation';
 import Loading from '../components/Loading';
 
 
-export default function Categories() {
+export default function Categories({navigation}) {
 
     const [categories, setCategories] = useState()
-    const navigation = useNavigation()
+    // const navigation = useNavigation()
 
     useEffect(()=>{
       getCategories().then((categories)=>setCategories(categories)) 

@@ -5,7 +5,7 @@ import { Ionicons, MaterialIcons, FontAwesome} from "@expo/vector-icons";
 import Categories from '../screens/Categories';
 import Orders from '../screens/Orders';
 import Foods from '../screens/Foods';
-import { FoodNavigator, OrdersNavigator } from './Staks';
+import { CategoriesNavigator, FoodNavigator, OrdersNavigator } from './Staks';
 import Dashboard from '../screens/Dashboard';
 
 
@@ -51,8 +51,8 @@ export default function DrawerNavigator() {
         />
           <Drawer.Screen 
             name = "Categories"
-            component={Categories}
-             
+            // component={Categories}
+            component={CategoriesNavigator}
             options={{
                 title: "Categories",
                 // headerShown: true,
