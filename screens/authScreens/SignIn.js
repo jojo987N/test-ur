@@ -22,7 +22,10 @@ export default function SignIn({navigation}) {
 
 
   const SignInUser =  ()=>{
-    setLoading(true)
+       setLoading(true)
+    try{
+    
+     
     signInWithEmailAndPassword(auth, email, password)
     .then((re)=>{
 
@@ -51,6 +54,12 @@ export default function SignIn({navigation}) {
           
     })
 
+  }catch(err){   // en cours
+    setLoading(false)
+    console.log(err)
+    
+    }
+
     
 }
 
@@ -64,8 +73,8 @@ useEffect(()=>{
    
 }, [])
 
-  if(loading)
-  return <Loading />
+  // if(loading)
+  // return <Loading />
 
   return (
       <View style={styles.container}>
@@ -102,11 +111,12 @@ useEffect(()=>{
 
               <TouchableOpacity onPress={() => SignInUser()}>
 
-              <LinearGradient
+              {!loading?<LinearGradient
                           colors={['#948E99', '#2E1437']}
                           style={styles.signInButton} >
                           <Text style={{...styles.signInText, color: 'white'}}>Sign In</Text>
-              </LinearGradient>
+              </LinearGradient>:
+              <Loading />}
                   {/* <View style={styles.signUpButton}>
                       <Text style={{
                           padding: 16,
@@ -119,7 +129,7 @@ useEffect(()=>{
                   </View> */}
               </TouchableOpacity>
 
-              <TouchableOpacity onPress={() => navigation.navigate("SignUp")}>
+              {/* <TouchableOpacity onPress={() => navigation.navigate("SignUp")}>
 
               <LinearGradient
                           colors={['#ada996', '#f2f2f2', '#dbdbdb', '#eaeaea']}
@@ -127,7 +137,7 @@ useEffect(()=>{
                           <Text style={styles.signInText}>Sign Up</Text>
               </LinearGradient>
               
-              </TouchableOpacity>
+              </TouchableOpacity> */}
 
 
           </Animatable.View>
