@@ -7,6 +7,7 @@ import MenuNavigation from '../components/MenuNavigation'
 export default function Dashboard({navigation}) {
   const [isEnabled, setIsEnabled] = useState(false)
    
+   
   return (
     <View style={styles.container}>
 
@@ -15,12 +16,15 @@ export default function Dashboard({navigation}) {
           <Text style={styles.titleHeader}>Dashboard</Text>
         </View>
       <View style={styles.title_switch}>
-        <Text style={styles.title}>Restaurant Open Now</Text>
+        <Text style={styles.title}>Restaurant {isEnabled?"Open":"Close"} Now</Text>
         <View style={styles.switchContainer}>
           <Switch
             trackColor={{false: "#767577", true: "#81b0ff"}}
             thumbColor={isEnabled? "#81b0ff":"#f4f3f4"}
-            onValueChange = {()=>setIsEnabled(previousState => !previousState)}
+            onValueChange = {()=>{
+              setIsEnabled(previousState => !previousState)
+               
+            }}
             value={isEnabled}/>
         </View>
       </View>
