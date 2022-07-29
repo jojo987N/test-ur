@@ -15,9 +15,11 @@ import Loading from '../components/Loading'
 
   
 
-export default function Orders() {
+export default function Orders({route}) {
 
   const navigation = useNavigation() 
+
+//   console.log(route.params)
 
  // const [orders, setOrders] = useState([])
  const [orders, setOrders] = useState()
@@ -52,7 +54,7 @@ export default function Orders() {
           </View>
           <View style={styles.container}>
          {orders?<> 
-         <DisplayOrders orders={orders} status="new" navigation={navigation}/>
+         {route.params && route.params.orderStatus === "new"?<DisplayOrders orders={orders} status="new" navigation={navigation}/>:<></>}
         
          <DisplayOrders orders={orders} status="InProgress" navigation={navigation}/>
 

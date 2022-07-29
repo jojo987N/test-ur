@@ -27,7 +27,7 @@ export default function RootNavigation() {
         {/* <Stack.Screen name="UpdateCategory" component={UpdateCategory}/> */}
         <Stack.Screen name="SignIn" component={SignIn}/>
         <Stack.Screen name="DrawerNavigator" component={DrawerNavigator}/>
-        <Stack.Screen name="CategoriesNavigator" component={CategoriesNavigator}/>
+        {/* <Stack.Screen name="CategoriesNavigator" component={CategoriesNavigator}/> */}
         <Stack.Screen name="Upload" component={Upload}/>
 
          

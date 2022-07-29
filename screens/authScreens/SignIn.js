@@ -2,7 +2,7 @@ import { View, Text, SafeAreaView, StatusBar, Image, TextInput, StyleSheet, Touc
 import React, {useState, useEffect, useContext} from 'react'
 import { MaterialIcons } from '@expo/vector-icons'
 import { auth, getRestaurantId, userInfos} from '../../firebase'
-import { signInWithEmailAndPassword, onAuthStateChanged} from 'firebase/auth'
+import { signInWithEmailAndPassword, onAuthStateChanged, signOut} from 'firebase/auth'
 import { LinearGradient } from 'expo-linear-gradient'
 import * as Animatable from "react-native-animatable"
 import AsyncStorage from '@react-native-async-storage/async-storage'
@@ -12,12 +12,19 @@ import Loading from '../../components/Loading'
 
 
 
-export default function SignIn({navigation}) {
+export default function SignIn({navigation, route}) {
 
   const [email, setEmail] = useState('')
   const [password, setPassword] = useState('')
   const {setRestaurantData} = useContext(RestaurantContext)
   const [loading, setLoading] = useState(false)
+
+
+  if(route.params && route.params.param === "SignOut")
+  AsyncStorage.getAllKeys().then(k => AsyncStorage.multiRemove(k))
+  .then(()=>{
+  signOut(auth)
+})
 
 
 
@@ -54,9 +61,9 @@ export default function SignIn({navigation}) {
           
     })
 
-  }catch(err){   // en cours
+  }catch(e){   // en cours
     setLoading(false)
-    console.log(err)
+    console.log(e)
     
     }
 
@@ -65,11 +72,11 @@ export default function SignIn({navigation}) {
 
 useEffect(()=>{
 
-  // AsyncStorage.getItem("managerId")
-  // .then((value)=>{
-  //   if(value)
-  //   navigation.navigate('DrawerNavigator')
-  // })
+  AsyncStorage.getItem("managerId")
+  .then((value)=>{
+    if(value)
+    navigation.navigate('DrawerNavigator')
+  })
    
 }, [])
 
