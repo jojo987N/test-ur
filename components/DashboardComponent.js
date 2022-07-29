@@ -82,7 +82,7 @@ export default function DashboardComponent({navigation}) {
     renderItem={({item})=>{
       return (
         <TouchableOpacity onPress={()=>{
-          navigation.navigate('DrawerNavigator', {screen: item.label})
+          // navigation.navigate('DrawerNavigator', {screen: item.label})
         
         }} 
         style={styles.iconContainer}>

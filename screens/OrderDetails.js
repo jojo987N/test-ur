@@ -6,10 +6,12 @@ import Menus from '../components/Menus'
 import Divider from '../components/Divider'
 import UserDetails from '../components/UserDetails'
 import ConfirmModal from '../components/ConfirmModal'
+import {ButtonFoodDone} from '../components/OrderInProgressDetail'
 
 export default function OrderDetails({route}) {
     const {order} = route.params 
     const [modalVisible, setModalVisible] = useState(false)
+
   return (
     <View style={styles.container}>
         <UserDetails order={order}/>
@@ -17,7 +19,7 @@ export default function OrderDetails({route}) {
         <View style={styles.divider}></View>
         <Menus order={order}/>
         {/* <Divider /> */}
-      <View style={styles.buttons}>
+     { !route.params.orderInProgress?<View style={styles.buttons}>
           <TouchableOpacity onPress={()=>{
            //  updateOrder(order.id, APP_CONSTANT.CONFIRM)
            setModalVisible(true)
@@ -40,6 +42,8 @@ export default function OrderDetails({route}) {
               </View>
           </TouchableOpacity>
       </View>
+      :
+      <ButtonFoodDone />}
       <ConfirmModal order={order} modalVisible={modalVisible} setModalVisible={setModalVisible}/>
     </View>
   )

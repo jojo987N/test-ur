@@ -22,15 +22,21 @@ export default function OrderInProgressDetail({route, navigation}) {
             <Text style={styles.title}>Order {order.orderId.toUpperCase()}</Text>
             
           </View>
-            <View style={{...styles.header1,justifyContent: "space-evenly"}}>
-              <Text style={{color: "#A30000", fontWeight: "bold", fontSize: 13}}>Details</Text>
-                        <AntDesign
+            <TouchableOpacity 
+
+            onPress={()=>navigation.navigate("OrderDetails", { order: order, orderInProgress: "orderInProgress"})}
+            
+            style={{...styles.header1,justifyContent: "space-evenly"}}>
+               
+                <Text style={{color: "#A30000", fontWeight: "bold", fontSize: 13}}>Details</Text>
+
+               
+              <AntDesign
               name="down"
               color="black"
               size={15}
-              onPress={() => props.navigation.goBack()}
                         />
-            </View>
+            </TouchableOpacity>
            
         </View>
        <ProgressSteps route={route}/>
@@ -92,10 +98,7 @@ export default function OrderInProgressDetail({route, navigation}) {
 
        <Divider />
 
-       <TouchableOpacity style={styles.button}>
-         <Text style={styles.buttonText}>FOOD IS DONE</Text>
-       </TouchableOpacity>
-
+       <ButtonFoodDone />
        
 
 
@@ -103,6 +106,11 @@ export default function OrderInProgressDetail({route, navigation}) {
     </View>
   )
 }
+
+export const ButtonFoodDone = ()=>  <TouchableOpacity style={styles.button}>
+<Text style={styles.buttonText}>FOOD IS DONE</Text>
+</TouchableOpacity>
+
 
 const styles = StyleSheet.create({
 
