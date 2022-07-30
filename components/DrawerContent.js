@@ -22,7 +22,7 @@ export default function DrawerContent(props) {
 
     const {restaurantData} = useContext(RestaurantContext)
 
-    console.log(restaurantData)
+    // console.log(restaurantData)
 
     const [isSignedIn, setIsSignedIn] = useState(true)
 

@@ -54,7 +54,7 @@ export default function DrawerNavigator() {
         />
         <Drawer.Screen 
             name = "newOrders"
-            component={OrdersNavigator}
+            component={Orders}
             initialParams={{orderStatus: "new"}}
             options={{
                 title: "New Orders",
@@ -71,7 +71,8 @@ export default function DrawerNavigator() {
         />
         <Drawer.Screen 
             name = "OrdersInProgress"
-            component={OrdersNavigator}
+            component={Orders}
+            initialParams={{orderStatus: "ordersInProgress"}}
             options={{
                 title: "Orders in progress",
                 headerShown: false,
@@ -87,7 +88,8 @@ export default function DrawerNavigator() {
         />
          <Drawer.Screen 
             name = "ReadyForPickup"
-            component={OrdersNavigator}
+            component={Orders}
+            initialParams={{orderStatus: "readyForPickup"}}
             options={{
                 title: "Ready for Pickup",
                 headerShown: false,

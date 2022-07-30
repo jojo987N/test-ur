@@ -19,7 +19,7 @@ export default function Orders({route}) {
 
   const navigation = useNavigation() 
 
-//   console.log(route.params)
+// console.log(route.params)
 
  // const [orders, setOrders] = useState([])
  const [orders, setOrders] = useState()
@@ -56,9 +56,9 @@ export default function Orders({route}) {
          {orders?<> 
          {route.params && route.params.orderStatus === "new"?<DisplayOrders orders={orders} status="new" navigation={navigation}/>:<></>}
         
-         <DisplayOrders orders={orders} status="InProgress" navigation={navigation}/>
+         {route.params && route.params.orderStatus === "ordersInProgress"?<DisplayOrders orders={orders} status="InProgress" navigation={navigation}/>:<></>}
 
-         <DisplayOrders orders={orders} status="ready" navigation={navigation}/>
+         {route.params && route.params.orderStatus === "readyForPickup"?<DisplayOrders orders={orders} status="ready" navigation={navigation}/>:<></>}
          </>:<Loading />}
 
 
