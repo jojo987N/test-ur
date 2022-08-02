@@ -19,7 +19,7 @@ export default function OrderDetails({route}) {
         <View style={styles.divider}></View>
         <Menus order={order}/>
         {/* <Divider /> */}
-     { !route.params.orderInProgress?<View style={styles.buttons}>
+     { !route.params.orderStatus?<View style={styles.buttons}>
           <TouchableOpacity onPress={()=>{
            //  updateOrder(order.id, APP_CONSTANT.CONFIRM)
            setModalVisible(true)
@@ -42,8 +42,8 @@ export default function OrderDetails({route}) {
               </View>
           </TouchableOpacity>
       </View>
-      :
-      <ButtonFoodDone />}
+      : route.params.orderStatus === "inProgress"?
+      <ButtonFoodDone />:<></>}
       <ConfirmModal order={order} modalVisible={modalVisible} setModalVisible={setModalVisible}/>
     </View>
   )
