@@ -38,7 +38,9 @@ export default function DrawerNavigator() {
         />
         <Drawer.Screen 
             name = "OrdersScreen"
-            component={OrdersNavigator}
+            // component={OrdersNavigator}
+            component={Orders}
+            initialParams={{orderStatus: "all"}}
             options={{
                 title: "Orders",
                 headerShown: false,
