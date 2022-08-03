@@ -178,6 +178,9 @@ const routeOrder = (order, navigation) => {
     if(order.status === "InProgress")
     navigation.navigate("OrderInProgressDetail", { order: order })
 
+    if(order.status === "ready")
+    navigation.navigate("OrderDetails", { order: order, orderStatus: "ready"})
+
 }
 
 const pendingBackground = ()=>{

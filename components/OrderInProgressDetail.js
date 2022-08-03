@@ -24,7 +24,7 @@ export default function OrderInProgressDetail({route, navigation}) {
           </View>
             <TouchableOpacity 
 
-            onPress={()=>navigation.navigate("OrderDetails", { order: order, orderInProgress: "orderInProgress"})}
+            onPress={()=>navigation.navigate("OrderDetails", { order: order, orderStatus: "inProgress"})}
             
             style={{...styles.header1,justifyContent: "space-evenly"}}>
                
