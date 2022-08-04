@@ -73,6 +73,11 @@ export default function DashboardComponent({navigation}) {
         <Total title={`TOTAL PROFIT`} value="$20,590"/>
     </View>
 
+    <View style={styles.container2}>
+        <Total title={`TOTAL ORDERS`} value="200"/>
+        <Total title={`TOTAL MENUS`} value="120"/>
+    </View>
+
      
 
     <FlatList 
