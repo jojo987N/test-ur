@@ -1,11 +1,13 @@
 
 import { View, Text, Switch, StyleSheet} from 'react-native'
-import React, {useState} from 'react'
+import React, {useState, useMemo} from 'react'
 import DashboardComponent from '../components/DashboardComponent'
 import MenuNavigation from '../components/MenuNavigation'
 
 export default function Dashboard({navigation}) {
   const [isEnabled, setIsEnabled] = useState(false)
+
+  const dashboardComponent = useMemo(()=> <DashboardComponent />, [])
    
    
   return (
@@ -28,7 +30,7 @@ export default function Dashboard({navigation}) {
             value={isEnabled}/>
         </View>
       </View>
-      <DashboardComponent />
+      {dashboardComponent}
       {/* <View style={styles.row1}>
         <View style={styles.orders}>
           <Text>1</Text>

@@ -8,6 +8,7 @@ import AddFood from '../screens/AddFood'
 import Orders from '../screens/Orders'
 import OrderDetails from '../screens/OrderDetails'
 import OrderInProgressDetail from '../components/OrderInProgressDetail'
+import AddCategory from "../screens/AddCategory"
 
 const  CategoriesStack = createStackNavigator()
 
@@ -20,11 +21,15 @@ export  function CategoriesNavigator() {
           component={Categories}
           options={{headerShown: false}}/>
 
-           <CategoriesStack.Screen 
+           {/* <CategoriesStack.Screen 
           name="UpdateCategory"
           component={UpdateCategory}
-          options={{headerShown: false}}/>
+          options={{headerShown: false}}/> */}
 
+       <CategoriesStack.Screen 
+          name="AddCategory"
+          component={AddCategory}
+          options={{title: "Add Category", headerShown: true}}/>
       </CategoriesStack.Navigator>
     )
   }
@@ -46,7 +51,7 @@ export  function FoodNavigator() {
            <FoodStack.Screen 
           name="AddFood"
           component={AddFood}
-          options={{headerShown: true, }}/>
+          options={{headerShown: true }}/>
 
       </FoodStack.Navigator>
     )

@@ -57,7 +57,8 @@ export default function Categories({navigation}) {
         right: 0,
         margin: 30
       }}
-      onPress={()=>navigation.navigate("UpdateCategory")}>
+      // onPress={()=>navigation.navigate("UpdateCategory")}
+      onPress={()=>navigation.navigate("AddCategory")}>
       <AntDesign name="pluscircle" size={44} color="blue" />
        
          
