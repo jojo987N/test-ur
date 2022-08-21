@@ -5,10 +5,12 @@ import { NavigationContainer } from '@react-navigation/native'
 import Home from '../screens/Settings';
 import DrawerNavigator from './DrawerNavigator';
 import UpdateCategory from '../screens/UpdateCategory';
-import { CategoriesNavigator } from './Staks';
+import { CategoriesNavigator, OrdersNavigator } from './Staks';
 import SignIn from '../screens/authScreens/SignIn';
 import Upload from '../screens/Upload';
 import { RestaurantContext } from '../context/RestaurantContext';
+import OrderInProgressDetail from '../components/OrderInProgressDetail';
+import OrderDetails from '../screens/OrderDetails';
 
 
 export default function RootNavigation() {
@@ -27,8 +29,10 @@ export default function RootNavigation() {
         {/* <Stack.Screen name="UpdateCategory" component={UpdateCategory}/> */}
         <Stack.Screen name="SignIn" component={SignIn}/>
         <Stack.Screen name="DrawerNavigator" component={DrawerNavigator}/>
-        <Stack.Screen name="CategoriesNavigator" component={CategoriesNavigator}/>
+        {/* <Stack.Screen name="CategoriesNavigator" component={CategoriesNavigator}/> */}
         <Stack.Screen name="Upload" component={Upload}/>
+        <Stack.Screen name="OrderInProgressDetail" component={OrderInProgressDetail}/>
+        <Stack.Screen name="OrderDetails" component={OrderDetails}/>
 
          
 
