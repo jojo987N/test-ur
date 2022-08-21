@@ -2,7 +2,6 @@ import { View, Text,} from 'react-native'
 import React, { useState } from 'react'
 import { createStackNavigator } from '@react-navigation/stack'
 import { NavigationContainer } from '@react-navigation/native'
-import Home from '../screens/Settings';
 import DrawerNavigator from './DrawerNavigator';
 import UpdateCategory from '../screens/UpdateCategory';
 import { CategoriesNavigator, OrdersNavigator } from './Staks';

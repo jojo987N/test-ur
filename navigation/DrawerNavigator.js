@@ -1,6 +1,5 @@
 import React from 'react'
 import {createDrawerNavigator} from '@react-navigation/drawer'
-import Settings from '../screens/Settings';
 import { Ionicons, MaterialIcons, FontAwesome, Entypo} from "@expo/vector-icons";
 import Categories from '../screens/Categories';
 import Orders from '../screens/Orders';
@@ -138,22 +137,7 @@ export default function DrawerNavigator() {
                 )
             }}
         />
-         <Drawer.Screen 
-            name = "Settings"
-            component={Settings}
-            options={{
-                title: "Settings",
-                headerShown: true,
-                drawerIcon: ({focussed, size}) =>(
-                  <Ionicons 
-                    name="settings"
-                    color="black"
-                    size={size}
-
-                  />  
-                )
-            }}
-        />
+         
          <Drawer.Screen 
             name = "SignOut"
             initialParams={{param: "SignOut"}}
