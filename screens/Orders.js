@@ -1,10 +1,9 @@
-import { View, Text, StyleSheet, ScrollView, TouchableOpacity, ImageBackground, Image} from 'react-native'
+import { View, Text, StyleSheet, TouchableOpacity, ImageBackground, Image} from 'react-native'
 import React, {useState, useEffect} from 'react'
-import { collection, onSnapshot, query, where} from 'firebase/firestore'
-import { db, ordersCol} from '../firebase'
-//import { getOrders } from '../firebase'
+import { onSnapshot} from 'firebase/firestore'
+import { ordersCol} from '../firebase'
 import AsyncStorage from '@react-native-async-storage/async-storage'
-import { APP_CONSTANT } from '../global'
+import { APP_CONSTANT, COLORS } from '../global'
 import { useNavigation } from '@react-navigation/native';
 import LottieView from 'lottie-react-native'
 import { language, currency } from '../global';
@@ -19,9 +18,6 @@ export default function Orders({route}) {
 
   const navigation = useNavigation() 
 
-// console.log(route.params)
-
- // const [orders, setOrders] = useState([])
  const [orders, setOrders] = useState()
   
   useEffect(()=>{
@@ -29,7 +25,7 @@ export default function Orders({route}) {
     AsyncStorage.getItem("managerId").
     then((value)=>{
 
-        //const q= query(ordersCol, where('restaurantId', '==', value))
+        
 
         onSnapshot(ordersCol, (snapshot)=>{
 
@@ -47,20 +43,13 @@ export default function Orders({route}) {
       <>
         <View style={styles.header}>
             <TouchableOpacity onPress={()=>navigation.toggleDrawer()}>
-                 <Feather name="menu" size={24} color="white" style={{marginLeft: 10}}/>
+                 <Feather name="menu" size={24} color={COLORS.white} style={styles.feather}/>
             </TouchableOpacity>
              
-              <Text style={styles.headerTitle}>Online</Text>
+              <Text style={styles.headerTitle}>{APP_CONSTANT.ONLINE}</Text>
           </View>
           <View style={styles.container}>
-         {orders?<> 
-         {(route.params && route.params.orderStatus === "new") || route.params.orderStatus === "all" ?<DisplayOrders orders={orders} status="new" navigation={navigation}/>:<></>}
-        
-         {(route.params && route.params.orderStatus === "ordersInProgress") || route.params.orderStatus === "all" ?<DisplayOrders orders={orders} status="InProgress" navigation={navigation}/>:<></>}
-
-         {(route.params && route.params.orderStatus === "readyForPickup") || route.params.orderStatus === "all" ?<DisplayOrders orders={orders} status="ready" navigation={navigation}/>:<></>}
-         </>:<Loading />}
-
+          
 
       </View>
      </>
@@ -69,44 +58,12 @@ export default function Orders({route}) {
   )
 }
 
-const DisplayOrders = ({orders, status, navigation}) => {
-
-    const render = {
-        "new": "New",
-        "InProgress": "In Progress",
-        "ready": "Ready"
-    }
-
-     
-
-    return (
-
-        <View>
-            <View>
-                <Text style={styles.title}>
-                    {`${render[status]} (${orders.filter(order => order.status === status).length})`}
-                </Text>
-            </View>
-            <FlatList
-            data={orders.filter(order => order.status === status)}
-            keyExtractor={(item, index) => index}
-            renderItem={({ item, index }) => {
-                return (
-            
-                 <RenderingOrder order={item} navigation={navigation}/>
-                )
-            }}
-                />
-        </View>
-
-    )
-}
-
+ 
 const RenderingOrder = ({order, navigation})=>{
 
     return (
         <TouchableOpacity style={{ ...styles.row, 
-            //backgroundColor: order.status === APP_CONSTANT.PENDING ? "#42f554" : ""
+            
             backgroundColor: "black"
              }}
                 onPress={() => routeOrder(order, navigation)}
@@ -143,7 +100,7 @@ const RenderingOrder = ({order, navigation})=>{
                     autoPlay
                     speed={1}
                     loop
-                    // duration={5000}
+                    
                 />}
                   {order.status === "InProgress" && <OrderCountDown remainingTime={order.remainingTime}/> }
                 
@@ -161,9 +118,7 @@ const RenderingOrder = ({order, navigation})=>{
                
         
         
-                {/* <Text style={styles.col}>{order.status}</Text>) */}
-        
-                {/* <Text style={styles.col}>{order.status}</Text> */}
+                
             </TouchableOpacity>
         
     )
@@ -188,9 +143,9 @@ const pendingBackground = ()=>{
     return (
         <ImageBackground
                     style={{width: "100%"}}
-                    //imageStyle={{borderRadius: 20}}
+                    
                     source={require("../assets/images/pending.jpg")}
-                   //source={item.image}
+                   
                     
                   >
 
@@ -207,12 +162,12 @@ const renderStatus = (status)=>{
            <Text style={{color:"white", textAlign: "center", fontSize: 15, fontWeight: "bold", }}>Accept</Text>
        </View>
        
-    // <LottieView style={styles.animation}
-    // source={require("../assets/animations/34467-process-pending.json")}
-    // autoPlay
-    // speed={2}
-    // loop
-    // />
+    
+    
+    
+    
+    
+    
    )
    if(status === APP_CONSTANT.CONFIRMED)
    return (
@@ -229,14 +184,14 @@ const styles = StyleSheet.create({
 
     container : {
         flex: 1,
-       //marginHorizontal: 10,
+       
        backgroundColor: "#000033",
        paddingHorizontal: 10
     },
     header: {
         backgroundColor: 'white',
         flexDirection: "row",
-        //justifyContent: ""
+        
         alignItems: "center",
         backgroundColor: "black"
     },
@@ -261,9 +216,9 @@ const styles = StyleSheet.create({
         paddingHorizontal: 2,
         paddingVertical: 15,
         fontWeight: "bold",
-       // borderWidth: 2,
+       
         textAlign: "center",
-       // borderWidth: 1,
+       
        paddingVertical: 30,
        color: "#f2f2f2"
         
@@ -271,15 +226,15 @@ const styles = StyleSheet.create({
     row: {
         flexDirection: "row",
         flexWrap: "wrap",
-      //  borderBottomWidth: 0.5,
-       // backgroundColor: '#42f554',
+      
+       
         alignItems: "center",
 
         borderWidth: 0.5,
-        //marginHorizontal: 10,
+        
         marginVertical: 10,
         borderRadius: 10,
-       // height: 100,
+       
         borderColor: "grey",
         overflow: "hidden",
         shadowColor: "grey",
@@ -287,16 +242,19 @@ const styles = StyleSheet.create({
         
         
     },
+    feather: {
+        marginLeft: 10
+    },
     quantity: {
         flex: 1
     },
     quantityText: {color: "white", textAlign: "center", fontWeight: "bold", fontSize: 18},
 
     animation: {
-       // flex: 1,
+       
        position: "absolute",
         height: 400,
-       // alignSelf: "center",
+       
         width: 400,
         
        top: -90,
@@ -307,8 +265,8 @@ const styles = StyleSheet.create({
     },
     status:{
         flex: 1,
-        //borderColor: "white",
-        //borderWidth: 1,
+        
+        
         alignItems: "center"
         
     },
