@@ -59,70 +59,7 @@ export default function Orders({route}) {
 }
 
  
-const RenderingOrder = ({order, navigation})=>{
 
-    return (
-        <TouchableOpacity style={{ ...styles.row, 
-            
-            backgroundColor: "black"
-             }}
-                onPress={() => routeOrder(order, navigation)}
-            >
-        
-               
-                {order.status === "new" && <Image style={{position: "absolute", width: "100%"}} source={require("../assets/images/pending.jpg")} />}
-        
-                <Text style={styles.col}>{order.orderId.toUpperCase()}</Text>
-        
-                {order.status === "new" && <Text style={styles.col}>{order.User.items.reduce((a,v)=> a + v.price, 0).toLocaleString(language, {
-                            style: "currency",
-                            currency: currency
-                        })}</Text> }
-
-                {order.status === "ready" && <Text style={styles.col}>{order.User.name}</Text>}
-
-               {order.status === "InProgress" && 
-                <View style={styles.quantity}>
-                    <Text style={styles.quantityText}>
-                    {Object.entries(order.User.items.map(item => item.name).reduce((acc, curr) => (acc[curr] = (acc[curr] || 0) + 1, acc), {}))
-                    .reduce((a,v)=> a + v[1], 0) }  
-                    </Text> 
-                    <Text style={{color:"white", textAlign: "center"}}>items</Text>
-
-                </View>
-               }
-
-                <View style={styles.status}>
-                    {renderStatus(order.status)}
-        
-                    {order.status === "new" &&    <LottieView style={styles.animation}
-                    source={require("../assets/animations/ripple-effect.json")}
-                    autoPlay
-                    speed={1}
-                    loop
-                    
-                />}
-                  {order.status === "InProgress" && <OrderCountDown remainingTime={order.remainingTime}/> }
-                
-                  
-                {order.status === "ready" && 
-                 
-                    <Image style={styles.avatarImage} source={{uri: order.User.image}} />
-                
-                }
-                  
-                </View>
-
-               
-        
-               
-        
-        
-                
-            </TouchableOpacity>
-        
-    )
-}
  
 
 const routeOrder = (order, navigation) => {
