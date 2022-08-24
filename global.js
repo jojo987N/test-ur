@@ -28,16 +28,33 @@ export const APP_CONSTANT = {
         ORDERS_IN_PROGRESS: "In Progress",
         ORDERS_READY: "Ready",
         ONLINE: "Online",
+        
     },
+    STYLE: {
+        CURRENCY: "currency"
+    }
    
     
  }
 export const language = "en"
 export const currency = "USD"
 
-export const COLORS = {
-    white: "#ffffff"
+export const SCREEN = {
+
+    ORDERDETAILS: "OrderDetails"
 }
+
+export const COLORS = {
+    white: "#ffffff",
+    black: "#000000",
+    grey: "#808080",
+    COLUMN: "#f2f2f2"
+}
+export const IMAGE = {
+    NEW_ORDER: "../assets/images/pending.jpg"
+}
+
+
 LogBox.ignoreLogs(['Setting a timer'])
 LogBox.ignoreLogs(['AsyncStorage has been extracted from react-native core'])
 
