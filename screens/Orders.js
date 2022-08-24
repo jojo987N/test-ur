@@ -62,18 +62,7 @@ export default function Orders({route}) {
 
  
 
-const routeOrder = (order, navigation) => {
 
-    if(order.status === "new")
-    navigation.navigate("OrderDetails", { order: order })
-
-    if(order.status === "InProgress")
-    navigation.navigate("OrderInProgressDetail", { order: order })
-
-    if(order.status === "ready")
-    navigation.navigate("OrderDetails", { order: order, orderStatus: "ready"})
-
-}
 
 const pendingBackground = ()=>{
 
@@ -160,25 +149,7 @@ const styles = StyleSheet.create({
        color: "#f2f2f2"
         
     },
-    row: {
-        flexDirection: "row",
-        flexWrap: "wrap",
-      
-       
-        alignItems: "center",
-
-        borderWidth: 0.5,
-        
-        marginVertical: 10,
-        borderRadius: 10,
-       
-        borderColor: "grey",
-        overflow: "hidden",
-        shadowColor: "grey",
-        shadowOpacity: 1
-        
-        
-    },
+    
     feather: {
         marginLeft: 10
     },
