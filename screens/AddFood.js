@@ -109,7 +109,8 @@ export default function AddFood() {
             // .then(productRef => navigation.navigate("Upload", {
             //   product_id: productRef.id
             // }))
-            navigation.navigate("Upload")
+            
+            // navigation.navigate("Upload")
           }
         } />
       </View>
