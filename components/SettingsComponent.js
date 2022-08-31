@@ -171,7 +171,7 @@ export default function SettingsComponent({navigation, bs}) {
            
          </View> */}
 
-         <TouchableOpacity  onPress={()=>SignInUser()}>
+         <TouchableOpacity  onPress={()=>{}}>
            <View style={{
              backgroundColor: "#0080ff",
              marginHorizontal: 25,
