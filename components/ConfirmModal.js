@@ -30,6 +30,7 @@ export default function ConfirmModal({order, modalVisible, setModalVisible}) {
                      
                     setModalVisible(false)
                     //  updateOrder(order.id, APP_CONSTANT.CONFIRM, deliveryTime)
+                    navigation.navigate('OrderInProgressDetail')
                 }}>
                  <Text style={styles.textButton}>Accept & Confirm</Text>
                 </TouchableOpacity>
