@@ -148,13 +148,7 @@ export default function SettingsComponent({navigation, bs}) {
            
          </View>
 
-         <View style={styles.textInputContainer}>
-         <MaterialIcons name="person" size={20} color="#3d5c5c" style={{
-           marginLeft: 6,
-         }}/>
-           
-           
-         </View>
+         
          {/* <View style={styles.textInputContainer}>
          <MaterialIcons name="person" size={20} color="#3d5c5c" style={{
            marginLeft: 6,
