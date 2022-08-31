@@ -66,21 +66,21 @@ export const updateOrder = (order_Id, status, deliveryTime) => {
     status: status,
     deliveryTime: deliveryTime
   })
-    .then(() => console.log('good'))
+    .then(() => console.log('updated'))
 }
 export const updateProduct = (product_id, image) => {
   const docRef = doc(db, 'products', product_id)
   updateDoc(docRef, {
     image: image,
   })
-    .then(() => console.log('good'))
+    .then(() => console.log('updated'))
 }
 
-export const updateRestaurant = (restaurant) => {
+export const updateRestaurant = (setRestaurantData) => {
   const docRef = doc(db, 'restaurants', restaurant_Id)
   updateDoc(docRef, {
     status: status,
     deliveryTime: deliveryTime
   })
-    .then(() => console.log('good'))
+    .then(() => console.log('updated'))
 }
