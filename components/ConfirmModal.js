@@ -2,10 +2,13 @@ import { View, Text, StyleSheet, TextInput, Modal, TouchableOpacity} from 'react
 import React, {useState} from 'react'
 import { updateOrder } from '../firebase'
 import { APP_CONSTANT } from '../global'
+import { useNavigation } from '@react-navigation/native'
+
 
 export default function ConfirmModal({order, modalVisible, setModalVisible}) {
   
     const [deliveryTime, setDeliveryTime] = useState()
+    const navigation = useNavigation()
 
   return (
     <Modal
