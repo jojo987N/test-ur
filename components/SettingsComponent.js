@@ -152,11 +152,7 @@ export default function SettingsComponent({navigation, bs}) {
          <MaterialIcons name="person" size={20} color="#3d5c5c" style={{
            marginLeft: 6,
          }}/>
-          <TextInput 
-          placeholder='Image' 
-          value={image}
-          onChangeText={(text)=>setImage(text)}
-          style={styles.textInput}/>
+           
            
          </View>
          {/* <View style={styles.textInputContainer}>
