@@ -89,7 +89,7 @@ export default function SettingsComponent({navigation, bs}) {
       
 
        <Text style={{fontSize: 25, fontWeight: "bold", color: "#3d5c5c",
-      letterSpacing: 5}}>Delivery App</Text>
+      letterSpacing: 5}}>Upload Image</Text>
 
        </View>
        <View style={{
