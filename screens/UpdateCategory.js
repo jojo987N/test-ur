@@ -11,7 +11,7 @@ export default function UpdateCategory() {
           style={styles.textInput} />
       </View>
       <View style={styles.buttonContainer}>
-        <Button title={APP_CONSTANT.UPDATE} />
+        <Button title={APP_CONSTANT.TEXT.UPDATE} />
       </View>
     </View>
   )

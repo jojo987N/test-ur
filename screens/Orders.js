@@ -60,49 +60,9 @@ export default function Orders({route}) {
 
  
 
- 
 
 
 
-const pendingBackground = ()=>{
-
-    return (
-        <ImageBackground
-                    style={{width: "100%"}}
-                    
-                    source={require("../assets/images/pending.jpg")}
-                   
-                    
-                  >
-
-                  </ImageBackground>
-
-    )
-}
-
-const renderStatus = (status)=>{
-
-   if (status === "new")
-   return (
-       <View style={{height: 40, width: 100, alignSelf: "center", borderRadius: 20, backgroundColor: "#00cc00", justifyContent: "center"}}>
-           <Text style={{color:"white", textAlign: "center", fontSize: 15, fontWeight: "bold", }}>Accept</Text>
-       </View>
-       
-    
-    
-    
-    
-    
-    
-   )
-   if(status === APP_CONSTANT.CONFIRMED)
-   return (
-       <View style={styles.status_text_container}>
-           <Text style={styles.status_text}>Accepted</Text>
-       </View>
-        
-   )
-}
 
  
  

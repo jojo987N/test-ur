@@ -1,4 +1,4 @@
-import { APP_CONSTANT } from '../global'
+import { APP_CONSTANT, SCREEN } from '../global'
 
 const OrdersReady = ({ navigation }) => {
 
@@ -35,7 +35,7 @@ const OrdersReady = ({ navigation }) => {
         
                         backgroundColor: COLORS.black
                          }}
-                            onPress={() => navigation.navigate(SCREEN.ORDERDETAILS, { order: item })}
+                            onPress={() => navigation.navigate(SCREEN.ORDER_READY_DETAILS, { order: item })}
                         >
                    
     

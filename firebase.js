@@ -75,3 +75,12 @@ export const updateProduct = (product_id, image) => {
   })
     .then(() => console.log('good'))
 }
+
+export const updateRestaurant = (restaurant) => {
+  const docRef = doc(db, 'restaurants', restaurant_Id)
+  updateDoc(docRef, {
+    status: status,
+    deliveryTime: deliveryTime
+  })
+    .then(() => console.log('good'))
+}

@@ -5,38 +5,38 @@ import { NavigationContainer } from '@react-navigation/native'
 import DrawerNavigator from './DrawerNavigator';
 import UpdateCategory from '../screens/UpdateCategory';
 import { CategoriesNavigator, OrdersNavigator } from './Staks';
-import SignIn from '../screens/authScreens/SignIn';
+import SignIn from '../screens/SignIn';
 import Upload from '../screens/Upload';
-import { RestaurantContext } from '../context/RestaurantContext';
+import {RestaurantProvider } from '../context/RestaurantContext';
 import OrderInProgressDetail from '../components/OrderInProgressDetail';
 import OrderDetails from '../screens/OrderDetails';
+import { SCREEN } from '../global';
 
 
 export default function RootNavigation() {
 
     const Stack = createStackNavigator();
-    const [restaurantData, setRestaurantData] = useState()
-
+ 
   return (
     <NavigationContainer>
-      <RestaurantContext.Provider value={{restaurantData, setRestaurantData}}> 
+      <RestaurantProvider > 
         <Stack.Navigator
          screenOptions={{headerShown: false }}>
         
          
         {/* <Stack.Screen name="Home" component={Home}/> */}
         {/* <Stack.Screen name="UpdateCategory" component={UpdateCategory}/> */}
-        <Stack.Screen name="SignIn" component={SignIn}/>
-        <Stack.Screen name="DrawerNavigator" component={DrawerNavigator}/>
+        <Stack.Screen name={SCREEN.SIGN_IN} component={SignIn}/>
+        <Stack.Screen name={SCREEN.DRAWER_NAVIGATOR} component={DrawerNavigator}/>
         {/* <Stack.Screen name="CategoriesNavigator" component={CategoriesNavigator}/> */}
-        <Stack.Screen name="Upload" component={Upload}/>
-        <Stack.Screen name="OrderInProgressDetail" component={OrderInProgressDetail}/>
-        <Stack.Screen name="OrderDetails" component={OrderDetails}/>
+        <Stack.Screen name={SCREEN.UPLOAD} component={Upload}/>
+        <Stack.Screen name={SCREEN.ORDER_IN_PROGRESS_DETAILS} component={OrderInProgressDetail}/>
+        <Stack.Screen name={SCREEN.ORDER_DETAILS} component={OrderDetails}/>
 
          
 
         </Stack.Navigator>
-        </RestaurantContext.Provider>
+        </RestaurantProvider>
     </NavigationContainer>
      
   )

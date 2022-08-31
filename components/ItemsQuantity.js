@@ -8,11 +8,9 @@ const ItemsQuantity = ({order}) => {
                     .reduce((a, v) => a + v[1], 0)}
             </Text>
             <Text style={styles.itemsText}>items</Text>
-
         </View>
     )
 }
-
 const styles = StyleSheet.create({
     quantityText: {
         color: "white", 
@@ -23,7 +21,5 @@ const styles = StyleSheet.create({
     itemsText: { 
         color: "white", 
         textAlign: "center" }
-
 })
-
 export default ItemsQuantity;

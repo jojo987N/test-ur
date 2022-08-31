@@ -5,6 +5,7 @@ import { AntDesign, Ionicons} from "@expo/vector-icons";
 import { useNavigation } from '@react-navigation/native';
 import MenuNavigation from '../components/MenuNavigation';
 import Loading from '../components/Loading';
+import { APP_CONSTANT, COLORS, ICON, SCREEN } from '../global';
 
 
 export default function Categories({navigation}) {
@@ -20,7 +21,7 @@ export default function Categories({navigation}) {
     <View>
        <View style={styles.header}>
           <MenuNavigation navigation={navigation}/>
-          <Text style={styles.title}>Categories</Text>
+          <Text style={styles.title}>{APP_CONSTANT.TEXT.CATEGORIES}</Text>
         </View>
       <ScrollView>
         
@@ -57,8 +58,8 @@ export default function Categories({navigation}) {
         right: 0,
         margin: 30
       }}
-      onPress={()=>navigation.navigate("UpdateCategory")}>
-      <AntDesign name="pluscircle" size={44} color="blue" />
+      onPress={()=>navigation.navigate(SCREEN.UPDATECATEGORY)}>
+      <AntDesign name={ICON.ADD_BUTTON} size={44} color={COLORS.ADD_BUTTON} />
        
          
       

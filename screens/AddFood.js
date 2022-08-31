@@ -2,6 +2,8 @@ import { View, Text, TextInput, StyleSheet, Button} from 'react-native'
 import React, {useState} from 'react'
 import { addProduct } from '../firebase'
 import { useNavigation } from '@react-navigation/native';
+import { APP_CONSTANT, SCREEN } from '../global';
+import { colors } from 'react-native-elements';
 
 
 export default function AddFood() {
@@ -21,14 +23,14 @@ export default function AddFood() {
       </View>
       <View style={styles.inputView}>
           <TextInput
-          placeholder='Description'
+          placeholder={APP_CONSTANT.TEXT.DESCRIPTION}
           style={styles.inputText}
           value={description}
           onChangeText={(text)=>setDescription(text)}/>
       </View>
       <View style={{...styles.inputView, width: 150}}>
           <TextInput
-          placeholder='Price'
+          placeholder={APP_CONSTANT.TEXT.PRICE}
           style={styles.inputText}
           value={price}
           onChangeText={(text)=>setPrice(text)}/>
@@ -36,14 +38,10 @@ export default function AddFood() {
       <View style={{marginTop: 20,
           marginHorizontal: 20,
            }}>
-             <Button title='Add' onPress={
+             <Button title={APP_CONSTANT.TEXT.ADD} onPress={
                  ()=>{
                       
-                    // addProduct(name, description, price)
-                    // .then(productRef => navigation.navigate("Upload", {
-                    //   product_id: productRef.id
-                    // }))
-                    navigation.navigate("Upload")
+                    navigation.navigate(SCREEN.UPLOAD)
                  }
              }/>
              </View>
@@ -56,7 +54,7 @@ const styles = StyleSheet.create({
      // backgroundColor: "white",
       marginTop: 40,
       borderWidth: 0.3,
-      borderColor: "grey",
+      borderColor: colors.grey3,
       marginHorizontal: 20
     },
     inputText:{

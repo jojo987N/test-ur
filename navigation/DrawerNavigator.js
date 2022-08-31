@@ -6,8 +6,13 @@ import Orders from '../screens/Orders';
 import Foods from '../screens/Foods';
 import { CategoriesNavigator, FoodNavigator, OrdersNavigator } from './Staks';
 import Dashboard from '../screens/Dashboard';
-import SignIn from '../screens/authScreens/SignIn';
+import SignIn from '../screens/SignIn';
 import DrawerContent from '../components/DrawerContent';
+import { APP_CONSTANT, COLORS, ICON, SCREEN } from '../global';
+import NewOrders from '../screens/NewOrders';
+import OrdersInProgress from '../screens/OrdersInProgress';
+import OrdersReady from '../screens/OrdersReady';
+import { colors } from 'react-native-elements';
 
 
 const Drawer = createDrawerNavigator();
@@ -20,15 +25,15 @@ export default function DrawerNavigator() {
       useLegacyImplementation={true}
      >
        <Drawer.Screen 
-            name = "Dashboard"
+            name = {SCREEN.DASHBOARD}
             component={Dashboard}
             options={{
-                title: "Dashboard",
+                title: APP_CONSTANT.TEXT.DASHBOARD,
                 headerShown: false,
                 drawerIcon: ({focussed, size}) =>(
                   <FontAwesome 
-                    name="dashboard"
-                    color="black"
+                    name={ICON.DASHBOARD}
+                    color={COLORS.black}
                     size={size}
 
                   />  
@@ -36,17 +41,16 @@ export default function DrawerNavigator() {
             }}
         />
         <Drawer.Screen 
-            name = "OrdersScreen"
+            name = {SCREEN.ORDERS_SCREEN}
             // component={OrdersNavigator}
             component={Orders}
-            initialParams={{orderStatus: "all"}}
             options={{
-                title: "Orders",
+                title: APP_CONSTANT.TEXT.ORDERS,
                 headerShown: false,
                 drawerIcon: ({focussed, size}) =>(
                   <FontAwesome 
-                    name="list-alt"
-                    color="black"
+                    name={ICON.ORDERS}
+                    color={COLORS.black}
                     size={size}
 
                   />  
@@ -54,16 +58,15 @@ export default function DrawerNavigator() {
             }}
         />
         <Drawer.Screen 
-            name = "newOrders"
-            component={Orders}
-            initialParams={{orderStatus: "new"}}
+            name = {SCREEN.NEW_ORDERS}
+            component={NewOrders}
             options={{
-                title: "New Orders",
+                title: APP_CONSTANT.TEXT.NEW_ORDER,
                 headerShown: false,
                 drawerIcon: ({focussed, size}) =>(
                   <FontAwesome 
-                    name="list-alt"
-                    color="black"
+                    name={ICON.NEW_ORDERS}
+                    color={COLORS.black}
                     size={size}
 
                   />  
@@ -71,16 +74,15 @@ export default function DrawerNavigator() {
             }}
         />
         <Drawer.Screen 
-            name = "OrdersInProgress"
-            component={Orders}
-            initialParams={{orderStatus: "ordersInProgress"}}
+            name = {SCREEN.ORDERS_IN_PROGRESS}
+            component={OrdersInProgress}
             options={{
-                title: "Orders in progress",
+                title: APP_CONSTANT.TEXT.ORDERS_IN_PROGRESS,
                 headerShown: false,
                 drawerIcon: ({focussed, size}) =>(
                   <FontAwesome 
-                    name="list-alt"
-                    color="black"
+                    name={ICON.ORDERS_IN_PROGRESS}
+                    color={COLORS.black}
                     size={size}
 
                   />  
@@ -88,16 +90,15 @@ export default function DrawerNavigator() {
             }}
         />
          <Drawer.Screen 
-            name = "ReadyForPickup"
-            component={Orders}
-            initialParams={{orderStatus: "readyForPickup"}}
+            name = {SCREEN.READY_FOR_PICKUP}
+            component={OrdersReady}
             options={{
-                title: "Ready for Pickup",
+                title: APP_CONSTANT.TEXT.READY_FOR_PICKUP,
                 headerShown: false,
                 drawerIcon: ({focussed, size}) =>(
                   <FontAwesome 
-                    name="list-alt"
-                    color="black"
+                    name={ICON.READY_FOR_PICKUP}
+                    color={COLORS.black}
                     size={size}
 
                   />  
@@ -105,16 +106,16 @@ export default function DrawerNavigator() {
             }}
         />
           <Drawer.Screen 
-            name = "CategoriesNavigator"
+            name = {SCREEN.CATEGORIES_NAVIGATOR}
             // component={Categories}
             component={CategoriesNavigator}
             options={{
-                title: "Categories",
+                title: APP_CONSTANT.TEXT.CATEGORIES,
                 // headerShown: true,
                 drawerIcon: ({focussed, size}) =>(
                   <MaterialIcons 
-                    name="category"
-                    color="black"
+                    name={ICON.CATEGORY}
+                    color={COLORS.black}
                     size={size}
 
                   />  
@@ -122,15 +123,15 @@ export default function DrawerNavigator() {
             }}
         />
          <Drawer.Screen 
-            name = "FoodsScreen"
+            name = {SCREEN.FOODS_NAVIGATOR}
             component={FoodNavigator}
             options={{
-                title: "Foods",
+                title: APP_CONSTANT.TEXT.FOODS,
                 headerShown: false,
                 drawerIcon: ({focussed, size}) =>(
                   <Ionicons 
-                    name="fast-food"
-                    color="black"
+                    name={ICON.FOODS}
+                    color={COLORS.black}
                     size={size}
 
                   />  
@@ -139,16 +140,15 @@ export default function DrawerNavigator() {
         />
          
          <Drawer.Screen 
-            name = "SignOut"
-            initialParams={{param: "SignOut"}}
+            name = {SCREEN.SIGN_OUT}
             component={SignIn}
             options={{
-                title: "Sign out",
+                title: APP_CONSTANT.TEXT.SIGN_OUT,
                 headerShown: false,
                 drawerIcon: ({focussed, size}) =>(
                   <Entypo 
-                    name="log-out"
-                    color="black"
+                    name={ICON.SIGN_OUT}
+                    color={colors.black}
                     size={size}
 
                   />  

@@ -37,7 +37,7 @@ const NewOrders = ({ navigation }) => {
             
                             backgroundColor: COLORS.black
                              }}
-                                onPress={() => navigation.navigate(SCREEN.ORDERDETAILS, { order: item })}
+                                onPress={() => navigation.navigate(SCREEN.NEW_ORDER_DETAILS, { order: item })}
                             >
                        
                           <Image style={styles.image} source={require(IMAGE.NEW_ORDER)} />

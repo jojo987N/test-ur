@@ -5,6 +5,8 @@ import { AntDesign, Ionicons} from "@expo/vector-icons";
 import { useNavigation } from '@react-navigation/native';
 import MenuNavigation from '../components/MenuNavigation';
 import Loading from '../components/Loading';
+import { APP_CONSTANT } from '../global';
+import AddButton from '../components/AddButton';
 
 
 export default function Foods() {
@@ -20,7 +22,7 @@ export default function Foods() {
     <View>
        <View style={styles.header}>
           <MenuNavigation navigation={navigation}/>
-          <Text style={styles.title}>Foods</Text>
+          <Text style={styles.title}>{APP_CONSTANT.TEXT.FOODS}</Text>
         </View>
       <ScrollView>
         
@@ -28,12 +30,7 @@ export default function Foods() {
             {foods.map((food, index)=>{
                
               return (
-                <View key={index} style={{
-                  borderBottomWidth: 0.5,
-                  padding: 30,
-                 // marginHorizontal: 30,
-                  flexDirection: "row"
-                }}>
+                <View key={index} style={styles.row}>
                   <View style={{flex: 1}}>
                     <Image style={styles.image} source={{uri: food.image}} />
                   </View>
@@ -51,18 +48,7 @@ export default function Foods() {
       </ScrollView>
        
     </View>
-    <TouchableOpacity style={{
-        position: "absolute",
-        bottom:0,
-        right: 0,
-        margin: 30
-      }}
-      onPress={()=>navigation.navigate("AddFood")}>
-      <AntDesign name="pluscircle" size={44} color="blue" />
-       
-         
-      
-      </TouchableOpacity>
+    <AddButton />
     </>
   )
 }
@@ -78,6 +64,11 @@ const styles = StyleSheet.create({
     marginLeft: 10,
     fontSize: 20,
     fontWeight: "bold"
+  },
+  row: {
+    borderBottomWidth: 0.5,
+    padding: 30,
+    flexDirection: "row"
   },
   image: {
     height: 40, 
