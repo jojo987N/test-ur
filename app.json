@@ -1,7 +1,6 @@
 {
     "expo": {
      "name": "Restaurant App",
-     "sdkVersion": "36.0.0",
      "icon": "./assets/images/logo512.png",
      "splash": {
       "image": "./assets/images/splash-screen.png",
