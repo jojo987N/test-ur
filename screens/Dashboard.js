@@ -1,5 +1,5 @@
 
-import { View, Text, Switch, StyleSheet} from 'react-native'
+import { View, Text, Switch, StyleSheet, StatusBar} from 'react-native'
 import React, {useState, useMemo} from 'react'
 import DashboardComponent from '../components/DashboardComponent'
 import MenuNavigation from '../components/MenuNavigation'
