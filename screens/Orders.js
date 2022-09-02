@@ -12,8 +12,6 @@ import { FlatList } from 'react-native-gesture-handler'
 import OrderCountDown from '../components/OrderCountDown'
 import { Feather } from '@expo/vector-icons'
 import Loading from '../components/Loading'
-import { StatusBar } from 'expo-status-bar';
-
 
   
 
@@ -63,7 +61,7 @@ export default function Orders({route}) {
          {(route.params && route.params.orderStatus === "readyForPickup") || route.params.orderStatus === "all" ?<DisplayOrders orders={orders} status="ready" navigation={navigation}/>:<></>}
          </>:<Loading />}
 
-         <StatusBar style="auto" />
+
       </View>
      </>
        
