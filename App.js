@@ -1,4 +1,4 @@
- import { View, Text, StatusBar, SafeAreaView, StatusBar} from 'react-native'
+ import { View, Text, StatusBar, SafeAreaView} from 'react-native'
  import React from 'react'
 //import Home from './screens/Settings'
 import RootNavigation from './navigation'
