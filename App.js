@@ -6,8 +6,8 @@ import RootNavigation from './navigation'
  export default function App() {
    return (
     <SafeAreaView style={{
-      paddingTop: Platform.OS === "android" ? StatusBar.currentHeight : 0,
-      backgroundColor: "#eee",
+      // paddingTop: Platform.OS === "android" ? StatusBar.currentHeight : 0,
+      // backgroundColor: "#eee",
       flex: 1
     }}>
 
