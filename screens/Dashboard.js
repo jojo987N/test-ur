@@ -3,6 +3,8 @@ import { View, Text, Switch, StyleSheet} from 'react-native'
 import React, {useState, useMemo} from 'react'
 import DashboardComponent from '../components/DashboardComponent'
 import MenuNavigation from '../components/MenuNavigation'
+import { StatusBar } from 'expo-status-bar';
+
 
 export default function Dashboard({navigation}) {
   const [isEnabled, setIsEnabled] = useState(false)
@@ -42,6 +44,7 @@ export default function Dashboard({navigation}) {
           
         </View>
       </View> */}
+      <StatusBar style="auto" />
     </View>
   )
 }
