@@ -2,6 +2,8 @@
  import React from 'react'
 //import Home from './screens/Settings'
 import RootNavigation from './navigation'
+import { StatusBar } from 'expo-status-bar';
+
  
  export default function App() {
    return (
@@ -12,6 +14,7 @@ import RootNavigation from './navigation'
     }}>
 
      <RootNavigation />
+     <StatusBar style="auto" />
 
     </SafeAreaView>
    )
