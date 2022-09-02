@@ -42,7 +42,7 @@ export default function OrderInProgressDetail({route, navigation}) {
        <ProgressSteps route={route}/>
 
        <View style={styles.mapContainer}>
-         <MapView
+         {/* <MapView
          
           initialRegion={{
             latitude: order.Restaurant.lat,
@@ -81,7 +81,7 @@ export default function OrderInProgressDetail({route, navigation}) {
           </Marker>
 
 
-          </MapView>
+          </MapView> */}
        </View>
 
        <View style={styles.customer_courier_Infos}>
