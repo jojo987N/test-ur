@@ -122,7 +122,7 @@ const styles = StyleSheet.create({
 
   header: {
     alignItems: "center",
-    // marginTop: 50
+    
     flex: 1,
     paddingBottom: 50,
     justifyContent: "flex-end"
@@ -141,20 +141,20 @@ const styles = StyleSheet.create({
   },
   textInputContainer: {
     flexDirection: "row",
-    //borderWidth : 1,
+    
     backgroundColor: colors.white,
     marginHorizontal: 25,
-    //padding: 10,
+    
     borderRadius: 5,
     marginTop: 20,
     alignItems: "center",
     borderBottomWidth: 0.3,
     borderBottomColor: "grey"
-    //marginT
+    
 
   },
   textInput: {
-    // borderWidth : 1,
+    
     width: "90%",
     padding: 10
   },
@@ -164,7 +164,7 @@ const styles = StyleSheet.create({
     justifyContent: "center",
     alignItems: "center",
     borderRadius: 10,
-    //flexDirection: "row"
+    
     marginTop: 50
 
   },

@@ -25,7 +25,7 @@ export default function OrderInProgressDetails({ route }) {
 
 const styles = StyleSheet.create({
     container: {
-        // marginHorizontal: 20,
+        
         flex: 1
     },
 
@@ -34,7 +34,7 @@ const styles = StyleSheet.create({
         backgroundColor: "#e6e6e6"
     },
     buttons: {
-        //marginTop: 40
+        
         position: "absolute",
         bottom: 10,
         width: "100%"

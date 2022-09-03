@@ -25,17 +25,6 @@ export default function Dashboard({navigation}) {
         </View>
       </View>
       <DashboardComponent />
-      {/* <View style={styles.row1}>
-        <View style={styles.orders}>
-          <Text>1</Text>
-        </View>
-        <View style={styles.orders}>
-        <Text>0</Text>
-        </View>
-        <View>
-          
-        </View>
-      </View> */}
     </View>
   )
 }
@@ -54,7 +43,7 @@ const styles = StyleSheet.create({
   },
   container:{
     flex: 1,
-   // alignItems: "center"
+   
   },
   title_switch: {
   flexDirection: "row",
@@ -64,12 +53,12 @@ const styles = StyleSheet.create({
   marginHorizontal: 10
   },
   title: {
-    //borderWidth: 1
+    
     fontSize: 15,
   
   },
   switchContainer:{
-   // borderWidth: 1
+   
   },
   row1:{
     flexDirection: "row"

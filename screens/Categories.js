@@ -11,7 +11,7 @@ import { APP_CONSTANT, COLORS, ICON, SCREEN } from '../global';
 export default function Categories({navigation}) {
 
     const [categories, setCategories] = useState()
-    // const navigation = useNavigation()
+    
 
     useEffect(()=>{
       getCategories().then((categories)=>setCategories(categories)) 
@@ -27,12 +27,12 @@ export default function Categories({navigation}) {
         
        {categories?<View>
             {categories.map((category, index)=>{
-              //  console.log(category.image, index)
+              
               return (
                 <View key={index} style={{
                   borderBottomWidth: 0.5,
                   padding: 30,
-                 // marginHorizontal: 30,
+                 
                   flexDirection: "row"
                 }}>
                   <View style={{flex: 1}}>

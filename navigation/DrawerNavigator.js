@@ -42,7 +42,7 @@ export default function DrawerNavigator() {
         />
         <Drawer.Screen 
             name = {SCREEN.ORDERS_SCREEN}
-            // component={OrdersNavigator}
+            
             component={Orders}
             options={{
                 title: APP_CONSTANT.TEXT.ORDERS,
@@ -107,11 +107,11 @@ export default function DrawerNavigator() {
         />
           <Drawer.Screen 
             name = {SCREEN.CATEGORIES_NAVIGATOR}
-            // component={Categories}
+            
             component={CategoriesNavigator}
             options={{
                 title: APP_CONSTANT.TEXT.CATEGORIES,
-                // headerShown: true,
+                
                 drawerIcon: ({focussed, size}) =>(
                   <MaterialIcons 
                     name={ICON.CATEGORY}
