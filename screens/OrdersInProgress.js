@@ -1,5 +1,7 @@
+import { View, StyleSheet, Text, FlatList, TouchableOpacity} from 'react-native'
 import ItemsQuantity from '../components/ItemsQuantity'
-import { APP_CONSTANT } from '../global'
+import OrderCountDown from '../components/OrderCountDown'
+import { APP_CONSTANT, COLORS } from '../global'
 
 const OrdersInProgress = ({ navigation }) => {
 
@@ -49,9 +51,6 @@ const OrdersInProgress = ({ navigation }) => {
                         <View style={styles.status}>
                             <OrderCountDown remainingTime={item.remainingTime}/> 
                         </View>
-                        
-                        
-                        
                         </TouchableOpacity>
                     )
                 }}

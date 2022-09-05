@@ -1,4 +1,4 @@
-import { View, Image,  } from 'react-native'
+import { View, Image, StyleSheet} from 'react-native'
 import { APP_CONSTANT, COLORS, IMAGE, SCREEN } from '../global'
 import { totalPrice } from '../utils'
 
