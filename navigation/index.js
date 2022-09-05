@@ -25,10 +25,10 @@ export default function RootNavigation() {
 
 
           <Stack.Screen name={SCREEN.SIGN_IN} component={SignIn} />
-          <Stack.Screen name={SCREEN.DRAWER_NAVIGATOR} component={DrawerNavigator} />
+          {/* <Stack.Screen name={SCREEN.DRAWER_NAVIGATOR} component={DrawerNavigator} />
           <Stack.Screen name={SCREEN.UPLOAD} component={Upload} />
           <Stack.Screen name={SCREEN.ORDER_IN_PROGRESS_DETAILS} component={OrderInProgressDetail} />
-          <Stack.Screen name={SCREEN.ORDER_DETAILS} component={OrderDetails} />
+          <Stack.Screen name={SCREEN.ORDER_DETAILS} component={OrderDetails} /> */}
 
 
 
