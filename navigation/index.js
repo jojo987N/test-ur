@@ -15,27 +15,26 @@ import { SCREEN } from '../global';
 
 export default function RootNavigation() {
 
-  // const Stack = createStackNavigator();
+   const Stack = createStackNavigator();
 
   return (
-    <Text>Bonjour</Text>
-    // <NavigationContainer>
-    //   <RestaurantProvider >
-    //     <Stack.Navigator
-    //       screenOptions={{ headerShown: false }}>
+    <NavigationContainer>
+      <RestaurantProvider >
+        <Stack.Navigator
+          screenOptions={{ headerShown: false }}>
 
 
-    //       <Stack.Screen name={SCREEN.SIGN_IN} component={SignIn} />
-    //       <Stack.Screen name={SCREEN.DRAWER_NAVIGATOR} component={DrawerNavigator} />
-    //       <Stack.Screen name={SCREEN.UPLOAD} component={Upload} />
-    //       <Stack.Screen name={SCREEN.ORDER_IN_PROGRESS_DETAILS} component={OrderInProgressDetail} />
-    //       <Stack.Screen name={SCREEN.ORDER_DETAILS} component={OrderDetails} />
+          <Stack.Screen name={SCREEN.SIGN_IN} component={SignIn} />
+          <Stack.Screen name={SCREEN.DRAWER_NAVIGATOR} component={DrawerNavigator} />
+          <Stack.Screen name={SCREEN.UPLOAD} component={Upload} />
+          <Stack.Screen name={SCREEN.ORDER_IN_PROGRESS_DETAILS} component={OrderInProgressDetail} />
+          <Stack.Screen name={SCREEN.ORDER_DETAILS} component={OrderDetails} />
 
 
 
-    //     </Stack.Navigator>
-    //   </RestaurantProvider>
-    // </NavigationContainer>
+        </Stack.Navigator>
+      </RestaurantProvider>
+    </NavigationContainer>
 
   )
 }
