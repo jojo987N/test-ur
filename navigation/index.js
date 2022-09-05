@@ -2,7 +2,7 @@ import { View, Text, } from 'react-native'
 import React, { useState } from 'react'
 import { createStackNavigator } from '@react-navigation/stack'
 import { NavigationContainer } from '@react-navigation/native'
-// import DrawerNavigator from './DrawerNavigator';
+ import DrawerNavigator from './DrawerNavigator';
  import UpdateCategory from '../screens/UpdateCategory';
 // import { CategoriesNavigator, OrdersNavigator } from './Staks';
 // import SignIn from '../screens/SignIn';
