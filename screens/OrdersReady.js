@@ -1,4 +1,4 @@
-import { FlatList, Text, TouchableOpacity, View} from 'react-native'
+import { FlatList, Text, TouchableOpacity, View, StyleSheet} from 'react-native'
 import { APP_CONSTANT, COLORS, SCREEN } from '../global'
 
 const OrdersReady = ({ navigation }) => {
