@@ -40,7 +40,7 @@ const NewOrders = ({ navigation }) => {
                                 onPress={() => navigation.navigate(SCREEN.NEW_ORDER_DETAILS, { order: item })}
                             >
                        
-                          <Image style={styles.image} source={require(IMAGE.NEW_ORDER)} />
+                          <Image style={styles.image} source={IMAGE.NEW_ORDER} />
         
                         <Text style={styles.col}>{item.orderId.toUpperCase()}</Text>
                 
