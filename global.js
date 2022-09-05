@@ -100,7 +100,7 @@ export const COLORS = {
     UPDATE_BUTTON: "#0080ff"
 }
 export const IMAGE = {
-    NEW_ORDER: require("../assets/images/pending.jpg")
+    NEW_ORDER: require("./assets/images/pending.jpg")
 }
 
 export const ICON = {
