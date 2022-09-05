@@ -1,4 +1,4 @@
-import { language, currency } from '../global';
+import { language, currency } from './global';
 import { APP_CONSTANT } from './global';
 
 export const totalPrice = (item) => {
