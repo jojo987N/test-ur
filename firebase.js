@@ -222,7 +222,8 @@ export const addRestaurant = (userCredentials,name,phone, address) => {
     userCredentials,
     name,
     phone,
-    location
+    location: Object.assign({}, location)
+
    
   })
 }
