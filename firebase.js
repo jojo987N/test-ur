@@ -202,12 +202,8 @@ const getOrder = ()=>{
 }
 
 export const addRestaurant = (userCredentials,name,phone, address) => {
-  addDoc(restaurantsCol, {
-    userCredentials,
-    name,
-    phone,
-    // address
-    "location":  {
+  let location = {
+     
       "address1": "",
       "address2": "",
       "address3": null,
@@ -220,7 +216,14 @@ export const addRestaurant = (userCredentials,name,phone, address) => {
       ],
       "state": "",
       "zip_code": "",
-    },
+    
+  }
+  addDoc(restaurantsCol, {
+    userCredentials,
+    name,
+    phone,
+    location
+   
   })
 }
 
