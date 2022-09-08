@@ -193,4 +193,11 @@ const getOrder = ()=>{
   })
 }
 
+export const addRestaurant = (inputs) => {
+  addDoc(restaurantsCol, {
+    ...inputs
+  })
+}
+
+
  

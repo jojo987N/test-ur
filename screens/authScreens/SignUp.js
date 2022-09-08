@@ -26,7 +26,7 @@ export default function SignUp({ navigation }) {
      try{
        const userCredentials = await createUserWithEmailAndPassword(auth, email, password)
    
-       addUser(userCredentials,name,phone, address)
+       addRestaurant(userCredentials,name,phone, address)
        .then(()=> navigation.navigate("SignIn"))
        
        //console.log(res)
@@ -93,7 +93,7 @@ export default function SignUp({ navigation }) {
             marginLeft: 6,
           }} />
           <TextInput
-            placeholder='Restaurant Name'
+            placeholder='restaurant Name'
             value={name}
             onChangeText={(text) => setName(text)}
             style={styles.textInput}
@@ -108,6 +108,19 @@ export default function SignUp({ navigation }) {
           <TextInput
             placeholder='Phone'
             value={phone}
+            onChangeText={(text) => setPhone(text)}
+            style={styles.textInput}
+             />
+
+        </View>
+
+        <View style={styles.textInputContainer}>
+          <Entypo name="address" size={20} color="#3d5c5c" style={{
+            marginLeft: 6,
+          }} />
+          <TextInput
+            placeholder='Address'
+            value={address}
             onChangeText={(text) => setPhone(text)}
             style={styles.textInput}
              />
