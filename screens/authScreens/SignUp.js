@@ -31,7 +31,7 @@ export default function SignUp({ navigation }) {
        
        //console.log(res)
        //await auth().createUserWithEmailAndPassword(email,password)
-       console.log("USER ACCOUNT CREATED")
+       console.log("RESTAURANT ACCOUNT CREATED")
      }catch(error){
        console.log(error.code)
       //  if(error.code === 'auth/email-already-in-use'){
