@@ -11,6 +11,7 @@ import Upload from '../screens/Upload';
 import { RestaurantContext } from '../context/RestaurantContext';
 import OrderInProgressDetail from '../components/OrderInProgressDetail';
 import OrderDetails from '../screens/OrderDetails';
+import SignUp from '../screens/authScreens/SignUp';
 
 
 export default function RootNavigation() {
@@ -28,6 +29,7 @@ export default function RootNavigation() {
         {/* <Stack.Screen name="Home" component={Home}/> */}
         {/* <Stack.Screen name="UpdateCategory" component={UpdateCategory}/> */}
         <Stack.Screen name="SignIn" component={SignIn}/>
+        <Stack.Screen name="SignUp" component={SignUp}/>
         <Stack.Screen name="DrawerNavigator" component={DrawerNavigator}/>
         {/* <Stack.Screen name="CategoriesNavigator" component={CategoriesNavigator}/> */}
         <Stack.Screen name="Upload" component={Upload}/>
