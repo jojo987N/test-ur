@@ -98,7 +98,7 @@ useEffect(()=>{
   return (
       <View style={styles.container}>
           <View style={styles.header}>
-              <Text style={styles.title}>Welcome !</Text>
+              <Text style={styles.title}>Restaurant Owner !</Text>
           </View>
 
           <Animatable.View style={styles.footer} animation="fadeInUpBig">
