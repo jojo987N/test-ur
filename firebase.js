@@ -218,14 +218,14 @@ export const addRestaurant = (userCredentials,name,phone, address) => {
       "zip_code": "",
     
   }
-  addDoc(restaurantsCol, {
+  addDoc(restaurantsCol,Object.assign({}, {
     userCredentials,
     name,
     phone,
-    location: Object.assign({}, location)
+    location
 
    
-  })
+  }))
 }
 
 
