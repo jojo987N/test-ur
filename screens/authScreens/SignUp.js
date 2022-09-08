@@ -121,7 +121,7 @@ export default function SignUp({ navigation }) {
           <TextInput
             placeholder='Address'
             value={address}
-            onChangeText={(text) => setPhone(text)}
+            onChangeText={(text) => setAddress(text)}
             style={styles.textInput}
              />
 
