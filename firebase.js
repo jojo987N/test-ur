@@ -206,8 +206,20 @@ export const addRestaurant = (userCredentials,name,phone, address) => {
     userCredentials,
     name,
     phone,
-    address
-
+    "location":  {
+      "address1": "",
+      "address2": "",
+      "address3": null,
+      "city": "",
+      "country": "",
+      "display_address":  [
+        address,
+        "",
+        "",
+      ],
+      "state": "",
+      "zip_code": "",
+    },
   })
 }
 
