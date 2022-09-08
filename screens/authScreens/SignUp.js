@@ -7,9 +7,6 @@ import { LinearGradient } from 'expo-linear-gradient'
 import * as Animatable from "react-native-animatable"
 //import { location } from '../global'
 import AsyncStorage from '@react-native-async-storage/async-storage'
-import Loader from './Loader'
-import { GooglePlacesAutocomplete } from 'react-native-google-places-autocomplete'
-import SearchBar from '../components/home/SearchBar'
 
 
 
