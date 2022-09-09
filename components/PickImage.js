@@ -7,7 +7,9 @@ import { TouchableOpacity, View, Text} from 'react-native'
 
 
 
-const PickImage = (bs, setImage, setUrl) => {
+const PickImage = (setImage, setUrl) => {
+  
+    const bs = useRef()
 
     const uploadImage = async (uri)=>{
       const response = await fetch(uri)
