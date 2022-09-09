@@ -1,5 +1,5 @@
 import { View, Text, TextInput, StyleSheet, Button, Image, Pressable} from 'react-native'
-import React, {useRef, useState} from 'react'
+import React, {useContext, useRef, useState} from 'react'
 import { addCategory, addProduct } from '../firebase'
 import { useNavigation } from '@react-navigation/native';
 import PickImage from '../components/PickImage';
