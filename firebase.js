@@ -197,6 +197,7 @@ export const updateProduct = (product_id, image)=>{
 
 export const updateRestaurant = (restaurant_id, image)=>{
 
+  console.log(image)
   const docRef = doc(db, 'restaurants', restaurant_id)
 
   updateDoc(docRef, {
