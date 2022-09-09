@@ -211,7 +211,7 @@ export default function Upload({route, navigation}) {
            <AntDesign name="pluscircle" size={24} color="black" />
         </Pressable> */}
         
-       <SettingsComponent bs={bs} image={image}/>
+       <SettingsComponent bs={bs} />
 
        {/* <MenuButton navigation={navigation} /> */}
          

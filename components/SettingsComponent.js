@@ -6,7 +6,7 @@ import { signInWithEmailAndPassword, onAuthStateChanged} from 'firebase/auth'
 import AsyncStorage from '@react-native-async-storage/async-storage'
 import { RestaurantContext } from '../context/RestaurantContext'
 
-export default function SettingsComponent({navigation, bs, image}) {
+export default function SettingsComponent({navigation, bs}) {
 
  const {restaurantData} = useContext(RestaurantContext)
 
