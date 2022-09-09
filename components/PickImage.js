@@ -7,7 +7,7 @@ import { TouchableOpacity, View, Text} from 'react-native'
 
 
 
-const PickImage = (setImage, setUrl) => {
+const PickImage = (setImage, setUrl, setClicked) => {
   
     const bs = useRef()
 
@@ -129,6 +129,8 @@ const PickImage = (setImage, setUrl) => {
         </View>
         
       )
+      if(setClicked)
+      bs.current.snapTo(0)
 
     return (
         <BottomSheet 
