@@ -3,6 +3,7 @@ import React, {useContext, useRef, useState} from 'react'
 import { addCategory, addProduct } from '../firebase'
 import { useNavigation } from '@react-navigation/native';
 import PickImage from '../components/PickImage';
+import { RestaurantContext } from '../context/RestaurantContext';
 
 
 export default function AddCategory() {
