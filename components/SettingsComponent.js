@@ -5,6 +5,7 @@ import { auth, getDriverInfos} from '../firebase'
 import { signInWithEmailAndPassword, onAuthStateChanged} from 'firebase/auth'
 import AsyncStorage from '@react-native-async-storage/async-storage'
 import { RestaurantContext } from '../context/RestaurantContext'
+import { ScrollView } from 'react-native-gesture-handler'
 
 export default function SettingsComponent({navigation, bs}) {
 
@@ -25,7 +26,7 @@ export default function SettingsComponent({navigation, bs}) {
   
 
   return (
-    <SafeAreaView style={{
+    <ScrollView style={{
       paddingTop: Platform.OS === "android" ? StatusBar.currentHeight : 0,
       backgroundColor: "#e0ebeb",
       flex: 1
@@ -150,7 +151,7 @@ export default function SettingsComponent({navigation, bs}) {
 
        </View>
  
-    </SafeAreaView>
+    </ScrollView>
       
      
   )
