@@ -2,17 +2,18 @@ import { View, Text, SafeAreaView, StatusBar, Pressable, Image, TouchableOpacity
 import { AntDesign } from "@expo/vector-icons";
 import BottomSheet from 'reanimated-bottom-sheet'
 import Animated from "react-native-reanimated";
-import {useEffect, useRef, useState} from 'react'
+import {useContext, useEffect, useRef, useState} from 'react'
 import { GestureHandlerRootView } from "react-native-gesture-handler";
 import * as ImagePicker from "expo-image-picker"
 import * as Permissions from 'expo-permissions'
 import {Camera} from "expo-camera"
 //import storage from '@react-native-firebase/storage'
 //import {} from 'firebase/app'
-import { updateProduct } from "../firebase"
+import { updateProduct, updateRestaurant } from "../firebase"
 //import {firebaseConfig} from './firebase'
 import {getDownloadURL, getStorage, ref, uploadBytes} from 'firebase/storage'
 import SettingsComponent from "../components/SettingsComponent";
+import { RestaurantContext } from "../context/RestaurantContext";
 //import { MenuButton } from "./OrdersScreen";
 
 
@@ -20,7 +21,8 @@ import SettingsComponent from "../components/SettingsComponent";
 
 export default function Upload({route, navigation}) {
 
-    
+  const {restaurantData} = useContext(RestaurantContext)
+
 
     const uploadImage = async (uri)=>{
     const response = await fetch(uri)
@@ -31,7 +33,8 @@ export default function Upload({route, navigation}) {
 
     const storageRef = ref(storage, uri.substring(uri.lastIndexOf('/')+1));
     await uploadBytes(storageRef, blob)
-    getDownloadURL(storageRef) 
+    const url = getDownloadURL(storageRef) 
+    updateRestaurant(restaurantData.id, url)
     // .then(url=> updateProduct(product_id,url))
 
     // uploadBytes(storageRef, blob).then((snapshot)=>{

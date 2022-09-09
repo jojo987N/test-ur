@@ -61,7 +61,7 @@ useEffect(()=>{
  
          if(snapshot.docs[0]){
  
-           setRestaurantData({...snapshot.docs[0].data(), email: user.email})
+           setRestaurantData({id: snapshot.docs[0].id, ...snapshot.docs[0].data(),  email: user.email})
            setLoading(false)
            navigation.navigate('DrawerNavigator')
 

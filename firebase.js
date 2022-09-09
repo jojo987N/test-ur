@@ -195,6 +195,18 @@ export const updateProduct = (product_id, image)=>{
   .then(()=> console.log('good'))
 }
 
+export const updateRestaurant = (restaurant_id, image)=>{
+
+  const docRef = doc(db, 'restaurants', restaurant_id)
+
+  updateDoc(docRef, {
+     
+    image: image,
+    
+  })
+  .then(()=> console.log('good'))
+}
+
 const getOrder = ()=>{
   getDocs(ordersCol)
   .then(snapshot => {
