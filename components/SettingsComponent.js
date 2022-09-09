@@ -6,7 +6,7 @@ import { signInWithEmailAndPassword, onAuthStateChanged} from 'firebase/auth'
 import AsyncStorage from '@react-native-async-storage/async-storage'
 import { RestaurantContext } from '../context/RestaurantContext'
 
-export default function SettingsComponent({navigation, bs}) {
+export default function SettingsComponent({navigation, bs, image}) {
 
  const {restaurantData} = useContext(RestaurantContext)
 
@@ -80,7 +80,8 @@ export default function SettingsComponent({navigation, bs}) {
             bs.current.snapTo(0)}
       }>
              <Image 
-       source={{uri: restaurantData.image_url}} 
+      //  source={{uri: restaurantData.image_url}} 
+       source={{uri: image}}
        style={{
          width: 100,
          height: 100
