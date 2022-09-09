@@ -56,7 +56,7 @@ const PickImage = (setImage, setUrl) => {
     
       }
 
-    const renderContent = ()=>(
+    return   ()=>(
         <View style={{
           
           backgroundColor: "white",
@@ -131,14 +131,6 @@ const PickImage = (setImage, setUrl) => {
       )
       
 
-    return (
-        // <BottomSheet 
-        // ref={bs}
-        // snapPoints={["47%","90%", 0]}
-        // renderContent={renderContent}
-        //       />
-        {renderContent}
-          
-    )
+     
 }
 export default PickImage; 
