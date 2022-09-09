@@ -29,7 +29,7 @@ export default function Upload({route, navigation}) {
 
     const storage = getStorage();
 
-    const storageRef = ref(storage, uri.substring(pickerResult.uri.lastIndexOf('/')+1));
+    const storageRef = ref(storage, uri.substring(uri.lastIndexOf('/')+1));
     await uploadBytes(storageRef, uri)
     getDownloadURL(storageRef) 
     // .then(url=> updateProduct(product_id,url))
