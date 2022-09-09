@@ -84,7 +84,8 @@ export default function SettingsComponent({navigation, bs, image}) {
        source={{uri: image}}
        style={{
          width: 100,
-         height: 100
+         height: 100,
+         overflow: 'hidden'
        }}
        />
        
