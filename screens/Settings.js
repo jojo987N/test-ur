@@ -67,7 +67,7 @@ export default function Upload({route, navigation}) {
 
   uploadImage(pickerResult.uri)
 
-   setImage(pickerResult.uri)
+  //  setImage(pickerResult.uri)
 
    setRestaurantData({
      ...restaurantData,
