@@ -18,7 +18,7 @@ export default function SettingsComponent({navigation, bs, image}) {
   // const [address, setAddress] = useState(restaurantData.location.display_address[0])
   const [address, setAddress] = useState(restaurantData.address)
 
-  const [image, setImage] = useState(restaurantData.image_url)
+  // const [image, setImage] = useState(restaurantData.image_url)
   const [password, setPassword] = useState('')
 
     
