@@ -21,7 +21,7 @@ import { RestaurantContext } from "../context/RestaurantContext";
 
 export default function Upload({route, navigation}) {
 
-  const {restaurantData} = useContext(RestaurantContext)
+  const {restaurantData, setRestaurantData} = useContext(RestaurantContext)
 
 
     const uploadImage = async (uri)=>{
@@ -45,7 +45,7 @@ export default function Upload({route, navigation}) {
 
   //const reference = storage().ref('')
 
-  const [image, setImage] = useState(restaurantData.image) 
+  // const [image, setImage] = useState(restaurantData.image) 
 
 
   
@@ -68,6 +68,12 @@ export default function Upload({route, navigation}) {
   uploadImage(pickerResult.uri)
 
    setImage(pickerResult.uri)
+
+   setRestaurantData({
+     ...restaurantData,
+     image: pickerResult.uri
+   })
+
 
   }
 

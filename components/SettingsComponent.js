@@ -81,7 +81,8 @@ export default function SettingsComponent({navigation, bs, image}) {
       }>
              <Image 
       //  source={{uri: restaurantData.image_url}} 
-       source={{uri: image}}
+      //  source={{uri: image}}
+      source={{uri: restaurantData.image}}
        style={{
          width: 100,
          height: 100,
