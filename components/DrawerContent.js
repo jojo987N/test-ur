@@ -64,7 +64,10 @@ export default function DrawerContent(props) {
 
                     <Text style={{
                         fontSize: 14,
-                    }}>{restaurantData.location.address1}</Text>
+                    }}>{
+                    // restaurantData.location.address1
+                    restaurantData.address
+                    }</Text>
                 </View>
             </View>
              
