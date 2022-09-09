@@ -4,6 +4,8 @@ import { addCategory, addProduct } from '../firebase'
 import { useNavigation } from '@react-navigation/native';
 import PickImage from '../components/PickImage';
 import { RestaurantContext } from '../context/RestaurantContext';
+import BottomSheet from 'reanimated-bottom-sheet'
+
 
 
 export default function AddCategory() {
