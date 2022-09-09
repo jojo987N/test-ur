@@ -21,10 +21,11 @@ export default function SignIn({navigation, route}) {
 
 
   if(route.params && route.params.param === "SignOut")
-  AsyncStorage.getAllKeys().then(k => AsyncStorage.multiRemove(k))
-  .then(()=>{
   signOut(auth)
-})
+//   AsyncStorage.getAllKeys().then(k => AsyncStorage.multiRemove(k))
+//   .then(()=>{
+//   signOut(auth)
+// })
 
 
 
