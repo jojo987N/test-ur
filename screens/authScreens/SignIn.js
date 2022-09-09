@@ -51,37 +51,38 @@ export default function SignIn({navigation, route}) {
     
 }
 
-// useEffect(()=>{
+useEffect(()=>{
 
-//   const checkAuth = onAuthStateChanged(auth, (user)=>{
+  const checkAuth = onAuthStateChanged(auth, (user)=>{
        
-//       if(user){
-//        getRestaurantId(user.uid)
-//        .then(snapshot => {
+      if(user){
+       getRestaurantId(user.uid)
+       .then(snapshot => {
  
-//          if(snapshot.docs[0]){
+         if(snapshot.docs[0]){
  
-//            setRestaurantData({...snapshot.docs[0].data(), email: user.email})
+           setRestaurantData({...snapshot.docs[0].data(), email: user.email})
  
-//            AsyncStorage.setItem('managerId', user.uid)
-//           .then(()=> {
-//             setLoading(false)
-//             navigation.navigate('DrawerNavigator')
-//            })
+           AsyncStorage.setItem('managerId', user.uid)
+          .then(()=> {
+            setLoading(false)
+            navigation.navigate('DrawerNavigator')
+           })
        
  
-//          }
+         }
           
          
-//        })
+       })
         
 
 
-//       }
-//   })
-//   return checkAuth
+      }else
+      navigation.navigate('SignIn')
+  })
+  return checkAuth
    
-// }, [])
+}, [])
 
   if(loading)
   return <Loading />
