@@ -158,7 +158,8 @@ export const addProduct = (name, description, price) => {
 
 export const getRestaurantId = (uid)=>{
 
-  const q= query(restaurantsCol, where('managerId', '==', uid))
+  // const q= query(restaurantsCol, where('managerId', '==', uid))
+  const q= query(restaurantsCol, where('ownerId', '==', uid))
 
   return getDocs(q)
    
