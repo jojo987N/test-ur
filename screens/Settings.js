@@ -188,7 +188,7 @@ export default function Upload({route, navigation}) {
         style={{
           width: 400,
           height:400,
-          alignSelf: "flex-start",
+          // alignSelf: "flex-start",
           resizeMode: "contain"
         }}/>):(<></>)}
 
