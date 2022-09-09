@@ -2,6 +2,7 @@ import BottomSheet from 'reanimated-bottom-sheet'
 import {useRef} from 'react'
 import * as ImagePicker from "expo-image-picker"
 import {getDownloadURL, getStorage, ref, uploadBytes} from 'firebase/storage'
+import { TouchableOpacity, View, Text} from 'react-native'
 
 
 
