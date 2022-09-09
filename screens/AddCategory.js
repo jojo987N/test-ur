@@ -11,16 +11,16 @@ export default function AddCategory() {
     const [name, setName] = useState("")
     const [description, setDescription] = useState("")
     const navigation = useNavigation()
-    const [clicked, setClicked] = useState(false)
     const [image, setImage] = useState()
     const [url, setUrl] = useState()
+    const bs = useRef()
     
 
   return (
     <>
     <View style={{marginTop: 20}}>
       <Pressable 
-      onPress={()=> setClicked(true)}
+      onPress={()=>  bs.current.snapTo(0) }
       style={styles.imageContainer}>
         {/* <Image source={require('../assets/images/dishes.png')} style={{width: 100, height: 100}} /> */}
         <Image source={{uri: image}} style={{width: 100, height: 100}} />
@@ -49,7 +49,7 @@ export default function AddCategory() {
             (text)=>setPrice(text)}/>
       </View> */}
        <View style={{marginVertical: 30, marginHorizontal: 20, marginTop: 40}}>
-        <Button title="Pick an image from camera roll" onPress={()=> setClicked(true)} color="#841584"/>
+        <Button title="Pick an image from camera roll" onPress={()=> {}} color="#841584"/>
       </View>
       
       <View style={{marginTop: 20,
@@ -63,8 +63,14 @@ export default function AddCategory() {
              </View>
              
     </View>
-    <PickImage  setImage={setImage} setUrl={setUrl} setClicked={setClicked}/>
-
+     
+    <BottomSheet 
+        ref={bs}
+        snapPoints={["47%","90%", 0]}
+        renderContent={<PickImage  setImage={setImage} setUrl={setUrl} />}
+        //borderRadius={10}
+          
+              />
      
     </>
   )

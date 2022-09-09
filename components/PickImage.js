@@ -7,7 +7,7 @@ import { TouchableOpacity, View, Text} from 'react-native'
 
 
 
-const PickImage = (setImage, setUrl, setClicked) => {
+const PickImage = (setImage, setUrl) => {
   
     const bs = useRef()
 
@@ -129,17 +129,15 @@ const PickImage = (setImage, setUrl, setClicked) => {
         </View>
         
       )
-      if(setClicked)
-      bs.current.snapTo(0)
+      
 
     return (
-        <BottomSheet 
-        ref={bs}
-        snapPoints={["47%","90%", 0]}
-        renderContent={renderContent}
-        //borderRadius={10}
-          
-              />
+        // <BottomSheet 
+        // ref={bs}
+        // snapPoints={["47%","90%", 0]}
+        // renderContent={renderContent}
+        //       />
+        {renderContent}
           
     )
 }
