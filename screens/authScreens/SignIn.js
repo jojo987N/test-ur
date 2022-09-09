@@ -70,15 +70,15 @@ useEffect(()=>{
            })
        
  
-         }
+         }else
+         navigation.navigate('SignIn')
           
          
        })
         
 
 
-      }else
-      navigation.navigate('SignIn')
+      } 
   })
   return checkAuth
    
