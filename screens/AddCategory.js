@@ -1,5 +1,5 @@
 import { View, Text, TextInput, StyleSheet, Button, Image, Pressable} from 'react-native'
-import React, {useContext, useRef, useState} from 'react'
+import React, {useContext, useEffect, useRef, useState} from 'react'
 import { addCategory, addProduct } from '../firebase'
 import { useNavigation } from '@react-navigation/native';
 import PickImage from '../components/PickImage';
@@ -17,6 +17,9 @@ export default function AddCategory() {
     const [url, setUrl] = useState()
     const bs = useRef()
     
+    useEffect(()=>{
+      bs.current.snapTo(2)
+    }, [])
 
   return (
     <>
