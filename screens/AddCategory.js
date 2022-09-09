@@ -63,7 +63,7 @@ export default function AddCategory() {
              </View>
              
     </View>
-    <PickImage bs={bs} setImage={setImage} setUrl={setUrl} setClicked={setClicked}/>
+    <PickImage  setImage={setImage} setUrl={setUrl} setClicked={setClicked}/>
 
      
     </>
