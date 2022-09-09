@@ -1,7 +1,8 @@
-import { View, Text, TextInput, StyleSheet, Button, Image} from 'react-native'
+import { View, Text, TextInput, StyleSheet, Button, Image, Pressable} from 'react-native'
 import React, {useState} from 'react'
 import { addProduct } from '../firebase'
 import { useNavigation } from '@react-navigation/native';
+import PickImage from '../components/PickImage';
 
 
 export default function AddCategory() {
@@ -9,6 +10,7 @@ export default function AddCategory() {
     const [description, setDescription] = useState("")
     const [price, setPrice] = useState()
     const navigation = useNavigation()
+    const bs = useRef()
 
     const pickImage = async () => {
 
@@ -16,9 +18,11 @@ export default function AddCategory() {
 
   return (
     <View style={{marginTop: 20}}>
-      <View style={{ alignItems: "center", opacity: 0.2}}>
+      <Pressable 
+      onPress={()=> bs.current.snapTo(0)}
+      style={styles.imageContainer}>
         <Image source={require('../assets/images/dishes.png')} style={{width: 100, height: 100}} />
-      </View>
+      </Pressable>
       <View style={styles.inputView}>
           <TextInput
           placeholder='Name'
@@ -58,11 +62,16 @@ export default function AddCategory() {
                  }
              }/>
              </View>
+             <PickImage />
     </View>
   )
 }
 
 const styles = StyleSheet.create({
+    imageContainer: { 
+      alignItems: "center", 
+      opacity: 0.2
+    },
     inputView : {
      // backgroundColor: "white",
       marginTop: 40,
