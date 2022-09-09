@@ -7,7 +7,7 @@ import { TouchableOpacity, View, Text} from 'react-native'
 
 
 
-const PickImage = (bs, setImage, id, updateFunction) => {
+const PickImage = (bs, setImage, setUrl) => {
 
     const uploadImage = async (uri)=>{
       const response = await fetch(uri)
@@ -19,7 +19,8 @@ const PickImage = (bs, setImage, id, updateFunction) => {
       const storageRef = ref(storage, uri.substring(uri.lastIndexOf('/')+1));
       await uploadBytes(storageRef, blob)
       const url = await getDownloadURL(storageRef) 
-      updateFunction(id, url)
+      setUrl(url)
+      // updateFunction(id, url)
       // .then(url=> updateProduct(product_id,url))
   
       // uploadBytes(storageRef, blob).then((snapshot)=>{

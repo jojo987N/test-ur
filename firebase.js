@@ -155,6 +155,17 @@ export const addProduct = (name, description, price) => {
   }) 
 }
 
+export const addCategory = (name, description, image, restaurantId) => {
+
+  return addDoc(categoriesCol, {
+    restaurantId,
+    name,
+    description,
+    image,
+    createdAt: serverTimestamp()      
+  }) 
+}
+
 
 export const getRestaurantId = (uid)=>{
 
@@ -218,10 +229,13 @@ export const updateRestaurantInfos = (restaurant_id, email, name, phone, address
    name,
    phone,
    address,
-   city
+   city,
+   updatedAt: serverTimestamp() 
   })
   .then(()=> console.log('good'))
 }
+
+
 
 const getOrder = ()=>{
   getDocs(ordersCol)
@@ -238,9 +252,8 @@ export const addRestaurant = (userCredentials,name,phone, address) => {
     ownerEmail: userCredentials.user.email,
     name,
     phone,
-    address
-
-   
+    address,
+    createdAt: serverTimestamp() 
   })
 }
 

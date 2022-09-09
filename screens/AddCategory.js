@@ -1,27 +1,28 @@
 import { View, Text, TextInput, StyleSheet, Button, Image, Pressable} from 'react-native'
 import React, {useRef, useState} from 'react'
-import { addProduct } from '../firebase'
+import { addCategory, addProduct } from '../firebase'
 import { useNavigation } from '@react-navigation/native';
 import PickImage from '../components/PickImage';
 
 
 export default function AddCategory() {
+    const {restaurantData} = useContext(RestaurantContext)
     const [name, setName] = useState("")
     const [description, setDescription] = useState("")
-    const [price, setPrice] = useState()
     const navigation = useNavigation()
     const bs = useRef()
-
-    const pickImage = async () => {
-
-    }
+    const [image, setImage] = useState()
+    const [url, setUrl] = useState()
+    
 
   return (
     <View style={{marginTop: 20}}>
       <Pressable 
       onPress={()=> bs.current.snapTo(0)}
       style={styles.imageContainer}>
-        <Image source={require('../assets/images/dishes.png')} style={{width: 100, height: 100}} />
+        {/* <Image source={require('../assets/images/dishes.png')} style={{width: 100, height: 100}} /> */}
+        <Image source={{uri: image}} style={{width: 100, height: 100}} />
+
       </Pressable>
       <View style={styles.inputView}>
           <TextInput
@@ -45,7 +46,7 @@ export default function AddCategory() {
           onChangeText={(text)=>setPrice(text)}/>
       </View> */}
       <View style={{marginVertical: 30, marginHorizontal: 20, marginTop: 40}}>
-        <Button title="Pick an image from camera roll" onPress={pickImage} color="#841584"/>
+        <Button title="Pick an image from camera roll" onPress={()=> bs.current.snapTo(0)} color="#841584"/>
       </View>
       
       <View style={{marginTop: 20,
@@ -53,16 +54,11 @@ export default function AddCategory() {
            }}>
              <Button title='Add' onPress={
                  ()=>{
-                      
-                    // addProduct(name, description, price)
-                    // .then(productRef => navigation.navigate("Upload", {
-                    //   product_id: productRef.id
-                    // }))
-                    // navigation.navigate("Upload")
+                    addCategory(name, description, url, restaurantData.id)
                  }
              }/>
              </View>
-             <PickImage />
+             <PickImage bs={bs} setImage={setImage} setUrl={setUrl}/>
     </View>
   )
 }
