@@ -1,15 +1,17 @@
 import { View, Text, ScrollView, TouchableOpacity, StyleSheet, Image} from 'react-native'
-import React, {useEffect, useState} from 'react'
+import React, {useContext, useEffect, useState} from 'react'
 import {getCategories} from '../firebase'
 import { AntDesign, Ionicons} from "@expo/vector-icons";
 import { useNavigation } from '@react-navigation/native';
 import MenuNavigation from '../components/MenuNavigation';
 import Loading from '../components/Loading';
+import { CategoriesContext } from '../context/CategoriesContext';
 
 
 export default function Categories({navigation}) {
 
-    const [categories, setCategories] = useState()
+    // const [categories, setCategories] = useState()
+    const {categories, setCategories} = useContext(CategoriesContext)
     // const navigation = useNavigation()
 
     useEffect(()=>{
