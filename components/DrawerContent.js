@@ -55,7 +55,7 @@ export default function DrawerContent(props) {
                     rounded
                     avatarStyle={styles.avatar}
                     size={75}
-                    source={{uri: restaurantData.image_url}}/>
+                    source={{uri: restaurantData.image}}/>
                 <View style={{marginLeft: 10}}>
                     <Text style={{
                         fontWeight: "bold",

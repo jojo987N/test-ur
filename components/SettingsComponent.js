@@ -10,7 +10,7 @@ export default function SettingsComponent({navigation, bs, image}) {
 
  const {restaurantData} = useContext(RestaurantContext)
 
- console.log(restaurantData)
+ //console.log(restaurantData)
 
   const [email, setEmail] = useState(restaurantData.email)
   const [name, setName] = useState(restaurantData.name)
