@@ -45,7 +45,7 @@ export default function Upload({route, navigation}) {
 
   //const reference = storage().ref('')
 
-  const [image, setImage] = useState(null) 
+  const [image, setImage] = useState(restaurantData.image) 
 
 
   
