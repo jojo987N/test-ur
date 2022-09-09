@@ -22,7 +22,7 @@ export default function SignUp({ navigation }) {
 
 
   async function signUp(){
-   
+    
      try{
        const userCredentials = await createUserWithEmailAndPassword(auth, email, password)
        console.log(userCredentials)
