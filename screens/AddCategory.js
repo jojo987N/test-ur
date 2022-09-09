@@ -84,7 +84,7 @@ export default function AddCategory() {
 const styles = StyleSheet.create({
     imageContainer: { 
       alignItems: "center", 
-      opacity: 0.2
+      // opacity: 0.2
     },
     inputView : {
      // backgroundColor: "white",
