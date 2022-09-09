@@ -63,7 +63,7 @@ useEffect(()=>{
  
            setRestaurantData({...snapshot.docs[0].data(), email: user.email})
            setLoading(false)
-          //  navigation.navigate('DrawerNavigator')
+           navigation.navigate('DrawerNavigator')
 
           //  AsyncStorage.setItem('managerId', user.uid)
           // .then(()=> {
