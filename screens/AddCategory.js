@@ -28,7 +28,7 @@ export default function AddCategory() {
       onPress={()=>  bs.current.snapTo(0) }
       style={styles.imageContainer}>
         {/* <Image source={require('../assets/images/dishes.png')} style={{width: 100, height: 100}} /> */}
-        <Image source={{uri: image}} style={{width: 100, height: 100}} />
+        <Image source={{uri: image}} style={styles.image} />
 
       </Pressable>
       <View style={styles.inputView}>
@@ -85,6 +85,12 @@ const styles = StyleSheet.create({
     imageContainer: { 
       alignItems: "center", 
       // opacity: 0.2
+    },
+    image: {
+      width: 100, 
+      height: 100,
+      overflow: 'hidden',
+      borderRadius: 100 / 2,
     },
     inputView : {
      // backgroundColor: "white",
