@@ -18,6 +18,7 @@ export default function AddCategory() {
 
   return (
     <>
+    <PickImage bs={bs} setImage={setImage} setUrl={setUrl}/>
     <View style={{marginTop: 20}}>
       <Pressable 
       onPress={()=> bs.current.snapTo(0)}
@@ -63,7 +64,6 @@ export default function AddCategory() {
              
     </View>
     
-     <PickImage bs={bs} setImage={setImage} setUrl={setUrl}/>
     </>
   )
 }
