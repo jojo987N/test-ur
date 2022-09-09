@@ -45,8 +45,10 @@ export default function AddCategory() {
           placeholder='Price'
           style={styles.inputText}
           value={price}
-          onChangeText={(text)=>setPrice(text)}/>
+          onChangeText={
+            (text)=>setPrice(text)}/>
       </View> */}
+       <PickImage bs={bs} setImage={setImage} setUrl={setUrl}/>
       <View style={{marginVertical: 30, marginHorizontal: 20, marginTop: 40}}>
         <Button title="Pick an image from camera roll" onPress={()=> bs.current.snapTo(0)} color="#841584"/>
       </View>
@@ -60,7 +62,7 @@ export default function AddCategory() {
                  }
              }/>
              </View>
-             <PickImage bs={bs} setImage={setImage} setUrl={setUrl}/>
+             
     </View>
     
      
