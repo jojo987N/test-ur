@@ -33,7 +33,7 @@ export default function Upload({route, navigation}) {
 
     const storageRef = ref(storage, uri.substring(uri.lastIndexOf('/')+1));
     await uploadBytes(storageRef, blob)
-    const url = getDownloadURL(storageRef) 
+    const url = await getDownloadURL(storageRef) 
     updateRestaurant(restaurantData.id, url)
     // .then(url=> updateProduct(product_id,url))
 
