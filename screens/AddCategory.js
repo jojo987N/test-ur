@@ -68,7 +68,7 @@ export default function AddCategory() {
      
     <BottomSheet 
         ref={bs}
-        snapPoints={["47%","90%", 0]}
+        snapPoints={["40%","90%", 0]}
         renderContent={PickImage(setImage, setUrl)}
         //borderRadius={10}
           
