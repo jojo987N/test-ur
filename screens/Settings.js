@@ -184,13 +184,13 @@ export default function Upload({route, navigation}) {
           fontWeight: "bold"
         }}>Post</Text> */}
 
-        {image?(<Image source={{uri: image}} 
+        {/* {image?(<Image source={{uri: image}}  // icii
         style={{
           width: 400,
           height:400,
           // alignSelf: "flex-start",
           resizeMode: "contain"
-        }}/>):(<></>)}
+        }}/>):(<></>)} */}
 
          
       </View>
