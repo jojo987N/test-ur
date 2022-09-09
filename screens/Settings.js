@@ -29,7 +29,7 @@ export default function Upload({route, navigation}) {
 
     const storage = getStorage();
 
-    const storageRef = ref(storage, 'restaurant/bonmange');
+    const storageRef = ref(storage, uri.substring(pickerResult.uri.lastIndexOf('/')+1));
     await uploadBytes(storageRef, uri)
     getDownloadURL(storageRef) 
     // .then(url=> updateProduct(product_id,url))
@@ -55,8 +55,8 @@ export default function Upload({route, navigation}) {
     return;
     }
     let pickerResult = await ImagePicker.launchImageLibraryAsync()
-  //  console.log(pickerResult)
-   console.log(pickerResult.uri.substring(pickerResult.uri.lastIndexOf('/')))
+    console.log(pickerResult)
+  //  console.log(pickerResult.uri.substring(pickerResult.uri.lastIndexOf('/')+1))
    if(pickerResult.cancelled === true) return;
 
    //getBlobFromUri(pickerResult.uri)
