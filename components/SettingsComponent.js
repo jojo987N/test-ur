@@ -15,7 +15,9 @@ export default function SettingsComponent({navigation, bs}) {
   const [email, setEmail] = useState(restaurantData.email)
   const [name, setName] = useState(restaurantData.name)
   const [phone, setPhone] = useState(restaurantData.phone)
-  const [address, setAddress] = useState(restaurantData.location.display_address[0])
+  // const [address, setAddress] = useState(restaurantData.location.display_address[0])
+  const [address, setAddress] = useState(restaurantData.address)
+
   const [image, setImage] = useState(restaurantData.image_url)
   const [password, setPassword] = useState('')
 
