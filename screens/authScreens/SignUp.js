@@ -32,7 +32,7 @@ export default function SignUp({ navigation }) {
        //console.log(res)
        //await auth().createUserWithEmailAndPassword(email,password)
        console.log("RESTAURANT ACCOUNT CREATED")
-     }catch(error){
+     }catch(error){ 
        console.log(error)
       //  if(error.code === 'auth/email-already-in-use'){
       //    Alert.alert(
