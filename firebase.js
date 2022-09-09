@@ -204,7 +204,9 @@ const getOrder = ()=>{
 export const addRestaurant = (userCredentials,name,phone, address) => {
  
   addDoc(restaurantsCol,{
-    userCredentials,
+    ownerId: userCredentials.user.uid,
+    name: name,
+    ownerEmail: userCredentials.user.email,
     name,
     phone,
     address
