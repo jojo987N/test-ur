@@ -51,46 +51,37 @@ export default function SignIn({navigation, route}) {
     
 }
 
-useEffect(()=>{
+// useEffect(()=>{
 
-  // AsyncStorage.getItem("managerId")
-  // .then((value)=>{
-  //   if(value)
-  //   navigation.navigate('DrawerNavigator')
-  // })
-
-  const checkAuth = onAuthStateChanged(auth, (user)=>{
+//   const checkAuth = onAuthStateChanged(auth, (user)=>{
        
-      if(user){
-       // navigation.navigate('OrdersScreen')
-       getRestaurantId(user.uid)
-       .then(snapshot => {
+//       if(user){
+//        getRestaurantId(user.uid)
+//        .then(snapshot => {
  
-         if(snapshot.docs[0]){
+//          if(snapshot.docs[0]){
  
-           setRestaurantData({...snapshot.docs[0].data(), email: user.email})
+//            setRestaurantData({...snapshot.docs[0].data(), email: user.email})
  
-           AsyncStorage.setItem('managerId', user.uid)
-          .then(()=> {
-            setLoading(false)
-            navigation.navigate('DrawerNavigator')
-           })
+//            AsyncStorage.setItem('managerId', user.uid)
+//           .then(()=> {
+//             setLoading(false)
+//             navigation.navigate('DrawerNavigator')
+//            })
        
-         // AsyncStorage.setItem('managerId', snapshot.docs[0].id)
-         // .then(()=> navigation.navigate('DrawerNavigator'))
  
-         }
+//          }
           
          
-       })
+//        })
         
 
 
-      }
-  })
-  return checkAuth
+//       }
+//   })
+//   return checkAuth
    
-}, [])
+// }, [])
 
   if(loading)
   return <Loading />
