@@ -32,24 +32,29 @@ export default function Categories({navigation}) {
 
         getCategoriesRestaurants().then(categoriesRestaurants => {
            
-          if(addButtons)
-          addButtons.forEach((addButton, index)=> {
-            if(categoriesRestaurants[index])
-            setAddButtons([...addButtons.slice(0, index),
-              {
-              text: "Remove",
-              backgroundColor: "red"
-            } ,
-            ...addButtons.slice(index + 1)])
-            else
-            setAddButtons([...addButtons.slice(0, index),
-              {
-              text: "Add",
-              backgroundColor: "blue"
-            } ,
-            ...addButtons.slice(index + 1)])
+          if(addButtons){
 
-          })
+            console.log(addButtons, categories)
+            addButtons.forEach((addButton, index)=> {
+              if(categoriesRestaurants[index])
+              setAddButtons([...addButtons.slice(0, index),
+                {
+                text: "Remove",
+                backgroundColor: "red"
+              } ,
+              ...addButtons.slice(index + 1)])
+              else
+              setAddButtons([...addButtons.slice(0, index),
+                {
+                text: "Add",
+                backgroundColor: "blue"
+              } ,
+              ...addButtons.slice(index + 1)])
+  
+            })
+            
+          }
+          
         })
 
     
