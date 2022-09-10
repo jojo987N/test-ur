@@ -1,6 +1,6 @@
 import { View, Text, ScrollView, TouchableOpacity, StyleSheet, Image} from 'react-native'
 import React, {useContext, useEffect, useState} from 'react'
-import {getCategories} from '../firebase'
+import {addCategoryRestaurant, deleteCategoriesRestaurants, getCategories} from '../firebase'
 import { AntDesign, Ionicons} from "@expo/vector-icons";
 import { useNavigation } from '@react-navigation/native';
 import MenuNavigation from '../components/MenuNavigation';
