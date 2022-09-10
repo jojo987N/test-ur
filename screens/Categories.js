@@ -25,14 +25,17 @@ export default function Categories({navigation}) {
         setCategories(categories)
 
         
-      }).then(()=>  setAddButtons(new Array(categories.length).fill({
+      }).then(()=>  {setAddButtons(new Array(categories.length).fill({
         text: "Add",
         backgroundColor: "blue",
       }))
-      )
 
       console.log(addButtons)
-  
+
+    }
+      )
+
+   
     }, [])
   return (
     <> 
