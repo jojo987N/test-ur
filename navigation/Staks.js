@@ -15,7 +15,7 @@ const  CategoriesStack = createStackNavigator()
 
 export  function CategoriesNavigator() {
     return (
-      <CategoriesContextProvider> 
+       
       <CategoriesStack.Navigator>
 
           <CategoriesStack.Screen 
@@ -33,7 +33,7 @@ export  function CategoriesNavigator() {
           component={AddCategory}
           options={{title: "Add Category", headerShown: true}}/>
       </CategoriesStack.Navigator>
-      </CategoriesContextProvider>
+       
     )
   }
 
