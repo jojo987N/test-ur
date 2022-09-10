@@ -45,6 +45,8 @@ LogBox.ignoreLogs(['AsyncStorage has been extracted from react-native core'])
 
   export const ordersCol = collection(db, 'orders')
 
+  export const categoriesRestaurantsCol = collection(db, 'categoriesRestaurants')
+
 
   export const getOrders = (setOrders)=>{
     
@@ -118,6 +120,27 @@ export const productsCol = collection(db, 'products')
 
  }
 
+ export const getCategoriesRestaurants = ()=>{
+
+  const categoriesRestaurants=[]
+  
+  //const q= query(categoriesCol, orderBy('createdAt', 'desc'))
+  //  const q= query(categoriesRestaurantsCol, where('restaurantId', '==', restaurantId))
+
+  return getDocs(categoriesRestaurantsCol).then(snapshot=>{
+
+     snapshot.docs.forEach((doc) => {
+
+      categoriesRestaurants.push({...doc.data(), id: doc.id})
+
+      })
+
+      return categoriesRestaurants
+
+  })
+
+ }
+
  //getFoods()
 
   
@@ -165,10 +188,10 @@ export const addCategory = (name, description, image, restaurantId) => {
     createdAt: serverTimestamp()      
   }) 
 }
-export const categoriesRestaurants = collection(db, 'categoriesRestaurants')
+ 
 export const addCategoryRestaurant = (categoryId, restaurantId) => {
 
-  return addDoc(categoriesRestaurants, {
+  return addDoc(categoriesRestaurantsCol, {
     categoryId,
     restaurantId,
     createdAt: serverTimestamp()      

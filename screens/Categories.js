@@ -1,6 +1,6 @@
 import { View, Text, ScrollView, TouchableOpacity, StyleSheet, Image} from 'react-native'
 import React, {useContext, useEffect, useState} from 'react'
-import {addCategoryRestaurant, deleteCategoriesRestaurants, getCategories} from '../firebase'
+import {addCategoryRestaurant, categoriesRestaurantsCol, deleteCategoriesRestaurants, getCategories, getCategoriesRestaurants} from '../firebase'
 import { AntDesign, Ionicons} from "@expo/vector-icons";
 import { useNavigation } from '@react-navigation/native';
 import MenuNavigation from '../components/MenuNavigation';
@@ -21,14 +21,31 @@ export default function Categories({navigation}) {
     // })
     // const navigation = useNavigation()
     useEffect(()=>{
-      getCategories(restaurantData.id).then((categories)=>{
+      getCategories().then((categories)=>{
         setCategories(categories)
 
         setAddButtons(new Array(categories.length).fill({
           text: "Add",
           backgroundColor: "blue",
         }))
-      }) 
+      }).then(()=> {
+
+        getCategoriesRestaurants().then(categoriesRestaurants => {
+          
+          addButtons.forEach((addButton, index)=> {
+            if(categoriesRestaurants[index])
+            setAddButtons([...addButtons.slice(0, index),
+              {
+              text: "Remove",
+              backgroundColor: "red"
+            } ,
+            ...addButtons.slice(index + 1)])
+
+          })
+        })
+
+      })
+      
 
    
     }, [])
