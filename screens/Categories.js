@@ -14,10 +14,14 @@ export default function Categories({navigation}) {
     // const [categories, setCategories] = useState()
     const {categories, setCategories} = useContext(CategoriesContext)
     const {restaurantData} = useContext(RestaurantContext)
-    const [addButton, setAddButton] = useState({
+    const [addButtons, setAddButtons] = useState(new Array(restaurantData.length).fill({
       text: "Add",
-      backgroundColor: "blue"
-    })
+      backgroundColor: "blue",
+    }))
+    // const [addButton, setAddButton] = useState({
+    //   text: "Add",
+    //   backgroundColor: "blue"
+    // })
     // const navigation = useNavigation()
 
     useEffect(()=>{
@@ -53,13 +57,15 @@ export default function Categories({navigation}) {
                   </View>
                   <TouchableOpacity 
                   onPress={()=> {
-                    setAddButton({
-                      text: "Remove",
-                      backgroundColor: "red"
-                    })
+                    setAddButtons([...addButtons.slice(0, index),
+                      {
+                      text: addButtons[index].text === "Add"?"Remove":"Remove",
+                      backgroundColor: addButtons[index].text === "Add"?"blue":"red"
+                    } ,
+                    ...state.slice(index + 1)])
                   }}
-                  style={{...styles.addButton, backgroundColor: addButton.backgroundColor}}>
-                    <Text style={{color: "white", fontWeight: "bold"}}>{addButton.text}</Text>
+                  style={{...styles.addButton, backgroundColor: addButtons[index].backgroundColor}}>
+                    <Text style={{color: "white", fontWeight: "bold"}}>{addButtons[index].text}</Text>
                   </TouchableOpacity>
                 
                 </View>
