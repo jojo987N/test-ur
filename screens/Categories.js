@@ -52,7 +52,7 @@ export default function Categories({navigation}) {
                      backgroundColor: "blue",
                      justifyContent: "center",
                      width: 100,
-                     aspectRatio: 1,
+                     height: 50,
                      alignItems: "center",
                      borderRadius: 10
                      }}>
