@@ -5,11 +5,14 @@ import { useNavigation } from '@react-navigation/native';
 import PickImage from '../components/PickImage';
 import { RestaurantContext } from '../context/RestaurantContext';
 import BottomSheet from 'reanimated-bottom-sheet'
+import { CategoriesContext } from '../context/CategoriesContext';
 
 
 
 export default function AddCategory() {
     const {restaurantData} = useContext(RestaurantContext)
+    const {categories, setCategories} = useContext(CategoriesContext)
+
     const [name, setName] = useState("")
     const [description, setDescription] = useState("")
     const navigation = useNavigation()
@@ -63,6 +66,15 @@ export default function AddCategory() {
              <Button title='Add' onPress={
                  ()=>{
                     addCategory(name, description, url, restaurantData.id)
+                    .then(()=> setCategories([
+                      ...categories,
+                       {
+                         name,
+                         description,
+                         url,
+                         id: restaurantData.id
+                       }
+                    ]))
                  }
              }/>
              </View>
