@@ -6,16 +6,18 @@ import { useNavigation } from '@react-navigation/native';
 import MenuNavigation from '../components/MenuNavigation';
 import Loading from '../components/Loading';
 import { CategoriesContext } from '../context/CategoriesContext';
+import { RestaurantContext } from '../context/RestaurantContext';
 
 
 export default function Categories({navigation}) {
 
     // const [categories, setCategories] = useState()
     const {categories, setCategories} = useContext(CategoriesContext)
+    const {restaurantData} = useContext(RestaurantContext)
     // const navigation = useNavigation()
 
     useEffect(()=>{
-      getCategories().then((categories)=>setCategories(categories)) 
+      getCategories(restaurantData.id).then((categories)=>setCategories(categories)) 
       }, [])
   return (
     <> 
