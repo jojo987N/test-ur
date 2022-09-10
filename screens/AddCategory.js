@@ -66,15 +66,15 @@ export default function AddCategory() {
              <Button title='Add' onPress={
                  ()=>{
                     addCategory(name, description, url, restaurantData.id)
-                    // .then(()=> setCategories([
-                    //   ...categories,
-                    //    {
-                    //      name,
-                    //      description,
-                    //      url,
-                    //      id: restaurantData.id
-                    //    }
-                    // ]))
+                    .then(()=> setCategories([
+                      ...categories,
+                       {
+                         name,
+                         description,
+                         url,
+                         id: restaurantData.id
+                       }
+                    ]))
                  }
              }/>
              </View>

@@ -17,8 +17,7 @@ export default function Categories({navigation}) {
     // const navigation = useNavigation()
 
     useEffect(()=>{
-      // getCategories(restaurantData.id).then((categories)=>setCategories(categories)) 
-      getCategories(restaurantData.id, setCategories)
+      getCategories(restaurantData.id).then((categories)=>setCategories(categories)) 
   
     }, [])
   return (
