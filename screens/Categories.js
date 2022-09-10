@@ -56,7 +56,7 @@ export default function Categories({navigation}) {
                      alignItems: "center",
                      borderRadius: 25
                      }}>
-                    <Text style={{color: "white"}}>Add</Text>
+                    <Text style={{color: "white", fontWeight: "bold"}}>Add</Text>
                   </TouchableOpacity>
                 
                 </View>
@@ -67,19 +67,18 @@ export default function Categories({navigation}) {
       </ScrollView>
        
     </View>
-    <TouchableOpacity style={{
+    {/* <TouchableOpacity style={{
         position: "absolute",
         bottom:0,
         right: 0,
         margin: 30
       }}
-      // onPress={()=>navigation.navigate("UpdateCategory")}
       onPress={()=>navigation.navigate("AddCategory")}>
       <AntDesign name="pluscircle" size={44} color="blue" />
        
          
       
-      </TouchableOpacity>
+      </TouchableOpacity> */}
     </>
   )
 }
