@@ -24,16 +24,11 @@ export default function Categories({navigation}) {
       getCategories(restaurantData.id).then((categories)=>{
         setCategories(categories)
 
-        
-      }).then(()=>  {setAddButtons(new Array(categories.length).fill({
-        text: "Add",
-        backgroundColor: "blue",
-      }))
-
-      console.log(addButtons)
-
-    }
-      )
+        setAddButtons(new Array(categories.length).fill({
+          text: "Add",
+          backgroundColor: "blue",
+        }))
+      }) 
 
    
     }, [])
@@ -46,7 +41,7 @@ export default function Categories({navigation}) {
         </View>
       <ScrollView>
         
-       {categories?<View>
+       {categories && addButtons?<View>
             {categories.map((category, index)=>{
               //  console.log(category.image, index)
               return (
