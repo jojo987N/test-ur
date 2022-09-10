@@ -29,13 +29,12 @@ export default function Categories({navigation}) {
           backgroundColor: "blue",
         }))
       })
-
+       .then(()=>{
         getCategoriesRestaurants().then(categoriesRestaurants => {
            
-          if(addButtons){
+          // if(addButtons){
 
-            console.log(addButtons, categories)
-            addButtons.forEach((addButton, index)=> {
+            categories.forEach((category, index)=> {
               if(categoriesRestaurants[index])
               setAddButtons([...addButtons.slice(0, index),
                 {
@@ -43,19 +42,22 @@ export default function Categories({navigation}) {
                 backgroundColor: "red"
               } ,
               ...addButtons.slice(index + 1)])
-              else
-              setAddButtons([...addButtons.slice(0, index),
-                {
-                text: "Add",
-                backgroundColor: "blue"
-              } ,
-              ...addButtons.slice(index + 1)])
+              // else
+              // setAddButtons([...addButtons.slice(0, index),
+              //   {
+              //   text: "Add",
+              //   backgroundColor: "blue"
+              // } ,
+              // ...addButtons.slice(index + 1)])
   
             })
             
-          }
+          // }
           
         })
+
+
+      })
 
     
       
