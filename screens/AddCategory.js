@@ -71,7 +71,7 @@ export default function AddCategory() {
                        {
                          name,
                          description,
-                         url,
+                         image: url,
                          id: restaurantData.id
                        }
                     ]))
