@@ -168,7 +168,7 @@ export const addCategory = (name, description, image, restaurantId) => {
 export const categoriesRestaurants = collection(db, 'categoriesRestaurants')
 export const addCategoryRestaurant = (categoryId, restaurantId) => {
 
-  return addDoc(categoriesCol, {
+  return addDoc(categoriesRestaurants, {
     categoryId,
     restaurantId,
     createdAt: serverTimestamp()      
