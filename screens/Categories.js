@@ -56,7 +56,7 @@ export default function Categories({navigation}) {
                      alignItems: "center",
                      borderRadius: 10
                      }}>
-                    <Text style={{color: "white", fontWeight: "bold"}}>Remove</Text>
+                    <Text style={{color: "white", fontWeight: "bold"}}>Add</Text>
                   </TouchableOpacity>
                 
                 </View>
