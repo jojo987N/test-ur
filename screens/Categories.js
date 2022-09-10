@@ -29,6 +29,8 @@ export default function Categories({navigation}) {
           backgroundColor: "blue",
         }))
       }) 
+
+      console.log(addButtons)
   
     }, [])
   return (
