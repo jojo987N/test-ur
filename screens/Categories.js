@@ -49,7 +49,7 @@ export default function Categories({navigation}) {
       
 
    
-    }, [addButtons])
+    }, [])
   return (
     <> 
     <View>
