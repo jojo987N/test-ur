@@ -63,8 +63,8 @@ export default function Categories({navigation}) {
                   onPress={()=> {
                     setAddButtons([...addButtons.slice(0, index),
                       {
-                      text: addButtons[index].text === "Add"?"Remove":"Remove",
-                      backgroundColor: addButtons[index].text === "Add"?"blue":"red"
+                      text: addButtons[index].text === "Add"?"Remove":"Add",
+                      backgroundColor: addButtons[index].backgroundColor === "blue"?"red":"blue"
                     } ,
                     ...addButtons.slice(index + 1)])
                   }}
