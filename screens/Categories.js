@@ -47,9 +47,10 @@ export default function Categories({navigation}) {
                       fontSize: 20
                     }}>{category.name}</Text>
                   </View>
-                  <View >
-                    <Text>Add</Text>
-                  </View>
+                  <TouchableOpacity 
+                  style={{ backgroundColor: "blue"}}>
+                    <Text style={{color: "white"}}>Add</Text>
+                  </TouchableOpacity>
                 
                 </View>
               )
