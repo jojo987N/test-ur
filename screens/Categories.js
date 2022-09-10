@@ -66,7 +66,7 @@ export default function Categories({navigation}) {
                       text: addButtons[index].text === "Add"?"Remove":"Remove",
                       backgroundColor: addButtons[index].text === "Add"?"blue":"red"
                     } ,
-                    ...state.slice(index + 1)])
+                    ...addButtons.slice(index + 1)])
                   }}
                   style={{...styles.addButton, backgroundColor: addButtons[index].backgroundColor}}>
                     <Text style={{color: "white", fontWeight: "bold"}}>{addButtons[index].text}</Text>
