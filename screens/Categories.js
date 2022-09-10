@@ -23,7 +23,7 @@ export default function Categories({navigation}) {
     //   backgroundColor: "blue"
     // })
     // const navigation = useNavigation()
-
+    console.log(addButtons)
     useEffect(()=>{
       getCategories(restaurantData.id).then((categories)=>setCategories(categories)) 
   
