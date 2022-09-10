@@ -102,9 +102,9 @@ export const productsCol = collection(db, 'products')
   const categories=[]
   
   //const q= query(categoriesCol, orderBy('createdAt', 'desc'))
-   const q= query(categoriesCol, where('restaurantId', '==', restaurantId))
+  //  const q= query(categoriesCol, where('restaurantId', '==', restaurantId))
 
-  return getDocs(q).then(snapshot=>{
+  return getDocs(categoriesCol).then(snapshot=>{
 
      snapshot.docs.forEach((doc) => {
 
