@@ -48,7 +48,12 @@ export default function Categories({navigation}) {
                     }}>{category.name}</Text>
                   </View>
                   <TouchableOpacity 
-                  style={{ backgroundColor: "blue"}}>
+                  style={{
+                     backgroundColor: "blue",
+                     justifyContent: "center",
+                     width: 50,
+                     aspectRatio: 1,
+                     }}>
                     <Text style={{color: "white"}}>Add</Text>
                   </TouchableOpacity>
                 
