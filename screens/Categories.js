@@ -24,10 +24,10 @@ export default function Categories({navigation}) {
       getCategories().then((categories)=>{
         setCategories(categories)
 
-        setAddButtons(new Array(categories.length).fill({
-          text: "Add",
-          backgroundColor: "blue",
-        }))
+        // setAddButtons(new Array(categories.length).fill({
+        //   text: "Add",
+        //   backgroundColor: "blue",
+        // }))
       }).then(()=> {
 
         getCategoriesRestaurants().then(categoriesRestaurants => {
@@ -41,6 +41,13 @@ export default function Categories({navigation}) {
               backgroundColor: "red"
             } ,
             ...addButtons.slice(index + 1)])
+            else
+            setAddButtons([...addButtons.slice(0, index),
+              {
+              text: "Add",
+              backgroundColor: "blue"
+            } ,
+            ...addButtons.slice(index + 1)])
 
           })
         })
@@ -49,7 +56,7 @@ export default function Categories({navigation}) {
       
 
    
-    }, [])
+    }, [addButtons])
   return (
     <> 
     <View>
