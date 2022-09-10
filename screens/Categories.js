@@ -24,11 +24,12 @@ export default function Categories({navigation}) {
       getCategories(restaurantData.id).then((categories)=>{
         setCategories(categories)
 
-        setAddButtons(new Array(categories.length).fill({
-          text: "Add",
-          backgroundColor: "blue",
-        }))
-      }) 
+        
+      }).then(()=>  setAddButtons(new Array(categories.length).fill({
+        text: "Add",
+        backgroundColor: "blue",
+      }))
+      )
 
       console.log(addButtons)
   
