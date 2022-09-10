@@ -53,6 +53,7 @@ export default function Categories({navigation}) {
                      justifyContent: "center",
                      width: 50,
                      aspectRatio: 1,
+                     alignItems: "center",
                      }}>
                     <Text style={{color: "white"}}>Add</Text>
                   </TouchableOpacity>
