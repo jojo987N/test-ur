@@ -31,7 +31,8 @@ export default function Categories({navigation}) {
       }).then(()=> {
 
         getCategoriesRestaurants().then(categoriesRestaurants => {
-          
+           
+          if(addButtons)
           addButtons.forEach((addButton, index)=> {
             if(categoriesRestaurants[index])
             setAddButtons([...addButtons.slice(0, index),
@@ -48,7 +49,7 @@ export default function Categories({navigation}) {
       
 
    
-    }, [])
+    }, [addButtons])
   return (
     <> 
     <View>
