@@ -28,7 +28,7 @@ export default function Categories({navigation}) {
         //   text: "Add",
         //   backgroundColor: "blue",
         // }))
-      }).then(()=> {
+      })
 
         getCategoriesRestaurants().then(categoriesRestaurants => {
            
@@ -52,7 +52,7 @@ export default function Categories({navigation}) {
           })
         })
 
-      })
+    
       
 
    
