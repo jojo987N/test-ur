@@ -14,18 +14,21 @@ export default function Categories({navigation}) {
     // const [categories, setCategories] = useState()
     const {categories, setCategories} = useContext(CategoriesContext)
     const {restaurantData} = useContext(RestaurantContext)
-    const [addButtons, setAddButtons] = useState(new Array(restaurantData.length).fill({
-      text: "Add",
-      backgroundColor: "blue",
-    }))
+    const [addButtons, setAddButtons] = useState()
     // const [addButton, setAddButton] = useState({
     //   text: "Add",
     //   backgroundColor: "blue"
     // })
     // const navigation = useNavigation()
-    console.log(addButtons)
     useEffect(()=>{
-      getCategories(restaurantData.id).then((categories)=>setCategories(categories)) 
+      getCategories(restaurantData.id).then((categories)=>{
+        setCategories(categories)
+
+        setAddButtons(new Array(categories.length).fill({
+          text: "Add",
+          backgroundColor: "blue",
+        }))
+      }) 
   
     }, [])
   return (
