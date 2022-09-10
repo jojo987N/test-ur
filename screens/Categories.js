@@ -54,6 +54,7 @@ export default function Categories({navigation}) {
                      width: 50,
                      aspectRatio: 1,
                      alignItems: "center",
+                     borderRadius: 25
                      }}>
                     <Text style={{color: "white"}}>Add</Text>
                   </TouchableOpacity>
