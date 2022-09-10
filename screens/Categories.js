@@ -59,7 +59,7 @@ export default function Categories({navigation}) {
                     })
                   }}
                   style={{...styles.addButton, backgroundColor: addButton.backgroundColor}}>
-                    <Text style={{color: "white", fontWeight: "bold"}}>{addButton}</Text>
+                    <Text style={{color: "white", fontWeight: "bold"}}>{addButton.text}</Text>
                   </TouchableOpacity>
                 
                 </View>
