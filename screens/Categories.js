@@ -24,10 +24,10 @@ export default function Categories({navigation}) {
       getCategories().then((categories)=>{
         setCategories(categories)
 
-        // setAddButtons(new Array(categories.length).fill({
-        //   text: "Add",
-        //   backgroundColor: "blue",
-        // }))
+        setAddButtons(new Array(categories.length).fill({
+          text: "Add",
+          backgroundColor: "blue",
+        }))
       })
 
         getCategoriesRestaurants().then(categoriesRestaurants => {
