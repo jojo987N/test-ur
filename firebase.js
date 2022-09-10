@@ -97,25 +97,38 @@ export const productsCol = collection(db, 'products')
 
  export const categoriesCol = collection(db, 'categories')
 
- export const getCategories = (restaurantId)=>{
+ export const getCategories = (restaurantId, setCategories)=>{
 
   const categories=[]
   
   //const q= query(categoriesCol, orderBy('createdAt', 'desc'))
    const q= query(categoriesCol, where('restaurantId', '==', restaurantId))
 
-  return getDocs(q).then(snapshot=>{
+   const unsuscribe = onSnapshot(q, (snapshot)=>{
+     
+       snapshot.docs.forEach((doc) => {
 
-     snapshot.docs.forEach((doc) => {
-
-       // console.log(doc.data().createdAt)
        categories.push({...doc.data(), id: doc.id})
 
       })
 
-      return categories
-
+     setCategories(categories)
   })
+
+
+
+   
+  // return getDocs(q).then(snapshot=>{
+
+  //    snapshot.docs.forEach((doc) => {
+
+  //      categories.push({...doc.data(), id: doc.id})
+
+  //     })
+
+  //     return categories
+
+  // })
 
  }
 
