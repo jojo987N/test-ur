@@ -29,35 +29,35 @@ export default function Categories({navigation}) {
           backgroundColor: "blue",
         }))
       })
-       .then(()=>{
-        getCategoriesRestaurants().then(categoriesRestaurants => {
+      //  .then(()=>{
+      //   getCategoriesRestaurants().then(categoriesRestaurants => {
            
-          // if(addButtons){
-             if(categories)
-            categories.forEach((category, index)=> {
-              if(categoriesRestaurants[index])
-              setAddButtons([...addButtons.slice(0, index),
-                {
-                text: "Remove",
-                backgroundColor: "red"
-              } ,
-              ...addButtons.slice(index + 1)])
-              // else
-              // setAddButtons([...addButtons.slice(0, index),
-              //   {
-              //   text: "Add",
-              //   backgroundColor: "blue"
-              // } ,
-              // ...addButtons.slice(index + 1)])
+      //     // if(addButtons){
+      //        if(categories)
+      //       categories.forEach((category, index)=> {
+      //         if(categoriesRestaurants[index])
+      //         setAddButtons([...addButtons.slice(0, index),
+      //           {
+      //           text: "Remove",
+      //           backgroundColor: "red"
+      //         } ,
+      //         ...addButtons.slice(index + 1)])
+      //         // else
+      //         // setAddButtons([...addButtons.slice(0, index),
+      //         //   {
+      //         //   text: "Add",
+      //         //   backgroundColor: "blue"
+      //         // } ,
+      //         // ...addButtons.slice(index + 1)])
   
-            })
+      //       })
             
-          // }
+      //     // }
           
-        })
+      //   })
 
 
-      })
+      // })
 
     
       
@@ -76,6 +76,10 @@ export default function Categories({navigation}) {
        {categories && addButtons?<View>
             {categories.map((category, index)=>{
               //  console.log(category.image, index)
+
+         
+
+
               return (
                 <View key={index} style={{
                   borderBottomWidth: 0.5,
