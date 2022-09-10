@@ -165,7 +165,32 @@ export const addCategory = (name, description, image, restaurantId) => {
     createdAt: serverTimestamp()      
   }) 
 }
+export const categoriesRestaurants = collection(db, 'categoriesRestaurants')
+export const addCategoryRestaurant = (categoryId, restaurantId) => {
 
+  return addDoc(categoriesCol, {
+    categoryId,
+    restaurantId,
+    createdAt: serverTimestamp()      
+  }) 
+}
+
+export const deleteCategoriesRestaurants = (index) => {
+
+  getDocs(categoriesRestaurants).then(snapshot => {
+    const id = snapshot.docs.find((doc, i) => i === index)
+    const docRef = doc(db, 'categoriesRestaurants', id)
+    deleteDoc(docRef)
+      .then(() => {
+        console.log("deleted")
+      })
+
+  })
+
+
+}
+
+ 
 
 export const getRestaurantId = (uid)=>{
 
