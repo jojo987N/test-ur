@@ -47,6 +47,9 @@ export default function Categories({navigation}) {
                       fontSize: 20
                     }}>{category.name}</Text>
                   </View>
+                  <View >
+                    <Text>Add</Text>
+                  </View>
                 
                 </View>
               )
