@@ -14,6 +14,10 @@ export default function Categories({navigation}) {
     // const [categories, setCategories] = useState()
     const {categories, setCategories} = useContext(CategoriesContext)
     const {restaurantData} = useContext(RestaurantContext)
+    const [addButton, setAddButton] = useState({
+      text: "Add",
+      backgroundColor: "blue"
+    })
     // const navigation = useNavigation()
 
     useEffect(()=>{
@@ -48,15 +52,14 @@ export default function Categories({navigation}) {
                     }}>{category.name}</Text>
                   </View>
                   <TouchableOpacity 
-                  style={{
-                     backgroundColor: "blue",
-                     justifyContent: "center",
-                     width: 100,
-                     height: 50,
-                     alignItems: "center",
-                     borderRadius: 10
-                     }}>
-                    <Text style={{color: "white", fontWeight: "bold"}}>Add</Text>
+                  onPress={()=> {
+                    setAddButton({
+                      text: "Remove",
+                      backgroundColor: "red"
+                    })
+                  }}
+                  style={{...styles.addButton, backgroundColor: addButton.backgroundColor}}>
+                    <Text style={{color: "white", fontWeight: "bold"}}>{addButton}</Text>
                   </TouchableOpacity>
                 
                 </View>
@@ -99,5 +102,12 @@ const styles = StyleSheet.create({
     height: 40, 
     aspectRatio: 1,
     borderRadius: 40
-  }
+  },
+  addButton: {
+    justifyContent: "center",
+    width: 100,
+    height: 50,
+    alignItems: "center",
+    borderRadius: 10
+    }
 })
