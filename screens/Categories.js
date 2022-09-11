@@ -32,9 +32,10 @@ export default function Categories({navigation}) {
         }))
       })
 
-      const categoriesRestaurants=[]
+      
       const unsuscribe = onSnapshot(categoriesRestaurants, (snapshot)=>{
-
+        const categoriesRestaurants=[]
+        
         snapshot.docs.forEach((doc)=>{
            
         categoriesRestaurants.push({...doc.data(), id: doc.id})
