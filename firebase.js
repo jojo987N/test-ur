@@ -201,9 +201,9 @@ export const addCategoryRestaurant = (categoryId, restaurantId) => {
 export const deleteCategoriesRestaurants = (index) => {
 
   getDocs(categoriesRestaurantsCol).then(snapshot => {
-    const id = snapshot.docs.find((doc, i) => i === index)
-    console.log(id)
-     const docRef = doc(db, 'categoriesRestaurants', id)
+    const doc = snapshot.docs.find((doc, i) => i === index)
+    console.log(doc.id)
+     const docRef = doc(db, 'categoriesRestaurants', doc.id)
     // deleteDoc(docRef)
     //   .then(() => {
     //     console.log("deleted")
