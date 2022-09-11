@@ -285,7 +285,9 @@ export const updateRestaurantInfos = (restaurant_id, email, name, phone, address
    email,
    name,
    phone,
-   address,
+   address: address.description,
+   lat: address.location.lat,
+   lng: address.location.lng,
    city,
    updatedAt: serverTimestamp() 
   })
