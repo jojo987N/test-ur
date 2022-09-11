@@ -121,7 +121,8 @@ export default function Categories({navigation}) {
                   onPress={()=> {
                     if(!categoriesRestaurants[index]){
                       addCategoryRestaurant(category.id, restaurantData.id)
-                      .then(()=>{
+                      .then((res)=>{
+                        console.log(res)
                         // setAddButtons([...addButtons.slice(0, index),
                         //   {
                         //   text: "Remove",
