@@ -202,6 +202,7 @@ export const deleteCategoriesRestaurants = (index) => {
 
   getDocs(categoriesRestaurantsCol).then(snapshot => {
     const id = snapshot.docs.find((doc, i) => i === index)
+    console.log(id)
      const docRef = doc(db, 'categoriesRestaurants', id)
     // deleteDoc(docRef)
     //   .then(() => {
