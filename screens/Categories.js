@@ -7,6 +7,7 @@ import MenuNavigation from '../components/MenuNavigation';
 import Loading from '../components/Loading';
 import { CategoriesContext } from '../context/CategoriesContext';
 import { RestaurantContext } from '../context/RestaurantContext';
+import { onSnapshot } from 'firebase/firestore';
 
 
 export default function Categories({navigation}) {
