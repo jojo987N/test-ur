@@ -81,7 +81,14 @@ export default function Categories({navigation}) {
        {categories && addButtons && categoriesRestaurants?<View>
             {categories.map((category, index)=>{
               //  console.log(category.image, index)
-
+     
+              if (categoriesRestaurants[index])
+                setAddButtons([...addButtons.slice(0, index),
+                {
+                  text: "Remove",
+                  backgroundColor: "red"
+                },
+                ...addButtons.slice(index + 1)])
               
         
 
