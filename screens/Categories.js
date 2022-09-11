@@ -149,8 +149,8 @@ export default function Categories({navigation}) {
 
                      
                   }}
-                  style={{...styles.addButton, backgroundColor: categoriesRestaurants[index]?"red":addButtons[index].backgroundColor}}>
-                    <Text style={{color: "white", fontWeight: "bold"}}>{categoriesRestaurants[index]?"Remove":addButtons[index].text}</Text>
+                  style={{...styles.addButton, backgroundColor: categoriesRestaurants.some(categorieRestaurant => (categorieRestaurant.categoryId === category.id )&& (categorieRestaurant.restaurantId === restaurantData.id) )?"red":addButtons[index].backgroundColor}}>
+                    <Text style={{color: "white", fontWeight: "bold"}}>{categoriesRestaurants.some(categorieRestaurant => (categorieRestaurant.categoryId === category.id )&& (categorieRestaurant.restaurantId === restaurantData.id) )?"Remove":addButtons[index].text}</Text>
                   </TouchableOpacity>
                 
                 </View>
