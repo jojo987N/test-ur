@@ -122,7 +122,7 @@ export default function Categories({navigation}) {
                     if(!categoriesRestaurants[index]){
                       addCategoryRestaurant(category.id, restaurantData.id)
                       .then((res)=>{
-                        console.log(res)
+                        console.log(res.id)
                         // setAddButtons([...addButtons.slice(0, index),
                         //   {
                         //   text: "Remove",
