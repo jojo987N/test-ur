@@ -87,8 +87,8 @@ export default function SearchBar({searchbar, cityHandler, style, setAddress, se
           
           ):()=>{}}
           
-          textInputProps={{
-              value: "bonjour"
+          selectProps={{
+            defaultInputValue: "bonjour",
           }}/>
     </View>
   )
