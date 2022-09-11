@@ -135,7 +135,7 @@ export default function SettingsComponent({navigation, bs}) {
            
          </View>
         
-         </ScrollView>
+         
          
          {/* <View style={styles.textInputContainer}>
          <MaterialIcons name="person" size={20} color="#3d5c5c" style={{
@@ -157,7 +157,7 @@ export default function SettingsComponent({navigation, bs}) {
            </View>
          </TouchableOpacity>
          
-
+         </ScrollView>
        </View>
  
     </View>
