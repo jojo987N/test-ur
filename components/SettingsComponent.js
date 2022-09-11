@@ -27,7 +27,7 @@ export default function SettingsComponent({navigation, bs}) {
   
 
   return (
-    <ScrollView style={{
+    <View style={{
       paddingTop: Platform.OS === "android" ? StatusBar.currentHeight : 0,
       backgroundColor: "#e0ebeb",
       flex: 1
@@ -70,6 +70,7 @@ export default function SettingsComponent({navigation, bs}) {
          setAddress={setAddress}/>
        </View>
 
+         <ScrollView> 
          <View style={styles.textInputContainer}>
          <MaterialIcons name="person" size={20} color="#3d5c5c" style={{
            marginLeft: 6,
@@ -133,7 +134,8 @@ export default function SettingsComponent({navigation, bs}) {
           style={styles.textInput}/>
            
          </View>
-
+        
+         </ScrollView>
          
          {/* <View style={styles.textInputContainer}>
          <MaterialIcons name="person" size={20} color="#3d5c5c" style={{
@@ -158,7 +160,7 @@ export default function SettingsComponent({navigation, bs}) {
 
        </View>
  
-    </ScrollView>
+    </View>
       
      
   )
