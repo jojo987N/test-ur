@@ -85,7 +85,9 @@ export default function SearchBar({searchbar, cityHandler, style, setAddress, se
               <Text>Search</Text>
           </View>
           
-          ):()=>{}}/>
+          ):()=>{}}
+          
+          value={"bonjour"}/>
     </View>
   )
 }
