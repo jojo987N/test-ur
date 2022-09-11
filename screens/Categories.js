@@ -31,9 +31,27 @@ export default function Categories({navigation}) {
         }))
       })
 
-      getCategoriesRestaurants().then(categoriesRestaurants => {
+      const categoriesRestaurants=[]
+      const unsuscribe = onSnapshot(categoriesRestaurants, (snapshot)=>{
+
+        snapshot.docs.forEach((doc)=>{
+           
+        categoriesRestaurants.push({...doc.data(), id: doc.id})
+  
+        })
+         // console.log(orders)
          setCategoriesRestaurants(categoriesRestaurants)
       })
+
+      // getCategoriesRestaurants().then(categoriesRestaurants => {
+      //    setCategoriesRestaurants(categoriesRestaurants)
+      // })
+      
+      
+      
+      
+      
+      
       //  .then(()=>{
       //   getCategoriesRestaurants().then(categoriesRestaurants => {
            
