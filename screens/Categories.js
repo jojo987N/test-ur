@@ -82,16 +82,6 @@ export default function Categories({navigation}) {
             {categories.map((category, index)=>{
               //  console.log(category.image, index)
      
-              if (categoriesRestaurants[index])
-                setAddButtons([...addButtons.slice(0, index),
-                {
-                  text: "Remove",
-                  backgroundColor: "red"
-                },
-                ...addButtons.slice(index + 1)])
-              
-        
-
               return (
                 <View key={index} style={{
                   borderBottomWidth: 0.5,
@@ -121,8 +111,8 @@ export default function Categories({navigation}) {
                     } ,
                     ...addButtons.slice(index + 1)])
                   }}
-                  style={{...styles.addButton, backgroundColor: addButtons[index].backgroundColor}}>
-                    <Text style={{color: "white", fontWeight: "bold"}}>{addButtons[index].text}</Text>
+                  style={{...styles.addButton, backgroundColor: categoriesRestaurants[index]?"red":addButtons[index].backgroundColor}}>
+                    <Text style={{color: "white", fontWeight: "bold"}}>{categoriesRestaurants[index]?"Remove":addButtons[index].text}</Text>
                   </TouchableOpacity>
                 
                 </View>
