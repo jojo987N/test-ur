@@ -203,10 +203,10 @@ export const deleteCategoriesRestaurants = (index) => {
   getDocs(categoriesRestaurantsCol).then(snapshot => {
     const docc = snapshot.docs.find((doc, i) => i === index)
       const docRef = doc(db, 'categoriesRestaurants', docc.id)
-    // deleteDoc(docRef)
-    //   .then(() => {
-    //     console.log("deleted")
-    //   })
+    deleteDoc(docRef)
+      .then(() => {
+        console.log("deleted")
+      })
 
   })
 
