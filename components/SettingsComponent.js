@@ -6,6 +6,7 @@ import { signInWithEmailAndPassword, onAuthStateChanged} from 'firebase/auth'
 import AsyncStorage from '@react-native-async-storage/async-storage'
 import { RestaurantContext } from '../context/RestaurantContext'
 import { ScrollView } from 'react-native-gesture-handler'
+import SearchBar from './SearchBar'
 
 export default function SettingsComponent({navigation, bs}) {
 
