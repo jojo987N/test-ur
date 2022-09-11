@@ -198,17 +198,24 @@ export const addCategoryRestaurant = (categoryId, restaurantId) => {
   }) 
 }
 
-export const deleteCategoriesRestaurants = (index) => {
+export const deleteCategoriesRestaurants = async (index) => {
 
-  return getDocs(categoriesRestaurantsCol).then(snapshot => {
-    const docc = snapshot.docs.find((doc, i) => i === index)
-      const docRef = doc(db, 'categoriesRestaurants', docc.id)
-    deleteDoc(docRef)
-      .then(() => {
-        console.log("deleted")
-      })
+   const snapshot = await getDocs(categoriesRestaurantsCol);
+   const docc = snapshot.docs.find((doc, i) => i === index)
+   const docRef = doc(db, 'categoriesRestaurants', docc.id)
 
-  })
+  return deleteDoc(docRef)
+     
+
+  // return getDocs(categoriesRestaurantsCol).then(snapshot => {
+  //   const docc = snapshot.docs.find((doc, i) => i === index)
+  //     const docRef = doc(db, 'categoriesRestaurants', docc.id)
+  //   deleteDoc(docRef)
+  //     .then(() => {
+  //       console.log("deleted")
+  //     })
+
+  // })
 
 
 }
