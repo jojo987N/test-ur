@@ -55,10 +55,7 @@ export default function SettingsComponent({navigation, bs}) {
        
         </Pressable>
       
-        {/* <View style={{marginHorizontal: 25}}> */}
-         <SearchBar style={{backgroundColor: "white", borderBottomColor: "grey", borderBottomWidth: 0.3}}
-         setAddress={setAddress}/>
-       {/* </View> */}
+         
 
        <Text style={{fontSize: 25, fontWeight: "bold", color: "#3d5c5c",
       letterSpacing: 5}}>Upload Image</Text>
@@ -67,6 +64,11 @@ export default function SettingsComponent({navigation, bs}) {
        <View style={{
          marginTop: 40
        }}>
+
+         {/* <View style={{marginHorizontal: 25}}> */}
+         <SearchBar style={{backgroundColor: "white", borderBottomColor: "grey", borderBottomWidth: 0.3}}
+         setAddress={setAddress}/>
+       {/* </View> */}
 
          <View style={styles.textInputContainer}>
          <MaterialIcons name="person" size={20} color="#3d5c5c" style={{
