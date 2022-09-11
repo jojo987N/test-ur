@@ -276,22 +276,24 @@ export const updateRestaurant = (restaurant_id, image)=>{
   .then(()=> console.log('good'))
 }
 
-export const updateRestaurantInfos = (restaurant_id, email, name, phone, address, city)=>{
+export const updateRestaurantInfos = (restaurant_id, email, name, phone, address, city, setRestaurantData)=>{
 
   // console.log(image)
   const docRef = doc(db, 'restaurants', restaurant_id)
 
-  updateDoc(docRef, {
-   email,
-   name,
-   phone,
-   address: address.description,
-   lat: address.location.lat,
-   lng: address.location.lng,
-   city,
-   updatedAt: serverTimestamp() 
-  })
-  .then(()=> console.log('good'))
+  const data =  {
+    email,
+    name,
+    phone,
+    address: address.description,
+    lat: address.location.lat,
+    lng: address.location.lng,
+    city,
+    updatedAt: serverTimestamp() 
+   }
+
+  return updateDoc(docRef, data)
+  .then(()=> setRestaurantData(data))
 }
 
 
