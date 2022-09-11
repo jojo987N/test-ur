@@ -65,10 +65,10 @@ export default function SettingsComponent({navigation, bs}) {
          marginTop: 40
        }}>
 
-         {/* <View style={{marginHorizontal: 25}}> */}
+         <View style={{marginHorizontal: 25}}>
          <SearchBar style={{backgroundColor: "white", borderBottomColor: "grey", borderBottomWidth: 0.3}}
          setAddress={setAddress}/>
-       {/* </View> */}
+       </View>
 
          <View style={styles.textInputContainer}>
          <MaterialIcons name="person" size={20} color="#3d5c5c" style={{
