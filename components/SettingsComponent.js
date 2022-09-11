@@ -54,6 +54,10 @@ export default function SettingsComponent({navigation, bs}) {
        
         </Pressable>
       
+        {/* <View style={{marginHorizontal: 25}}> */}
+         <SearchBar style={{backgroundColor: "white", borderBottomColor: "grey", borderBottomWidth: 0.3}}
+         setAddress={setAddress}/>
+       {/* </View> */}
 
        <Text style={{fontSize: 25, fontWeight: "bold", color: "#3d5c5c",
       letterSpacing: 5}}>Upload Image</Text>
@@ -103,7 +107,7 @@ export default function SettingsComponent({navigation, bs}) {
            
          </View>
 
-         <View style={styles.textInputContainer}>
+         {/* <View style={styles.textInputContainer}>
          <Entypo name="address" size={20} color="#3d5c5c" style={{
            marginLeft: 6,
          }}/>
@@ -113,7 +117,7 @@ export default function SettingsComponent({navigation, bs}) {
           onChangeText={(text)=>setAddress(text)}
           style={styles.textInput}/>
            
-         </View>
+         </View> */}
 
          <View style={styles.textInputContainer}>
          <FontAwesome5 name="city" size={20} color="#3d5c5c" style={{
