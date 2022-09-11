@@ -33,16 +33,16 @@ export default function Categories({navigation}) {
       })
 
       
-      const unsuscribe = onSnapshot(categoriesRestaurants, (snapshot)=>{
-        const categoriesRestaurants=[]
-        
+      const unsuscribe = onSnapshot(categoriesRestaurantsCol, (snapshot)=>{
+        const c=[]
+
         snapshot.docs.forEach((doc)=>{
            
-        categoriesRestaurants.push({...doc.data(), id: doc.id})
+        c.push({...doc.data(), id: doc.id})
   
         })
          // console.log(orders)
-         setCategoriesRestaurants(categoriesRestaurants)
+         setCategoriesRestaurants(c)
       })
 
       // getCategoriesRestaurants().then(categoriesRestaurants => {
