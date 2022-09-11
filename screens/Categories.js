@@ -119,20 +119,13 @@ export default function Categories({navigation}) {
                   </View>
                   <TouchableOpacity 
                   onPress={()=> {
-                    // if(addButtons[index].text === "Add")
                     if(!categoriesRestaurants[index]){
                       addCategoryRestaurant(category.id, restaurantData.id)
                       .then(()=>{
-                        setAddButtons([...addButtons.slice(0, index),
-                          {
-                          text: "Remove",
-                          backgroundColor: "red"
-                        } ,
-                        ...addButtons.slice(index + 1)])
                         // setAddButtons([...addButtons.slice(0, index),
                         //   {
-                        //   text: addButtons[index].text === "Add"?"Remove":"Add",
-                        //   backgroundColor: addButtons[index].backgroundColor === "blue"?"red":"blue"
+                        //   text: "Remove",
+                        //   backgroundColor: "red"
                         // } ,
                         // ...addButtons.slice(index + 1)])
                       })
@@ -140,12 +133,12 @@ export default function Categories({navigation}) {
                     else{
                       deleteCategoriesRestaurants(index)
                       .then(()=>{
-                        setAddButtons([...addButtons.slice(0, index),
-                          {
-                          text: "Add",
-                          backgroundColor: "blue"
-                        } ,
-                        ...addButtons.slice(index + 1)])
+                        // setAddButtons([...addButtons.slice(0, index),
+                        //   {
+                        //   text: "Add",
+                        //   backgroundColor: "blue"
+                        // } ,
+                        // ...addButtons.slice(index + 1)])
                       })
                     }
                     
