@@ -70,7 +70,7 @@ export default function SettingsComponent({ navigation, bs }) {
 
         <View style={{ marginHorizontal: 25 }}>
           <SearchBar style={{ backgroundColor: "white", borderBottomColor: "grey", borderBottomWidth: 0.3 }}
-            setAddress={setAddress} />
+            setAddress={setAddress} setCity={setCity}/>
         </View>
 
         <ScrollView>
@@ -126,7 +126,7 @@ export default function SettingsComponent({ navigation, bs }) {
            
          </View> */}
 
-          <View style={styles.textInputContainer}>
+          {/* <View style={styles.textInputContainer}>
             <FontAwesome5 name="city" size={20} color="#3d5c5c" style={{
               marginLeft: 6,
             }} />
@@ -136,7 +136,7 @@ export default function SettingsComponent({ navigation, bs }) {
               onChangeText={(text) => setCity(text)}
               style={styles.textInput} />
 
-          </View>
+          </View> */}
 
 
 

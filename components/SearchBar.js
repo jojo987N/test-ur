@@ -5,7 +5,7 @@ import Ionicons from 'react-native-vector-icons/Ionicons'
 import AntDesign from 'react-native-vector-icons/AntDesign' 
 import { apikey } from '../global'
 
-export default function SearchBar({searchbar, cityHandler, style, setAddress, navigation, restaurantData}) {
+export default function SearchBar({searchbar, cityHandler, style, setAddress, setCity}) {
   
   return (
     <View style={{marginTop: 15, flexDirection: "row"}}>
@@ -32,11 +32,13 @@ export default function SearchBar({searchbar, cityHandler, style, setAddress, na
           
           if(style){
             // console.log(details?.geometry?.location)
-
+      
           setAddress({
             description: data.description,
             location: details?.geometry?.location
           })
+
+          setCity(city)
         }
 
          // setLocation(details?.geometry?.location)
