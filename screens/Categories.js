@@ -135,7 +135,7 @@ export default function Categories({navigation}) {
                       })
                     }
                     else{
-                      deleteCategoriesRestaurants(index)
+                      deleteCategoriesRestaurants(category.id, restaurantData.id)
                       .then(()=>{
                         // setAddButtons([...addButtons.slice(0, index),
                         //   {

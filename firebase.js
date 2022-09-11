@@ -199,11 +199,12 @@ export const addCategoryRestaurant = (categoryId, restaurantId) => {
    
 }
 
-export const deleteCategoriesRestaurants = async (index) => {
+export const deleteCategoriesRestaurants = async (categoryId, restaurantId) => {
 
-   const snapshot = await getDocs(categoriesRestaurantsCol);
-   const docc = snapshot.docs.find((doc, i) => i === index)
-   const docRef = doc(db, 'categoriesRestaurants', docc.id)
+  const q= query(categoriesRestaurantsCol, where('categoryId', '==', categoryId), where('restaurantId', '==', restaurantId))
+   const snapshot = await getDocs(q);
+  //  const docc = snapshot.docs.find((doc, i) => i === index)
+   const docRef = doc(db, 'categoriesRestaurants', snapshot.docs[0].id)
 
   return deleteDoc(docRef)
      
