@@ -196,6 +196,7 @@ export const addCategoryRestaurant = (categoryId, restaurantId) => {
     restaurantId,
     createdAt: serverTimestamp()      
   }) 
+   
 }
 
 export const deleteCategoriesRestaurants = async (index) => {

@@ -119,10 +119,13 @@ export default function Categories({navigation}) {
                   </View>
                   <TouchableOpacity 
                   onPress={()=> {
-                    if(!categoriesRestaurants[index]){
+
+
+                    // if(!categoriesRestaurants[index]){
+                      if(!categoriesRestaurants.some(categorieRestaurant => (categorieRestaurant.categoryId === category.id )&& (categorieRestaurant.restaurantId === restaurantData.id) )){
                       addCategoryRestaurant(category.id, restaurantData.id)
                       .then((res)=>{
-                        console.log(res.id)
+                        // console.log(res.id)
                         // setAddButtons([...addButtons.slice(0, index),
                         //   {
                         //   text: "Remove",
