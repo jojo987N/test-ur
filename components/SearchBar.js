@@ -57,7 +57,7 @@ export default function SearchBar({searchbar, cityHandler, style, setAddress, na
             borderRadius: !style?50:0,
             flexDirection: "row",
             alignItems: "center",
-            marginRight : 10,
+            // marginRight : 10,
             ...style?{borderBottomWidth: style.borderBottomWidth, borderBottomColor: style.borderBottomColor}:{}
         }  
 
