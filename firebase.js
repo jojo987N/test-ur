@@ -294,7 +294,7 @@ export const updateRestaurantInfos = (restaurantData, email, name, phone, addres
 
   return updateDoc(docRef, data)
   .then(()=> setRestaurantData({
-    restaurantData,
+    ...restaurantData,
     ...data
   }))
 }
