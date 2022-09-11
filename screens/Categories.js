@@ -15,6 +15,7 @@ export default function Categories({navigation}) {
     const {categories, setCategories} = useContext(CategoriesContext)
     const {restaurantData} = useContext(RestaurantContext)
     const [addButtons, setAddButtons] = useState()
+    const [categoriesRestaurants, setCategoriesRestaurants] = useState()
     // const [addButton, setAddButton] = useState({
     //   text: "Add",
     //   backgroundColor: "blue"
@@ -28,6 +29,10 @@ export default function Categories({navigation}) {
           text: "Add",
           backgroundColor: "blue",
         }))
+      })
+
+      getCategoriesRestaurants().then(categoriesRestaurants => {
+         setCategoriesRestaurants(categoriesRestaurants)
       })
       //  .then(()=>{
       //   getCategoriesRestaurants().then(categoriesRestaurants => {
@@ -63,7 +68,7 @@ export default function Categories({navigation}) {
       
 
    
-    }, [addButtons, categories])
+    }, [])
   return (
     <> 
     <View>
@@ -73,12 +78,12 @@ export default function Categories({navigation}) {
         </View>
       <ScrollView>
         
-       {categories && addButtons?<View>
+       {categories && addButtons && categoriesRestaurants?<View>
             {categories.map((category, index)=>{
               //  console.log(category.image, index)
 
-         
-
+              
+        
 
               return (
                 <View key={index} style={{
