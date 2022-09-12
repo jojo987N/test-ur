@@ -1,10 +1,10 @@
-import { TextInput, TouchableOpacity, View, StyleSheet} from 'react-native'
+import { TextInput, TouchableOpacity, View, StyleSheet, Text} from 'react-native'
 
 const AddInput = () => {
     let inputs = []
     return (
         <View>
-            <TouchableOpacity onPress={() => { }}>Add</TouchableOpacity>
+            <TouchableOpacity onPress={() => { }}><Text>Add</Text></TouchableOpacity>
             {inputs.map(input => (
                 <View style={styles.input}>
                     <TextInput />
