@@ -6,8 +6,13 @@ const AddInput = () => {
         <View>
             <TouchableOpacity onPress={() => { }}><Text>Add</Text></TouchableOpacity>
             {inputs.map(input => (
+                <View>
+                <View style={styles.input}>
+                    <TextInput placeholder='Add Size'/>
+                </View>
                 <View style={styles.input}>
                     <TextInput />
+                </View>
                 </View>
             )
             )}
@@ -19,7 +24,7 @@ const AddInput = () => {
 }
 const styles = StyleSheet.create({
     input: {
-        backgroundColor: "red",
+        backgroundColor: "white",
         marginHorizontal: 25,
         borderBottomWidth: 0.7,
         borderBottomColor: "grey",
