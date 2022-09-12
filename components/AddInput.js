@@ -29,7 +29,7 @@ const AddInput = ({ title, inputs, setInputs}) => {
               
                return  (
                 <View style={styles.inputContainer} key={index}>
-                    {/* <View style={styles.input}>
+                    <View style={styles.input}>
                         <TextInput placeholder='Add Size' style={styles.textInput} 
                         
                         onChangeText={(text) => {
@@ -40,8 +40,8 @@ const AddInput = ({ title, inputs, setInputs}) => {
                                         } ,
                                         ...inputs.slice(index + 1)])
                          }}/>
-                    </View> */}
-                    <View style={styles.input}>
+                    </View>
+                    {/* <View style={styles.input}>
                         <TextInput style={styles.textInput} keyboardType="numeric" 
                         defaultValue="0"
                         // value={value}
@@ -54,7 +54,7 @@ const AddInput = ({ title, inputs, setInputs}) => {
                                         ...inputs.slice(index + 1)])
                          }}
                         />
-                    </View>
+                    </View> */}
                 </View>
             )
             }
