@@ -2,11 +2,11 @@ import { AntDesign } from '@expo/vector-icons'
 import { useState } from 'react'
 import { TextInput, TouchableOpacity, View, StyleSheet, Text } from 'react-native'
 
-const AddInput = ({ title }) => {
+const AddInput = ({ title, inputs, setInputs}) => {
     // const [nb, setNb] = useState(1)
     // let inputs = Array.apply(null, Array(nb))
     // const [value, setValue] = useState()
-    const [inputs, setInputs] = useState([])
+    
     return (
         <View style={styles.container}>
             <View style={styles.header}>

@@ -13,6 +13,7 @@ export default function AddFood() {
   const [description, setDescription] = useState("")
   const [price, setPrice] = useState()
   const navigation = useNavigation()
+  const [inputs, setInputs] = useState([])
 
 
   const pickImage = async () => {
@@ -59,7 +60,7 @@ export default function AddFood() {
         <Text style={{fontSize: 25, fontWeight: "bold"}}>Addons</Text>
         <AntDesign name="pluscircle" size={24} color="black" />
         </View> */}
-        <AddInput title="Size"/>
+        <AddInput title="Size" inputs={inputs} setInputs={setInputs}/>
       {/* <CheckBox
 
         title={"Small Coke"}
