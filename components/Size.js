@@ -78,7 +78,9 @@ const styles = StyleSheet.create({
 
     },
     label: {
-      flex: 1
+      flex: 1,
+      fontSize: 20,
+      fontWeight: "bold"
     },
     input: {
         backgroundColor: "white",
