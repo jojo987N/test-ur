@@ -28,7 +28,7 @@ const styles = StyleSheet.create({
     },
     input: {
         backgroundColor: "white",
-        // marginHorizontal: 25,
+         marginHorizontal: 5,
         borderBottomWidth: 0.7,
         borderBottomColor: "grey",
         marginVertical: 10,
