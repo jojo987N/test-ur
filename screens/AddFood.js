@@ -55,10 +55,10 @@ export default function AddFood() {
         </View>
       </View>
 
-        <View style={styles.addons}>
+        {/* <View style={styles.addons}>
         <Text style={{fontSize: 25, fontWeight: "bold"}}>Addons</Text>
         <AntDesign name="pluscircle" size={24} color="black" />
-        </View>
+        </View> */}
         <AddInput />
       {/* <CheckBox
 
