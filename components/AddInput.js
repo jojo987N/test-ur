@@ -1,7 +1,7 @@
 import { TextInput, TouchableOpacity, View, StyleSheet, Text} from 'react-native'
 
 const AddInput = () => {
-    let inputs = Array(1)
+    let inputs = Array.apply(null, Array(1))
     return (
         <View>
             <TouchableOpacity onPress={() => { }}><Text>Add</Text></TouchableOpacity>
@@ -22,7 +22,8 @@ const styles = StyleSheet.create({
         backgroundColor: "red",
         marginHorizontal: 25,
         borderBottomWidth: 0.7,
-        borderBottomColor: "grey"
+        borderBottomColor: "grey",
+        marginVertical: 10
        //marginT
     }
 })
