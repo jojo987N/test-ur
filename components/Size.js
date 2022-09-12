@@ -12,7 +12,7 @@ const Size = ({ title, inputs, setInputs }) => {
 
             <Text style={styles.title}>{title}</Text>
 
-            <View style={styles.inputContainer} key={index}>
+            <View style={styles.inputContainer}>
                 <View style={styles.input}>
                     <TextInput placeholder='Add Size' style={styles.textInput}
 
