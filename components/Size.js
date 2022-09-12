@@ -86,7 +86,7 @@ const styles = StyleSheet.create({
         borderBottomWidth: 0.7,
         borderBottomColor: "grey",
         marginVertical: 10,
-        flex: 3,
+        flex: 4,
         //marginT
     },
     textInput: {
