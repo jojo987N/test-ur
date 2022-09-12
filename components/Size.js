@@ -86,11 +86,12 @@ const styles = StyleSheet.create({
     },
     input: {
         backgroundColor: "white",
-        marginHorizontal: 5,
+        // marginHorizontal: 5,
         borderBottomWidth: 0.7,
         borderBottomColor: "grey",
         marginVertical: 10,
         flex: 5,
+        width: 200
         //marginT
     },
     textInput: {
