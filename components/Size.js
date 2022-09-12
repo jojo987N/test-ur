@@ -14,15 +14,15 @@ const Size = ({ title, inputs, setInputs }) => {
 
             <View style={styles.inputContainer}>
                 <View style={styles.input}>
-                    <TextInput placeholder='Add Size' style={styles.textInput}
+                    <TextInput placeholder='Name' style={styles.textInput}
 
                         onChangeText={(text) => {
                 
                         }} />
                 </View>
                 <View style={styles.input}>
-                    <TextInput style={styles.textInput} keyboardType="numeric"
-                        defaultValue="0"
+                    <TextInput placeholder='Amount' style={styles.textInput} keyboardType="numeric"
+                        // defaultValue="0"
                     value={value}
                      onChangeText={(text) => {
 
@@ -33,15 +33,15 @@ const Size = ({ title, inputs, setInputs }) => {
             </View>
             <View style={styles.inputContainer}>
                 <View style={styles.input}>
-                    <TextInput placeholder='Add Size' style={styles.textInput}
+                    <TextInput placeholder='Name' style={styles.textInput}
 
                         onChangeText={(text) => {
                 
                         }} />
                 </View>
                 <View style={styles.input}>
-                    <TextInput style={styles.textInput} keyboardType="numeric"
-                        defaultValue="0"
+                    <TextInput placeholder='Amount' style={styles.textInput} keyboardType="numeric"
+                        // defaultValue="0"
                     value={value}
                      onChangeText={(text) => {
 
@@ -52,15 +52,15 @@ const Size = ({ title, inputs, setInputs }) => {
             </View>
             <View style={styles.inputContainer}>
                 <View style={styles.input}>
-                    <TextInput placeholder='Add Size' style={styles.textInput}
+                    <TextInput placeholder='Name' style={styles.textInput}
 
                         onChangeText={(text) => {
                 
                         }} />
                 </View>
                 <View style={styles.input}>
-                    <TextInput style={styles.textInput} keyboardType="numeric"
-                        defaultValue="0"
+                    <TextInput placeholder='Amount' style={styles.textInput} keyboardType="numeric"
+                        // defaultValue="0"
                     value={value}
                      onChangeText={(text) => {
 
