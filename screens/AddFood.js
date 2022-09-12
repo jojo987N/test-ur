@@ -4,6 +4,7 @@ import { addProduct } from '../firebase'
 import { useNavigation } from '@react-navigation/native';
 import { CheckBox } from 'react-native-elements'
 import AddInput from '../components/AddInput';
+import { AntDesign } from '@expo/vector-icons';
 
 
 
@@ -56,6 +57,7 @@ export default function AddFood() {
 
         <View style={styles.addons}>
         <Text style={{fontSize: 25, fontWeight: "bold"}}>Addons</Text>
+        <AntDesign name="pluscircle" size={24} color="black" />
         <AddInput />
       {/* <CheckBox
 
@@ -124,7 +126,8 @@ const styles = StyleSheet.create({
 
   addons: {
    marginHorizontal: 20,
-   marginVertical: 20
+   marginVertical: 20,
+   flexDirection: "row"
   },
   inputView: {
     // backgroundColor: "white",
