@@ -41,6 +41,9 @@ export default function SignIn({ navigation, route }) {
             if (snapshot.docs[0]) {
 
               setRestaurantData({ ...snapshot.docs[0].data(), email: user.email })
+              setLoading(false)
+              navigation.navigate('DrawerNavigator')
+
 
             }
 
