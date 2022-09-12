@@ -1,7 +1,7 @@
 import { TextInput, TouchableOpacity, View, StyleSheet, Text} from 'react-native'
 
 const AddInput = () => {
-    let inputs = []
+    let inputs = Array.apply(null, Array(1))
     return (
         <View>
             <TouchableOpacity onPress={() => { }}><Text>Add</Text></TouchableOpacity>
