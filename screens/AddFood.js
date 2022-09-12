@@ -5,6 +5,7 @@ import { useNavigation } from '@react-navigation/native';
 import { CheckBox } from 'react-native-elements'
 import AddInput from '../components/AddInput';
 import { AntDesign } from '@expo/vector-icons';
+import Size from '../components/Size';
 
 
 
