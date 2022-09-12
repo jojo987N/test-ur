@@ -31,7 +31,8 @@ const styles = StyleSheet.create({
         // marginHorizontal: 25,
         borderBottomWidth: 0.7,
         borderBottomColor: "grey",
-        marginVertical: 10
+        marginVertical: 10,
+        flex: 1
        //marginT
     }
 })
