@@ -27,9 +27,10 @@ const AddInput = ({ title, inputs, setInputs}) => {
                 </TouchableOpacity>
             </View>
             {inputs.map((input, index) => {
-              setTimeout(()=> {
+                
+                
                 console.log(inputs)
-              }, 3000)
+              
                
                return  (
                 <View style={styles.inputContainer} key={index}>
@@ -37,6 +38,7 @@ const AddInput = ({ title, inputs, setInputs}) => {
                         <TextInput placeholder='Add Size' style={styles.textInput} 
                         
                         onChangeText={(text) => {
+                            if(text.length > 4 )
                             setInputs([...inputs.slice(0, index),
                                           {
                                           title: text,
