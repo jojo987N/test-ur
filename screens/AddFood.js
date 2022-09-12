@@ -110,7 +110,7 @@ export default function AddFood() {
       }}>
         <Button title='Add' onPress={
           () => {
-           console.log(inputs)
+          //  console.log(inputs)
             // addProduct(name, description, price)
             // .then(productRef => navigation.navigate("Upload", {
             //   product_id: productRef.id
