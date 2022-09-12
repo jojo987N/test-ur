@@ -81,7 +81,8 @@ const styles = StyleSheet.create({
       flex: 1,
       fontSize: 15,
       fontWeight: "bold",
-      textAlign: "center"
+      textAlign: "center",
+      marginRight: 5
     },
     input: {
         backgroundColor: "white",
