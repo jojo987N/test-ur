@@ -34,11 +34,12 @@ const styles = StyleSheet.create({
     container: {
         marginHorizontal: 25,
         marginTop: 10,
-        alignItems: "center"
+        
     },
     header: {
         flexDirection: "row",
-        justifyContent: "space-between"
+        justifyContent: "space-between",
+        alignItems: "center"
     },
     title: {
         fontSize: 25,
