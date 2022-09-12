@@ -95,7 +95,7 @@ export default function AddFood() {
 
 
 
-        <View style={{marginVertical: 30, marginHorizontal: 20, marginTop: 40}}>
+        <View style={{marginVertical: 30, marginHorizontal: 20, marginTop: 20}}>
         <Button title="Pick an image from camera roll" onPress={pickImage} color="#841584"/>
       </View>
 
