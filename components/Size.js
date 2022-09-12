@@ -78,7 +78,7 @@ const styles = StyleSheet.create({
 
     },
     label: {
-      flex: 1,
+    //   flex: 1,
       fontSize: 15,
       fontWeight: "bold",
       textAlign: "center",
