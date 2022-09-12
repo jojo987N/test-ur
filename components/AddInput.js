@@ -32,7 +32,8 @@ const AddInput = ({ title }) => {
 }
 const styles = StyleSheet.create({
     container: {
-        marginHorizontal: 20
+        marginHorizontal: 25,
+        marginTop: 10
     },
     header: {
         flexDirection: "row",
