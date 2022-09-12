@@ -35,7 +35,16 @@ const AddInput = ({ title }) => {
                         <TextInput style={styles.textInput} keyboardType="numeric" 
                         defaultValue="0"
                         // value={value}
-                        // onChangeText={(text) => setValue(text)}
+                         onChangeText={(text) => {
+                            setInputs([...inputs.slice(0, index),
+                                          {
+                                          value: text
+                                        } ,
+                                        ...inputs.slice(index + 1)])
+                                        
+
+                            //  setValue(text)
+                         }}
                         />
                     </View>
                 </View>
