@@ -13,7 +13,7 @@ const Size = ({ title, inputs, setInputs }) => {
             <Text style={styles.title}>{title}</Text>
 
             <View style={styles.inputContainer}>
-                <Text>Small</Text>
+                <Text style={styles.label}>Small</Text>
                 <View style={styles.input}>
                     <TextInput placeholder='Price' style={styles.textInput} keyboardType="numeric"
                         // defaultValue="0"
@@ -26,7 +26,7 @@ const Size = ({ title, inputs, setInputs }) => {
                 </View>
             </View>
             <View style={styles.inputContainer}>
-            <Text>Middle</Text>
+            <Text style={styles.label}>Middle</Text>
                 <View style={styles.input}>
                     <TextInput placeholder='Amount' style={styles.textInput} keyboardType="numeric"
                         // defaultValue="0"
@@ -39,7 +39,7 @@ const Size = ({ title, inputs, setInputs }) => {
                 </View>
             </View>
             <View style={styles.inputContainer}>
-            <Text>Big</Text>
+            <Text style={styles.label}>Big</Text>
                 <View style={styles.input}>
                     <TextInput placeholder='Amount' style={styles.textInput} keyboardType="numeric"
                         // defaultValue="0"
@@ -77,13 +77,16 @@ const styles = StyleSheet.create({
         alignItems: "center"
 
     },
+    label: {
+      flex: 1
+    },
     input: {
         backgroundColor: "white",
         marginHorizontal: 5,
         borderBottomWidth: 0.7,
         borderBottomColor: "grey",
         marginVertical: 10,
-        flex: 1,
+        flex: 3,
         //marginT
     },
     textInput: {
