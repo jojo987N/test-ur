@@ -1,12 +1,15 @@
 import { useState } from 'react'
 import { TextInput, TouchableOpacity, View, StyleSheet, Text} from 'react-native'
 
-const AddInput = () => {
+const AddInput = ({title}) => {
     const [nb, setNb] = useState(1)
     let inputs = Array.apply(null, Array(nb))
     return (
         <View>
+            <View style={styles.header}>
+            <Text>{title}</Text>
             <TouchableOpacity onPress={() => {setNb(nb=>nb+1)}}><Text>Add</Text></TouchableOpacity>
+            </View>
             {inputs.map(input => (
                 <View style={styles.inputContainer}>
                 <View style={styles.input}>
@@ -25,6 +28,9 @@ const AddInput = () => {
     )
 }
 const styles = StyleSheet.create({
+    header: {
+      flexDirection: "row"
+    },
     inputContainer: {
       flexDirection: "row",
       marginHorizontal: 25

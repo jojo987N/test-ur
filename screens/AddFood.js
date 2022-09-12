@@ -59,7 +59,7 @@ export default function AddFood() {
         <Text style={{fontSize: 25, fontWeight: "bold"}}>Addons</Text>
         <AntDesign name="pluscircle" size={24} color="black" />
         </View> */}
-        <AddInput />
+        <AddInput title="Addons"/>
       {/* <CheckBox
 
         title={"Small Coke"}
