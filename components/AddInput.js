@@ -14,6 +14,7 @@ const AddInput = ({ title, inputs, setInputs}) => {
                 <TouchableOpacity onPress={() => { 
                     
                     setInputs(inputs => new Array(inputs.length+1).fill({
+                        title: "",
                         value: "",
                       }))
                     
@@ -29,7 +30,16 @@ const AddInput = ({ title, inputs, setInputs}) => {
                return  (
                 <View style={styles.inputContainer} key={index}>
                     <View style={styles.input}>
-                        <TextInput placeholder='Add Size' style={styles.textInput} />
+                        <TextInput placeholder='Add Size' style={styles.textInput} 
+                        
+                        onChangeText={(text) => {
+                            setInputs([...inputs.slice(0, index),
+                                          {
+                                          title: text,
+                                          ...inputs[index]
+                                        } ,
+                                        ...inputs.slice(index + 1)])
+                         }}/>
                     </View>
                     <View style={styles.input}>
                         <TextInput style={styles.textInput} keyboardType="numeric" 
@@ -38,12 +48,10 @@ const AddInput = ({ title, inputs, setInputs}) => {
                          onChangeText={(text) => {
                             setInputs([...inputs.slice(0, index),
                                           {
-                                          value: text
+                                          value: text,
+                                          ...inputs[index]
                                         } ,
                                         ...inputs.slice(index + 1)])
-                                        
-
-                            //  setValue(text)
                          }}
                         />
                     </View>
