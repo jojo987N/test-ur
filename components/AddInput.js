@@ -38,7 +38,8 @@ const styles = StyleSheet.create({
     textInput: {
         // borderWidth : 1,
         //  width: "90%",
-         padding: 5
+         padding: 5,
+         paddingHorizontal: 5
        },
 })
 export default AddInput
