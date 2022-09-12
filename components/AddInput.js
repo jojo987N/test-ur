@@ -14,7 +14,7 @@ const AddInput = ({ title, inputs, setInputs}) => {
                 <TouchableOpacity onPress={() => { 
                     
                     setInputs(inputs => new Array(inputs.length+1).fill({
-                        title: "",
+                         
                         value: "",
                       }))
                     
@@ -35,7 +35,7 @@ const AddInput = ({ title, inputs, setInputs}) => {
                         onChangeText={(text) => {
                             setInputs([...inputs.slice(0, index),
                                           {
-                                          title: text,
+                                          value: text,
                                         //   value: inputs[index].value
                                         } ,
                                         ...inputs.slice(index + 1)])
