@@ -36,8 +36,9 @@ const AddInput = ({ title }) => {
                     <View style={styles.input}>
                         <TextInput style={styles.textInput} keyboardType="numeric" 
                         defaultValue="0"
-                        value={value}
-                        onChangeText={(text) => setValue(text)}/>
+                        // value={value}
+                        // onChangeText={(text) => setValue(text)}
+                        />
                     </View>
                 </View>
             )
