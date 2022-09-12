@@ -4,17 +4,31 @@ import { TextInput, TouchableOpacity, View, StyleSheet, Text } from 'react-nativ
 
 const AddInput = ({ title }) => {
     const [nb, setNb] = useState(1)
-    let inputs = Array.apply(null, Array(nb))
-    const [value, setValue] = useState()
+    // let inputs = Array.apply(null, Array(nb))
+    // const [value, setValue] = useState()
+    const [inputs, setInputs] = useState([])
     return (
         <View style={styles.container}>
             <View style={styles.header}>
                 <Text style={styles.title}>{title}</Text>
-                <TouchableOpacity onPress={() => { setNb(nb => nb + 1) }}>
+                <TouchableOpacity onPress={() => { 
+                    
+                    setInputs(inputs => new Array(inputs.length+1).fill({
+                        value: "",
+                      }))
+                    
+                    setNb(nb => nb + 1)
+                    
+                    
+                     }}>
                     <AntDesign name="pluscircle" size={24} color="black" />
                 </TouchableOpacity>
             </View>
-            {inputs.map((input, index) => (
+            {inputs.map((input, index) => {
+               setValue({
+
+               })
+               return  (
                 <View style={styles.inputContainer} key={index}>
                     <View style={styles.input}>
                         <TextInput placeholder='Add Size' style={styles.textInput} />
@@ -27,6 +41,7 @@ const AddInput = ({ title }) => {
                     </View>
                 </View>
             )
+            }
             )}
 
 
