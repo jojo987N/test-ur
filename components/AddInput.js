@@ -5,7 +5,7 @@ import { TextInput, TouchableOpacity, View, StyleSheet, Text } from 'react-nativ
 const AddInput = ({ title }) => {
     const [nb, setNb] = useState(1)
     let inputs = Array.apply(null, Array(nb))
-    const [value, setValue] = useState("0")
+    const [value, setValue] = useState()
     return (
         <View style={styles.container}>
             <View style={styles.header}>
@@ -20,7 +20,10 @@ const AddInput = ({ title }) => {
                         <TextInput placeholder='Add Size' style={styles.textInput} />
                     </View>
                     <View style={styles.input}>
-                        <TextInput style={styles.textInput} keyboardType="numeric" defaultValue={value}/>
+                        <TextInput style={styles.textInput} keyboardType="numeric" 
+                        defaultValue="0"
+                        value={value}
+                        onChangeText={(text) => setValue(text)}/>
                     </View>
                 </View>
             )
