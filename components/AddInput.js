@@ -27,7 +27,10 @@ const AddInput = ({ title, inputs, setInputs}) => {
                 </TouchableOpacity>
             </View>
             {inputs.map((input, index) => {
-              console.log(inputs)
+              setTimeout(()=> {
+                console.log(inputs)
+              }, 500)
+               
                return  (
                 <View style={styles.inputContainer} key={index}>
                     <View style={styles.input}>
