@@ -57,7 +57,7 @@ export default function AddFood() {
         <View style={styles.addons}>
         <Text style={{fontSize: 25, fontWeight: "bold"}}>Addons</Text>
         <AddInput />
-      <CheckBox
+      {/* <CheckBox
 
         title={"Small Coke"}
         checked={true}
@@ -89,7 +89,7 @@ export default function AddFood() {
           // setCheckbox(true)
           //setCheckbox1(false)
         }}
-      />
+      /> */}
         </View>
        
 
