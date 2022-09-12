@@ -29,7 +29,7 @@ const AddInput = ({ title, inputs, setInputs}) => {
             {inputs.map((input, index) => {
               setTimeout(()=> {
                 console.log(inputs)
-              }, 500)
+              }, 3000)
                
                return  (
                 <View style={styles.inputContainer} key={index}>
