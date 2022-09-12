@@ -2,7 +2,7 @@ import { useState } from 'react'
 import { TextInput, TouchableOpacity, View, StyleSheet, Text} from 'react-native'
 
 const AddInput = () => {
-    const [nb, setNb] = useState(0)
+    const [nb, setNb] = useState(1)
     let inputs = Array.apply(null, Array(nb))
     return (
         <View>
