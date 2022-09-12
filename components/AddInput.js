@@ -39,7 +39,7 @@ const styles = StyleSheet.create({
         // borderWidth : 1,
         //  width: "90%",
          padding: 5,
-         paddingHorizontal: 5
+         paddingHorizontal: 10
        },
 })
 export default AddInput
