@@ -79,7 +79,7 @@ const styles = StyleSheet.create({
     },
     label: {
       flex: 1,
-      fontSize: 20,
+      fontSize: 15,
       fontWeight: "bold"
     },
     input: {
