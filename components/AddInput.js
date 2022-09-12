@@ -32,7 +32,8 @@ const styles = StyleSheet.create({
         marginHorizontal: 20
     },
     header: {
-      flexDirection: "row"
+      flexDirection: "row",
+      justifyContent: "center"
     },
     inputContainer: {
       flexDirection: "row",
