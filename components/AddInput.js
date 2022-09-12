@@ -33,7 +33,7 @@ const styles = StyleSheet.create({
     },
     header: {
       flexDirection: "row",
-      justifyContent: "center"
+      justifyContent: "space-between"
     },
     inputContainer: {
       flexDirection: "row",
