@@ -58,6 +58,7 @@ export default function AddFood() {
         <View style={styles.addons}>
         <Text style={{fontSize: 25, fontWeight: "bold"}}>Addons</Text>
         <AntDesign name="pluscircle" size={24} color="black" />
+        </View>
         <AddInput />
       {/* <CheckBox
 
@@ -92,7 +93,7 @@ export default function AddFood() {
           //setCheckbox1(false)
         }}
       /> */}
-        </View>
+         
        
 
 
