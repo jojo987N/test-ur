@@ -15,6 +15,7 @@ const AddInput = ({ title, inputs, setInputs}) => {
                     
                     setInputs(inputs => new Array(inputs.length+1).fill({
                          
+                        title: "",
                         value: "",
                       }))
                     
@@ -35,7 +36,7 @@ const AddInput = ({ title, inputs, setInputs}) => {
                         onChangeText={(text) => {
                             setInputs([...inputs.slice(0, index),
                                           {
-                                          value: text,
+                                          title: text,
                                           value: inputs[index].value
                                         } ,
                                         ...inputs.slice(index + 1)])
@@ -48,7 +49,7 @@ const AddInput = ({ title, inputs, setInputs}) => {
                          onChangeText={(text) => {
                             setInputs([...inputs.slice(0, index),
                                           {
-                                        text: inputs[index].text,
+                                        title: inputs[index].text,
                                           value: text,
                                         } ,
                                         ...inputs.slice(index + 1)])
