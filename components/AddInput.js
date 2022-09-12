@@ -26,7 +26,8 @@ const AddInput = () => {
 }
 const styles = StyleSheet.create({
     inputContainer: {
-      flexDirection: "row"
+      flexDirection: "row",
+      marginHorizontal: 25
     },
     input: {
         backgroundColor: "white",
