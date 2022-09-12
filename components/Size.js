@@ -80,7 +80,8 @@ const styles = StyleSheet.create({
     label: {
       flex: 1,
       fontSize: 15,
-      fontWeight: "bold"
+      fontWeight: "bold",
+      alignItems: "center"
     },
     input: {
         backgroundColor: "white",
