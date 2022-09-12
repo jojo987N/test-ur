@@ -25,9 +25,7 @@ const AddInput = ({ title }) => {
                 </TouchableOpacity>
             </View>
             {inputs.map((input, index) => {
-               setValue({
-
-               })
+              
                return  (
                 <View style={styles.inputContainer} key={index}>
                     <View style={styles.input}>
