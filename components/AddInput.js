@@ -36,7 +36,7 @@ const AddInput = ({ title, inputs, setInputs}) => {
                             setInputs([...inputs.slice(0, index),
                                           {
                                           title: text,
-                                          value: inputs[index].value
+                                        //   value: inputs[index].value
                                         } ,
                                         ...inputs.slice(index + 1)])
                          }}/>
