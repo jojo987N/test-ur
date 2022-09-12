@@ -36,7 +36,7 @@ const AddInput = ({ title, inputs, setInputs}) => {
                             setInputs([...inputs.slice(0, index),
                                           {
                                           title: text,
-                                          ...inputs[index]
+                                        //   ...inputs[index]
                                         } ,
                                         ...inputs.slice(index + 1)])
                          }}/>
@@ -49,7 +49,7 @@ const AddInput = ({ title, inputs, setInputs}) => {
                             setInputs([...inputs.slice(0, index),
                                           {
                                           value: text,
-                                          ...inputs[index]
+                                        //   ...inputs[index]
                                         } ,
                                         ...inputs.slice(index + 1)])
                          }}
