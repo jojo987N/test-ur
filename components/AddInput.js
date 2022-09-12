@@ -8,10 +8,10 @@ const AddInput = () => {
             {inputs.map(input => (
                 <View style={styles.inputContainer}>
                 <View style={styles.input}>
-                    <TextInput placeholder='Add Size'/>
+                    <TextInput placeholder='Add Size' style={styles.textInput} />
                 </View>
                 <View style={styles.input}>
-                    <TextInput />
+                    <TextInput  style={styles.textInput} />
                 </View>
                 </View>
             )
@@ -32,8 +32,13 @@ const styles = StyleSheet.create({
         borderBottomWidth: 0.7,
         borderBottomColor: "grey",
         marginVertical: 10,
-        flex: 1
+        flex: 1,
        //marginT
-    }
+    },
+    textInput: {
+        // borderWidth : 1,
+        //  width: "90%",
+         padding: 5
+       },
 })
 export default AddInput
