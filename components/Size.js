@@ -26,13 +26,7 @@ const Size = ({ title, inputs, setInputs }) => {
                 </View>
             </View>
             <View style={styles.inputContainer}>
-                <View style={styles.input}>
-                    <TextInput placeholder='Name' style={styles.textInput}
-
-                        onChangeText={(text) => {
-                
-                        }} />
-                </View>
+            <Text>Middle</Text>
                 <View style={styles.input}>
                     <TextInput placeholder='Amount' style={styles.textInput} keyboardType="numeric"
                         // defaultValue="0"
@@ -45,13 +39,7 @@ const Size = ({ title, inputs, setInputs }) => {
                 </View>
             </View>
             <View style={styles.inputContainer}>
-                <View style={styles.input}>
-                    <TextInput placeholder='Name' style={styles.textInput}
-
-                        onChangeText={(text) => {
-                
-                        }} />
-                </View>
+            <Text>Big</Text>
                 <View style={styles.input}>
                     <TextInput placeholder='Amount' style={styles.textInput} keyboardType="numeric"
                         // defaultValue="0"
