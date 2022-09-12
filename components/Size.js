@@ -5,7 +5,7 @@ import { TextInput, TouchableOpacity, View, StyleSheet, Text } from 'react-nativ
 const Size = ({ title, inputs, setInputs }) => {
     // const [nb, setNb] = useState(1)
     // let inputs = Array.apply(null, Array(nb))
-    // const [value, setValue] = useState()
+     const [value, setValue] = useState()
 
     return (
         <View style={styles.container}>
