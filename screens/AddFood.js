@@ -3,6 +3,7 @@ import React, { useState } from 'react'
 import { addProduct } from '../firebase'
 import { useNavigation } from '@react-navigation/native';
 import { CheckBox } from 'react-native-elements'
+import AddInput from '../components/AddInput';
 
 
 
@@ -55,6 +56,7 @@ export default function AddFood() {
 
         <View style={styles.addons}>
         <Text style={{fontSize: 25, fontWeight: "bold"}}>Addons</Text>
+        <AddInput />
       <CheckBox
 
         title={"Small Coke"}
