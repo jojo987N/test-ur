@@ -19,7 +19,7 @@ const AddInput = ({ title }) => {
                         <TextInput placeholder='Add Size' style={styles.textInput} />
                     </View>
                     <View style={styles.input}>
-                        <TextInput style={styles.textInput} keyboardType="numeric"/>
+                        <TextInput style={styles.textInput} keyboardType="numeric" defaultValue={0}/>
                     </View>
                 </View>
             )
