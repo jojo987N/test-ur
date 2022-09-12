@@ -16,7 +16,7 @@ const AddInput = ({ title, inputs, setInputs}) => {
                     setInputs(inputs => new Array(inputs.length+1).fill({
                          
                         title: "",
-                        value: "",
+                        value: 0,
                       }))
                     
                     // setNb(nb => nb + 1)
