@@ -13,8 +13,8 @@ const AddInput = ({ title }) => {
                     <AntDesign name="pluscircle" size={24} color="black" />
                 </TouchableOpacity>
             </View>
-            {inputs.map(input => (
-                <View style={styles.inputContainer}>
+            {inputs.map((input, index) => (
+                <View style={styles.inputContainer} key={index}>
                     <View style={styles.input}>
                         <TextInput placeholder='Add Size' style={styles.textInput} />
                     </View>
