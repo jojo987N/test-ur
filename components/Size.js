@@ -13,15 +13,9 @@ const Size = ({ title, inputs, setInputs }) => {
             <Text style={styles.title}>{title}</Text>
 
             <View style={styles.inputContainer}>
+                <Text>Small</Text>
                 <View style={styles.input}>
-                    <TextInput placeholder='Name' style={styles.textInput}
-
-                        onChangeText={(text) => {
-                
-                        }} />
-                </View>
-                <View style={styles.input}>
-                    <TextInput placeholder='Amount' style={styles.textInput} keyboardType="numeric"
+                    <TextInput placeholder='Price' style={styles.textInput} keyboardType="numeric"
                         // defaultValue="0"
                     value={value}
                      onChangeText={(text) => {
