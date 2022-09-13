@@ -335,7 +335,7 @@ const a =  {
 updateDoc(docRef, {
   ...a,
   test: {
-    ...test,
+    ...a.test,
     e: "z"
   }
 
