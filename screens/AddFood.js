@@ -136,7 +136,7 @@ export default function AddFood() {
                 dPrice,
                 size,
               }
-            ]))
+            ])).then(()=> navigation.navigate('Foods'))
           //  console.log(inputs)
             // addProduct(name, description, price)
             // .then(productRef => navigation.navigate("Upload", {
