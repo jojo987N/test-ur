@@ -1,5 +1,5 @@
 import { View, Text, TextInput, StyleSheet, Button, Image, ScrollView} from 'react-native'
-import React, { useState } from 'react'
+import React, { useContext, useState } from 'react'
 import { addFood, addProduct } from '../firebase'
 import { useNavigation } from '@react-navigation/native';
 import { CheckBox } from 'react-native-elements'
@@ -7,10 +7,12 @@ import AddInput from '../components/AddInput';
 import { AntDesign } from '@expo/vector-icons';
 import Size from '../components/Size';
 import { openImagePickerAsync } from '../utils';
+import { FoodsContext } from '../context/FoodsContext';
 
 
 
 export default function AddFood() {
+  const {foods, setFoods} = useContext(FoodsContext)
   const [name, setName] = useState("")
   const [description, setDescription] = useState("")
   const [price, setPrice] = useState()
