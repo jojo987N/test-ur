@@ -16,9 +16,9 @@ export default function AddFood() {
   const [price, setPrice] = useState()
   const [dPrice, setDPrice] = useState()
   const [size, setSize] = useState({
-    small: 0,
-    middle: 0,
-    big: 0
+    small: "",
+    middle: "",
+    big: ""
   })
   const navigation = useNavigation()
   const [inputs, setInputs] = useState([])
