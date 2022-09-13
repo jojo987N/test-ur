@@ -1,4 +1,4 @@
-import { View, Text, TextInput, StyleSheet, Button, Image} from 'react-native'
+import { View, Text, TextInput, StyleSheet, Button, Image, ScrollView} from 'react-native'
 import React, { useState } from 'react'
 import { addFood, addProduct } from '../firebase'
 import { useNavigation } from '@react-navigation/native';
@@ -31,7 +31,7 @@ export default function AddFood() {
   }
 
   return (
-    <View style={{marginTop: 20}}>
+    <ScrollView style={{marginTop: 20}}>
       <View style={{ alignItems: "center", 
       // opacity: 0.2
     }}>
@@ -134,7 +134,7 @@ export default function AddFood() {
           }
         } />
       </View>
-    </View>
+    </ScrollView>
   )
 }
 
