@@ -1,6 +1,6 @@
 import {initializeApp} from 'firebase/app'
 import {addDoc, getFirestore, collection, getDocs, doc, deleteDoc, orderBy, query, limit,
-where, onSnapshot, serverTimestamp, updateDoc} from 'firebase/firestore'
+where, onSnapshot, serverTimestamp, updateDoc, setDoc} from 'firebase/firestore'
 import { LogBox } from 'react-native';
 import { getAuth } from 'firebase/auth';
 
@@ -321,7 +321,16 @@ export const addRestaurant = (userCredentials,name,phone, address) => {
   })
 }
 
-getCategories().then(categories => console.log(categories))
+// getCategories().then(categories => console.log(categories))
 
+const docRef = doc(db, "categories", "COtmX3WcfvZ9PExYzXgx");
 
+setDoc(docRef, {
+  test: {
+    a: "ab"
+  }
+})
+.then(docRef => {
+    console.log("Entire Document has been updated successfully");
+})
  
