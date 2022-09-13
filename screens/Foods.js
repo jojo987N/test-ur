@@ -1,11 +1,12 @@
 import { View, Text, ScrollView, TouchableOpacity, StyleSheet, Image} from 'react-native'
 import React, {useContext, useEffect, useState} from 'react'
-import {getFoods} from '../firebase'
+import {foodsCol, getFoods} from '../firebase'
 import { AntDesign, Ionicons} from "@expo/vector-icons";
 import { useNavigation } from '@react-navigation/native';
 import MenuNavigation from '../components/MenuNavigation';
 import Loading from '../components/Loading';
 import { FoodsContext } from '../context/FoodsContext';
+import { onSnapshot } from 'firebase/firestore';
 
 
 export default function Foods() {
@@ -15,6 +16,21 @@ export default function Foods() {
     const navigation = useNavigation()
 
     useEffect(()=>{
+
+      const unsuscribe = onSnapshot(foodsCol, (snapshot)=>{
+        let foods=[]
+
+        snapshot.docs.forEach((doc)=>{
+           
+        foods.push({...doc.data(), id: doc.id})
+  
+        })
+         // console.log(orders)
+         setFoods(foods)
+      })
+
+
+
       getFoods().then((foods)=>setFoods(foods)) 
       }, [])
   return (
