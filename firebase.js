@@ -325,12 +325,14 @@ export const addRestaurant = (userCredentials,name,phone, address) => {
 
 const docRef = doc(db, "categories", "COtmX3WcfvZ9PExYzXgx");
 
-updateDoc(docRef, {
+const a =  {
   test: {
-    // d: "aFG",
+    d: "aFG",
     e:"i"
   }
-})
+}
+
+updateDoc(docRef, a)
 .then(docRef => {
     console.log("Entire Document has been updated successfully");
 })
