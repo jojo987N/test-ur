@@ -321,7 +321,7 @@ export const addRestaurant = (userCredentials,name,phone, address) => {
   })
 }
 
-console.log(db.collection('categories'))
+getCategories().then(categories => console.log(categories))
 
 
  
