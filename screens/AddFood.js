@@ -29,7 +29,7 @@ export default function AddFood() {
       <View style={{ alignItems: "center", 
       // opacity: 0.2
     }}>
-        <Image source={image?image:require('../assets/images/dishes.png')} style={{width: 100, height: 100}} />
+        <Image source={image?{uri: image}:require('../assets/images/dishes.png')} style={{width: 100, height: 100}} />
       </View>
       <View style={styles.inputView}>
         <TextInput
