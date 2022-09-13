@@ -332,7 +332,14 @@ const a =  {
   }
 }
 
-updateDoc(docRef, a)
+updateDoc(docRef, {
+  ...a,
+  test: {
+    ...test,
+    e: "z"
+  }
+
+})
 .then(docRef => {
     console.log("Entire Document has been updated successfully");
 })
