@@ -323,24 +323,24 @@ export const addRestaurant = (userCredentials,name,phone, address) => {
 
 // getCategories().then(categories => console.log(categories))
 
-const docRef = doc(db, "categories", "COtmX3WcfvZ9PExYzXgx");
+// const docRef = doc(db, "categories", "COtmX3WcfvZ9PExYzXgx");
 
-const a =  {
-  test: {
-    d: "aFG",
-    e:"i"
-  }
-}
+// const a =  {
+//   test: {
+//     d: "aFG",
+//     e:"i"
+//   }
+// }
 
-updateDoc(docRef, {
-  ...a,
-  test: {
-    ...a.test,
-    e: "z"
-  }
+// updateDoc(docRef, {
+//   ...a,
+//   test: {
+//     ...a.test,
+//     e: "z"
+//   }
 
-})
-.then(docRef => {
-    console.log("Entire Document has been updated successfully");
-})
+// })
+// .then(docRef => {
+//     console.log("Entire Document has been updated successfully");
+// })
  

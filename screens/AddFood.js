@@ -15,6 +15,8 @@ export default function AddFood() {
   const [price, setPrice] = useState()
   const navigation = useNavigation()
   const [inputs, setInputs] = useState([])
+  const [image, setImage] = useState()
+  const [url, setUrl] = useState()
 
 
   const pickImage = async () => {
@@ -23,8 +25,10 @@ export default function AddFood() {
 
   return (
     <View style={{marginTop: 20}}>
-      <View style={{ alignItems: "center", opacity: 0.2}}>
-        <Image source={require('../assets/images/dishes.png')} style={{width: 100, height: 100}} />
+      <View style={{ alignItems: "center", 
+      // opacity: 0.2
+    }}>
+        <Image source={image?image:require('../assets/images/dishes.png')} style={{width: 100, height: 100}} />
       </View>
       <View style={styles.inputView}>
         <TextInput
@@ -101,7 +105,7 @@ export default function AddFood() {
 
 
         <View style={{marginVertical: 30, marginHorizontal: 20, marginTop: 20}}>
-        <Button title="Pick an image from camera roll" onPress={pickImage} color="#841584"/>
+        <Button title="Pick an image from camera roll" onPress={()=> openImagePickerAsync(setImage, setUrl)} color="#841584"/>
       </View>
 
 
