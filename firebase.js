@@ -82,7 +82,7 @@ export const foodsCol = collection(db, 'foods')
 
   const foods=[]
   
-  const q= query(productsCol, orderBy('createdAt', 'desc'))
+  const q= query(foodsCol, orderBy('createdAt', 'desc'))
 
   return getDocs(q).then(snapshot=>{
 

@@ -1,15 +1,17 @@
 import { View, Text, ScrollView, TouchableOpacity, StyleSheet, Image} from 'react-native'
-import React, {useEffect, useState} from 'react'
+import React, {useContext, useEffect, useState} from 'react'
 import {getFoods} from '../firebase'
 import { AntDesign, Ionicons} from "@expo/vector-icons";
 import { useNavigation } from '@react-navigation/native';
 import MenuNavigation from '../components/MenuNavigation';
 import Loading from '../components/Loading';
+import { FoodsContext } from '../context/FoodsContext';
 
 
 export default function Foods() {
 
-    const [foods, setFoods] = useState()
+    // const [foods, setFoods] = useState()
+    const {foods, setFoods} = useContext(FoodsContext)
     const navigation = useNavigation()
 
     useEffect(()=>{
