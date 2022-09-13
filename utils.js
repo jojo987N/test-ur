@@ -28,7 +28,7 @@ import {getDownloadURL, getStorage, ref, uploadBytes} from 'firebase/storage'
   
     }
 
-    export const  openImagePickerAsync = async (setImage)=>{
+    export const  openImagePickerAsync = async (setImage, setUrl)=>{
 
         let permissionResult = await ImagePicker.requestMediaLibraryPermissionsAsync();
     
@@ -44,7 +44,7 @@ import {getDownloadURL, getStorage, ref, uploadBytes} from 'firebase/storage'
        //getBlobFromUri(pickerResult.uri)
       // blobFromUrl(pickerResult.uri)
     
-      uploadImage(pickerResult.uri)
+      uploadImage(pickerResult.uri, setUrl)
     
       //  setImage(pickerResult.uri)
     
