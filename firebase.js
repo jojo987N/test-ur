@@ -321,5 +321,7 @@ export const addRestaurant = (userCredentials,name,phone, address) => {
   })
 }
 
+console.log("bonjour")
+
 
  
