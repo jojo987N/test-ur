@@ -35,7 +35,7 @@ export default function AddFood() {
       <View style={{ alignItems: "center", 
       // opacity: 0.2
     }}>
-        <Image source={image?{uri: image}:require('../assets/images/dishes.png')} style={{width: 100, height: 100}} />
+        <Image source={image?{uri: image}:require('../assets/images/dishes.png')} style={styles.image} />
       </View>
       <View style={styles.inputView}>
         <TextInput
@@ -139,7 +139,12 @@ export default function AddFood() {
 }
 
 const styles = StyleSheet.create({
-
+  image: {
+    width: 100, 
+    height: 100,
+    overflow: 'hidden',
+    borderRadius: 100 / 2,
+  },
   addons: {
    marginHorizontal: 20,
    marginVertical: 20,
