@@ -325,9 +325,9 @@ export const addRestaurant = (userCredentials,name,phone, address) => {
 
 const docRef = doc(db, "categories", "COtmX3WcfvZ9PExYzXgx");
 
-setDoc(docRef, {
+updateDoc(docRef, {
   test: {
-    c: "aF",
+    c: "aFG",
 
   }
 })
