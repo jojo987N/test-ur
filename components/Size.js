@@ -2,10 +2,10 @@ import { AntDesign } from '@expo/vector-icons'
 import { useState } from 'react'
 import { TextInput, TouchableOpacity, View, StyleSheet, Text } from 'react-native'
 
-const Size = ({ title, inputs, setInputs }) => {
+const Size = ({ title, size, setSize }) => {
     // const [nb, setNb] = useState(1)
     // let inputs = Array.apply(null, Array(nb))
-     const [value, setValue] = useState()
+    //  const [value, setValue] = useState()
 
     return (
         <View style={styles.container}>
@@ -17,10 +17,12 @@ const Size = ({ title, inputs, setInputs }) => {
                 <View style={styles.input}>
                     <TextInput placeholder='Price' style={styles.textInput} keyboardType="numeric"
                         // defaultValue="0"
-                    value={value}
+                    value={size.small}
                      onChangeText={(text) => {
-
-                   
+                       setSize({
+                           ...size,
+                           small: text
+                       })
                       }}
                     />
                 </View>
@@ -30,9 +32,12 @@ const Size = ({ title, inputs, setInputs }) => {
                 <View style={styles.input}>
                     <TextInput placeholder='Amount' style={styles.textInput} keyboardType="numeric"
                         // defaultValue="0"
-                    value={value}
+                    value={size.middle}
                      onChangeText={(text) => {
-
+                        setSize({
+                            ...size,
+                            middle: text
+                        })
                    
                       }}
                     />
@@ -43,9 +48,12 @@ const Size = ({ title, inputs, setInputs }) => {
                 <View style={styles.input}>
                     <TextInput placeholder='Amount' style={styles.textInput} keyboardType="numeric"
                         // defaultValue="0"
-                    value={value}
+                    value={size.big}
                      onChangeText={(text) => {
-
+                        setSize({
+                            ...size,
+                            big: text
+                        })
                    
                       }}
                     />

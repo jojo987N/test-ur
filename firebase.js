@@ -76,6 +76,8 @@ LogBox.ignoreLogs(['AsyncStorage has been extracted from react-native core'])
 
 export const productsCol = collection(db, 'products')
 
+export const foodsCol = collection(db, 'foods')
+
  export const getFoods = ()=>{
 
   const foods=[]
@@ -185,6 +187,19 @@ export const addCategory = (name, description, image, restaurantId) => {
     name,
     description,
     image,
+    createdAt: serverTimestamp()      
+  }) 
+}
+
+export const addFood = (name, description, url, price, dPrice, size) => {
+
+  return addDoc(foodsCol, {
+    name,
+    description,
+    url,
+    price,
+    dPrice,
+    size,
     createdAt: serverTimestamp()      
   }) 
 }

@@ -1,6 +1,6 @@
 import { View, Text, TextInput, StyleSheet, Button, Image} from 'react-native'
 import React, { useState } from 'react'
-import { addProduct } from '../firebase'
+import { addFood, addProduct } from '../firebase'
 import { useNavigation } from '@react-navigation/native';
 import { CheckBox } from 'react-native-elements'
 import AddInput from '../components/AddInput';
@@ -14,6 +14,12 @@ export default function AddFood() {
   const [name, setName] = useState("")
   const [description, setDescription] = useState("")
   const [price, setPrice] = useState()
+  const [dPrice, setDPrice] = useState()
+  const [size, setSize] = useState({
+    small: 0,
+    middle: 0,
+    big: 0
+  })
   const navigation = useNavigation()
   const [inputs, setInputs] = useState([])
   const [image, setImage] = useState()
@@ -57,8 +63,8 @@ export default function AddFood() {
           <TextInput
             placeholder='Discounted Price'
             style={styles.inputText}
-            value={price}
-            onChangeText={(text) => setPrice(text)} />
+            value={dPrice}
+            onChangeText={(text) => setDPrice(text)} />
         </View>
       </View>
 
@@ -66,7 +72,7 @@ export default function AddFood() {
         <Text style={{fontSize: 25, fontWeight: "bold"}}>Addons</Text>
         <AntDesign name="pluscircle" size={24} color="black" />
         </View> */}
-        <Size title="Size" inputs={inputs} setInputs={setInputs}/>
+        <Size title="Size" inputs={inputs} setInputs={setInputs} size={size} setSize={setSize}/>
       {/* <CheckBox
 
         title={"Small Coke"}
@@ -116,6 +122,8 @@ export default function AddFood() {
       }}>
         <Button title='Add' onPress={
           () => {
+
+            addFood(name, description, url, price, dPrice, size)
           //  console.log(inputs)
             // addProduct(name, description, price)
             // .then(productRef => navigation.navigate("Upload", {
