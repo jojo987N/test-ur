@@ -196,7 +196,7 @@ export const addFood = (name, description, url, price, dPrice, size) => {
   return addDoc(foodsCol, {
     name,
     description,
-    url,
+    image: url,
     price,
     dPrice,
     size,

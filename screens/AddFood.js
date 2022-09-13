@@ -124,6 +124,17 @@ export default function AddFood() {
           () => {
 
             addFood(name, description, url, price, dPrice, size)
+            .then(()=> setFoods([
+              ...foods,
+              {
+                name,
+                description,
+                image: url,
+                price,
+                dPrice,
+                size,
+              }
+            ]))
           //  console.log(inputs)
             // addProduct(name, description, price)
             // .then(productRef => navigation.navigate("Upload", {
