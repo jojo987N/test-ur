@@ -327,7 +327,8 @@ const docRef = doc(db, "categories", "COtmX3WcfvZ9PExYzXgx");
 
 setDoc(docRef, {
   test: {
-    a: "ab"
+    c: "ab",
+
   }
 })
 .then(docRef => {
