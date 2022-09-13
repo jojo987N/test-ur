@@ -327,7 +327,7 @@ const docRef = doc(db, "categories", "COtmX3WcfvZ9PExYzXgx");
 
 updateDoc(docRef, {
   test: {
-    c: "aFG",
+    d: "aFG",
 
   }
 })
