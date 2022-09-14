@@ -128,7 +128,7 @@ export default function AddFood() {
             addFood(name, description, url, price, dPrice, size)
             .then(()=> setFoods([
               ...foods,
-              {
+              { 
                 name,
                 description,
                 image: url,
