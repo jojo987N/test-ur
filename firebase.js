@@ -7,7 +7,7 @@ import { getAuth } from 'firebase/auth';
 LogBox.ignoreLogs(['Setting a timer'])
 LogBox.ignoreLogs(['AsyncStorage has been extracted from react-native core'])
 
-
+ 
  const firebaseConfig = {
 
     // apiKey: "AIzaSyBKG5-vG_pBdRdKHX30UYUF9_F7SOt8Co4",
