@@ -124,7 +124,7 @@ export default function AddFood() {
       }}>
         <Button title='Add' onPress={
           () => {
-
+            if(url)
             addFood(name, description, url, price, dPrice, size)
             .then(()=> setFoods([
               ...foods,
