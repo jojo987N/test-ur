@@ -198,7 +198,7 @@ export const addFood = (name, description, url, price, dPrice, size) => {
     description,
     image: url,
     price,
-    dPrice,
+    // dPrice,
     size,
     createdAt: serverTimestamp()      
   }) 
