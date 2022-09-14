@@ -133,7 +133,7 @@ export default function AddFood() {
                 description,
                 image: url,
                 price,
-                dPrice,
+                // dPrice,
                 size,
               }
             ])).then(()=> navigation.navigate('Foods'))
