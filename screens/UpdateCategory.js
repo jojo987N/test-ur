@@ -5,7 +5,7 @@ export default function UpdateCategory() {
   return (
     <View>
         <View style={{
-            //backgroundColor: "grey",
+            
             marginHorizontal: 20,
             borderRadius: 10,
             borderColor: "grey",
@@ -16,7 +16,7 @@ export default function UpdateCategory() {
            placeholder="Restaurant Name"
            style={{
                width: "90%",
-               //borderWidth: 0.3,
+               
                padding: 10,
                marginLeft: 5,
                }}/>

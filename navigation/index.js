@@ -15,12 +15,9 @@ import SignUp from '../screens/authScreens/SignUp';
 import { CategoriesContextProvider } from '../context/CategoriesContext';
 import { FoodsContextProvider } from '../context/FoodsContext';
 
-
 export default function RootNavigation() {
-
     const Stack = createStackNavigator();
     const [restaurantData, setRestaurantData] = useState()
-
   return (
     <NavigationContainer>
       <RestaurantContext.Provider value={{restaurantData, setRestaurantData}}> 
@@ -28,25 +25,16 @@ export default function RootNavigation() {
           <FoodsContextProvider> 
         <Stack.Navigator
          screenOptions={{headerShown: false }}>
-        
-         
-        {/* <Stack.Screen name="Home" component={Home}/> */}
-        {/* <Stack.Screen name="UpdateCategory" component={UpdateCategory}/> */}
         <Stack.Screen name="SignIn" component={SignIn}/>
         <Stack.Screen name="SignUp" component={SignUp}/>
         <Stack.Screen name="DrawerNavigator" component={DrawerNavigator}/>
-        {/* <Stack.Screen name="CategoriesNavigator" component={CategoriesNavigator}/> */}
         <Stack.Screen name="Upload" component={Upload}/>
         <Stack.Screen name="OrderInProgressDetail" component={OrderInProgressDetail}/>
         <Stack.Screen name="OrderDetails" component={OrderDetails}/>
-
-         
-
         </Stack.Navigator>
         </FoodsContextProvider>
         </CategoriesContextProvider>
         </RestaurantContext.Provider>
     </NavigationContainer>
-     
   )
 }

@@ -13,10 +13,6 @@
        "bundleIdentifier": "com.restaurantapp.restaurantapp",
        "buildNumber": "1.0.0"
      },
-     "ios": {
-        "bundleIdentifier": "com.restaurantapp.restaurantapp",
-        "buildNumber": "1"
-     },
      "android": {
        "permissions":[
         "ACCESS_COARSE_LOCATION",

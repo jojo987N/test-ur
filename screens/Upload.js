@@ -7,48 +7,26 @@ import { GestureHandlerRootView } from "react-native-gesture-handler";
 import * as ImagePicker from "expo-image-picker"
 import * as Permissions from 'expo-permissions'
 import {Camera} from "expo-camera"
-//import storage from '@react-native-firebase/storage'
-//import {} from 'firebase/app'
 import { updateProduct } from "../firebase"
-//import {firebaseConfig} from './firebase'
 import {getDownloadURL, getStorage, ref, uploadBytes} from 'firebase/storage'
-
-
-//initializeApp(firebaseConfig);
 
 export default function Upload({route}) {
 
     const {product_id} = route.params
-
     const uploadImage = async (uri)=>{
     const response = await fetch(uri)
-    
     const blob = await response.blob()
-
     const storage = getStorage();
-
     const storageRef = ref(storage, 'restaurant/bonmange');
+
     getDownloadURL(storageRef) 
     .then(url=> updateProduct(product_id,url))
-
-    // uploadBytes(storageRef, blob).then((snapshot)=>{
-    //   console.log('Uploaded')
-    // })
-
   }
-
   const blobFromUrl = async (uri)=>{
    const response = await fetch(uri)
-   //.then(r => r.blob())
    const blob = await response.blob()
-
-  // console.log(blob)
- //const url = window.URL.createObjectURL(new Blob([blob]))
- //console.log(url)
   }
-
   const getBlobFromUri = (uri)=>{
-
     const xhr = new XMLHttpRequest()
     xhr.onreadystatechange = ()=>{
       console.log(xhr.response)
@@ -57,23 +35,12 @@ export default function Upload({route}) {
     xhr.open("GET", uri, true)
     xhr.send()
   }
-
-  //const reference = storage().ref('')
-
   const [image, setImage] = useState(null) 
-
-
   const getPermissionAsync = async ()=>{
-    
-    //const {status} = await Permissions.askAsync(Permissions.CAMERA_ROLL)
     const {status} = await Camera.requestCameraPermissionsAsync();
   }
-
-
   let openImagePickerAsync = async ()=>{
-
     let permissionResult = await ImagePicker.requestMediaLibraryPermissionsAsync();
-
     if(permissionResult.granted === false){
     alert("Permission to acces camera roll is required")
     return;
@@ -81,18 +48,10 @@ export default function Upload({route}) {
     let pickerResult = await ImagePicker.launchImageLibraryAsync()
    console.log(pickerResult)
    if(pickerResult.cancelled === true) return;
-
-   //getBlobFromUri(pickerResult.uri)
-  // blobFromUrl(pickerResult.uri)
-
   uploadImage(pickerResult.uri)
-
    setImage(pickerResult.uri)
-
   }
-
   const pickImage = async () =>{
-
     let result = await ImagePicker.launchImageLibraryAsync({
       mediaTypes: ImagePicker.MediaTypeOptions.All,
       allowsEditing: true,
@@ -101,17 +60,13 @@ export default function Upload({route}) {
     });
     console.log(result)
   }
-
   const renderContent = ()=>(
     <View style={{
-      
       backgroundColor: "white",
       borderTopLeftRadius: 20,
       borderTopRightRadius: 20,
       elevation: 5,
-       
     }}>
-         
         <View style={{
         marginTop: 30
       }}> 
@@ -121,11 +76,8 @@ export default function Upload({route}) {
           fontWeight: "bold"
         }}>Upload Photo</Text>
       </View>
-       
        <TouchableOpacity  onPress={
-        //()=>bs.current.snapTo(0)
         ()=>openImagePickerAsync()
-       
       }> 
       <View style={{
         marginTop: 30,
@@ -171,15 +123,11 @@ export default function Upload({route}) {
           color: "white",
         }}>Cancel</Text>
       </View>
-      
     </View>
-    
   )
-  
    const bs = useRef()
   return (
     <GestureHandlerRootView style={{
-     // paddingTop: Platform.OS === "android" ? StatusBar.currentHeight : 0,
       backgroundColor: "#eee",
       flex: 1,
       justifyContent: "center",
@@ -189,26 +137,10 @@ export default function Upload({route}) {
       ref={bs}
       snapPoints={[450, 300, 0]}
       renderContent={renderContent}
-      //borderRadius={10}
-      
-       
-        
             />
-       
       <Text>Upload Image</Text>
       <View style={{
-       // backgroundColor: "#cccccc",
-        //width: 100,
-        //marginTop: 10,
-        //borderRadius: 10
-        
       }}>
-        {/* <Text style={{
-          padding: 8,
-          textAlign: "center",
-          fontWeight: "bold"
-        }}>Post</Text> */}
-
         {image?(<Image source={{uri: image}} 
         style={{
           width: 400,
@@ -216,20 +148,14 @@ export default function Upload({route}) {
           alignSelf: "flex-start",
           resizeMode: "contain"
         }}/>):(<></>)}
-
-
       </View>
       <Pressable style={{marginTop: 10}}
       onPress={
         ()=>bs.current.snapTo(0)
-        //openImagePickerAsync
-       
       }
       >
            <AntDesign name="pluscircle" size={24} color="black" />
         </Pressable>
-
     </GestureHandlerRootView>
-      
   );
 }

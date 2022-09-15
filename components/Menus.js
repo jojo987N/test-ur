@@ -5,10 +5,6 @@ import "intl"
 import "intl/locale-data/jsonp/en"
 import { language, currency } from '../global';
 
-
-
-
-
 export default function Menus({order}) {
   return (
     <View style={styles.container}>
@@ -25,7 +21,6 @@ export default function Menus({order}) {
                                 style: "currency",
                                 currency: currency
                             })}</Text>
-        
          </View>)}
     </View>
      <View style={styles.total}>
@@ -38,46 +33,36 @@ export default function Menus({order}) {
  </View>
   )
 }
-
 const styles = StyleSheet.create({
-
   container: {
-
-   // alignItems: "center",
-  // marginLeft: 10
+   
+  
   marginHorizontal: 20,
-
   },
   itemsContainer:{
     marginBottom: 10
   },
   items: {
-
     flexDirection: "row",
     alignItems: "center",
-    //marginTop: 20,
-    //marginVertical: 30,
+    
+    
     borderBottomWidth: 2,
     paddingVertical: 30,
     borderBottomColor: "#e6e6e6"
-     
-    
-
   },
   item_name: {
-    // flex: 1,
-    // borderWidth: 1
+    
+    
     marginRight: 10,
     fontWeight: "bold",
     color: "grey"
   },
   item_quantity: {
-
   },
   item_price: {
     fontWeight: "bold",
     color: "grey"
-
   },
   items_name_quantity: {
     flex: 1, 
@@ -85,9 +70,8 @@ const styles = StyleSheet.create({
     alignItems: "center"
   },
   total: {
-    //borderTopWidth: 0.3,
+    
     flexDirection: "row"
-     
   },
   totalText: {
     paddingTop: 10,
@@ -98,5 +82,4 @@ const styles = StyleSheet.create({
     paddingTop: 10,
     fontWeight: "bold"
   }
-   
 })

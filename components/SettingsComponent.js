@@ -9,23 +9,12 @@ import { ScrollView } from 'react-native-gesture-handler'
 import SearchBar from './SearchBar'
 
 export default function SettingsComponent({ navigation, bs }) {
-
   const { restaurantData, setRestaurantData } = useContext(RestaurantContext)
-
-  //console.log(restaurantData)
-
   const [email, setEmail] = useState(restaurantData.email)
   const [name, setName] = useState(restaurantData.name)
   const [phone, setPhone] = useState(restaurantData.phone)
   const [address, setAddress] = useState(restaurantData.address)
   const [city, setCity] = useState(restaurantData.city)
-
-
-  // const [image, setImage] = useState(restaurantData.image_url)
-  // const [password, setPassword] = useState('')
-
-
-
   return (
     <View style={{
       paddingTop: Platform.OS === "android" ? StatusBar.currentHeight : 0,
@@ -38,13 +27,10 @@ export default function SettingsComponent({ navigation, bs }) {
       }}>
         <Pressable onPress={
           () => {
-
             bs.current.snapTo(0)
           }
         }>
           <Image
-            //  source={{uri: restaurantData.image_url}} 
-            //  source={{uri: image}}
             source={{ uri: restaurantData.image }}
             style={{
               width: 100,
@@ -53,26 +39,19 @@ export default function SettingsComponent({ navigation, bs }) {
               borderRadius: 100 / 2,
             }}
           />
-
         </Pressable>
-
-
-
         <Text style={{
           fontSize: 25, fontWeight: "bold", color: "#3d5c5c",
           letterSpacing: 5
         }}>Upload Image</Text>
-
       </View>
       <View style={{
         marginTop: 40, flex: 1
       }}>
-
         <View style={{ marginHorizontal: 25 }}>
           <SearchBar style={{ backgroundColor: "white", borderBottomColor: "grey", borderBottomWidth: 0.3 }}
             setAddress={setAddress} setCity={setCity}/>
         </View>
-
         <ScrollView>
           <View style={styles.textInputContainer}>
             <MaterialIcons name="person" size={20} color="#3d5c5c" style={{
@@ -83,9 +62,7 @@ export default function SettingsComponent({ navigation, bs }) {
               value={email}
               onChangeText={(text) => setEmail(text)}
               style={styles.textInput} />
-
           </View>
-
           <View style={styles.textInputContainer}>
             <MaterialIcons name="person" size={20} color="#3d5c5c" style={{
               marginLeft: 6,
@@ -95,13 +72,7 @@ export default function SettingsComponent({ navigation, bs }) {
               value={name}
               onChangeText={(text) => setName(text)}
               style={styles.textInput} />
-
           </View>
-
-
-
-
-
           <View style={styles.textInputContainer}>
             <MaterialIcons name="person" size={20} color="#3d5c5c" style={{
               marginLeft: 6,
@@ -111,80 +82,29 @@ export default function SettingsComponent({ navigation, bs }) {
               value={phone}
               onChangeText={(text) => setPhone(text)}
               style={styles.textInput} />
-
           </View>
-
-          {/* <View style={styles.textInputContainer}>
-         <Entypo name="address" size={20} color="#3d5c5c" style={{
-           marginLeft: 6,
-         }}/>
-          <TextInput 
-          placeholder='Address' 
-          value={address}
-          onChangeText={(text)=>setAddress(text)}
-          style={styles.textInput}/>
-           
-         </View> */}
-
-          {/* <View style={styles.textInputContainer}>
-            <FontAwesome5 name="city" size={20} color="#3d5c5c" style={{
-              marginLeft: 6,
-            }} />
-            <TextInput
-              placeholder='City'
-              value={city}
-              onChangeText={(text) => setCity(text)}
-              style={styles.textInput} />
-
-          </View> */}
-
-
-
-          {/* <View style={styles.textInputContainer}>
-         <MaterialIcons name="person" size={20} color="#3d5c5c" style={{
-           marginLeft: 6,
-         }}/>
-          <TextInput 
-          placeholder='Email' 
-          value={carNumber}
-          onChangeText={(text)=>setEmail(text)}
-          style={styles.textInput}/>
-           
-         </View> */}
-
           <TouchableOpacity onPress={() => {
             updateRestaurantInfos(restaurantData, email, name, phone, address, city, setRestaurantData)
-            
           }}>
             <View style={styles.button}>
               <Text style={styles.buttonText}>Update</Text>
             </View>
           </TouchableOpacity>
-
         </ScrollView>
       </View>
-
     </View>
-
-
   )
 }
-
 const styles = StyleSheet.create({
   textInputContainer: {
     flexDirection: "row",
-
     backgroundColor: "white",
     marginHorizontal: 25,
-
     borderRadius: 5,
     marginTop: 20,
     alignItems: "center"
-
-
   },
   textInput: {
-
     width: "90%",
     padding: 10
   },

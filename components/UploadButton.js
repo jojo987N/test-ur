@@ -35,7 +35,7 @@ export default function UploadButton() {
       )
        
   return (
-      <View style={{//flex: 1,
+      <View style={{
         justifyContent: "center", borderWidth: 1}}>
 
 <View >

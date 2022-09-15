@@ -14,7 +14,6 @@ export default function ProgressSteps({route}) {
           </View>
          </View>
          <View style={{...styles.col, }}>
-             {/* <Text>2</Text> */}
 
              <OrderCountDown remainingTime={order.remainingTime} style={{backgroundColor: "white", height:49, color:"black"}}/>
         </View>
@@ -50,9 +49,9 @@ const styles = StyleSheet.create({
          
     },
     container2: {
-       // position: "absolute",
-        //flexDirection: "row",
-       // borderBottomWidth: 0.5
+       
+        
+       
     },
     container3: {
         flexDirection: "row"
