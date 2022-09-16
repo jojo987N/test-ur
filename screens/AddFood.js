@@ -27,8 +27,7 @@ export default function AddFood() {
   const [inputs, setInputs] = useState([])
   const [image, setImage] = useState()
   const [url, setUrl] = useState()
-  const countries = ["Egypt", "Canada", "Australia", "Ireland"]
-
+  const [category, setCategory] = useState()
   useEffect(()=>{
     getCategories().then((categories)=>{
       setCategories(categories)
@@ -77,7 +76,7 @@ export default function AddFood() {
       {categories?<SelectDropdown
         data={categories.filter(category => category.type).map(category => category.name)}
         onSelect={(selectedItem, index) => {
-          console.log(selectedItem, index)
+          setCategory(selectedItem)
         }}
         buttonTextAfterSelection={(selectedItem, index) => {
           // text represented after item is selected
@@ -104,7 +103,7 @@ export default function AddFood() {
         <Button title='Add' onPress={
           () => {
             if (url)
-              addFood(name, description, url, price, dPrice, size)
+              addFood(name, description, url, price, dPrice, size, category)
                 .then(() => setFoods([
                   ...foods,
                   {
@@ -113,6 +112,7 @@ export default function AddFood() {
                     image: url,
                     price,
                     size,
+                    category
                   }
                 ])).then(() => navigation.navigate('Foods'))
           }
