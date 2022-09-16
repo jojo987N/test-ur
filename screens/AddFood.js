@@ -73,6 +73,7 @@ export default function AddFood() {
             onChangeText={(text) => setDPrice(text)} />
         </View>
       </View>
+
       <View style={styles.inputView}> 
       <SelectDropdown
         data={categories}
@@ -85,6 +86,8 @@ export default function AddFood() {
           return selectedItem
         }}
         rowTextForSelection={(item, index) => {
+
+          console.log(item)
           // text represented for each item in dropdown
           // if data array is an array of objects then return item.property to represent item in dropdown
           return item
