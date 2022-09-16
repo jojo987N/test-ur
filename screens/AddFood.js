@@ -75,7 +75,7 @@ export default function AddFood() {
 
       <View style={styles.inputView}> 
       <SelectDropdown
-        data={countries}
+        data={categories.filter(category => category.type).map(category => category.type)}
         onSelect={(selectedItem, index) => {
           console.log(selectedItem, index)
         }}
