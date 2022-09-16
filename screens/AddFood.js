@@ -27,8 +27,7 @@ export default function AddFood() {
   const [inputs, setInputs] = useState([])
   const [image, setImage] = useState()
   const [url, setUrl] = useState()
-  const pickImage = async () => {
-  }
+  const countries = ["Egypt", "Canada", "Australia", "Ireland"]
 
   useEffect(()=>{
     getCategories().then((categories)=>{
@@ -76,7 +75,7 @@ export default function AddFood() {
 
       <View style={styles.inputView}> 
       <SelectDropdown
-        data={categories}
+        data={countries}
         onSelect={(selectedItem, index) => {
           console.log(selectedItem, index)
         }}
