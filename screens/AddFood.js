@@ -89,6 +89,8 @@ export default function AddFood() {
           // if data array is an array of objects then return item.property to represent item in dropdown
           return item
         }}
+        defaultButtonText="Select Category"
+
       />
       </View>
 
