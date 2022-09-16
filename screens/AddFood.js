@@ -73,7 +73,7 @@ export default function AddFood() {
             onChangeText={(text) => setDPrice(text)} />
         </View>
       </View>
-
+      <View style={styles.inputView}> 
       <SelectDropdown
         data={categories}
         onSelect={(selectedItem, index) => {
@@ -90,6 +90,7 @@ export default function AddFood() {
           return item
         }}
       />
+      </View>
 
       <Size title="Size" inputs={inputs} setInputs={setInputs} size={size} setSize={setSize} />
       <View style={{ marginVertical: 30, marginHorizontal: 20, marginTop: 20 }}>
