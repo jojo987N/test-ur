@@ -1,5 +1,5 @@
 import { View, Text, TextInput, StyleSheet, Button, Image, ScrollView } from 'react-native'
-import React, { useContext, useState } from 'react'
+import React, { useContext, useEffect, useState } from 'react'
 import { addFood, addProduct, getCategories } from '../firebase'
 import { useNavigation } from '@react-navigation/native';
 import { CheckBox } from 'react-native-elements'
@@ -29,10 +29,13 @@ export default function AddFood() {
   const [url, setUrl] = useState()
   const pickImage = async () => {
   }
-  useEffect(() => {
-    getCategories().then((categories) => {
+
+  useEffect(()=>{
+    getCategories().then(()=>{
       setCategories(categories)
-    }), [])
+    })
+  }, [])
+  
   return (
     <ScrollView style={{ marginTop: 20 }}>
       <View style={{
