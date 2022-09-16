@@ -36,7 +36,7 @@ export default function AddFood() {
   }, [])
   
   return (
-    <ScrollView style={{ marginTop: 20 }}>
+    <ScrollView style={styles.container}>
       <View style={{
         alignItems: "center",
       }}>
@@ -125,6 +125,9 @@ export default function AddFood() {
   )
 }
 const styles = StyleSheet.create({
+  container: { 
+    marginTop: 20, 
+    flex: 1 },
   image: {
     width: 100,
     height: 100,
