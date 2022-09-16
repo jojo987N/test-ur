@@ -74,7 +74,7 @@ export default function AddFood() {
       </View>
 
       <View style={styles.inputView}> 
-      <SelectDropdown
+      {categories?<SelectDropdown
         data={categories.filter(category => category.type).map(category => category.name)}
         onSelect={(selectedItem, index) => {
           console.log(selectedItem, index)
@@ -93,7 +93,7 @@ export default function AddFood() {
         defaultButtonText="Select Category"
         buttonStyle={{width: "100%"}}
 
-      />
+      />:<></>}
       </View>
 
       <Size title="Size" inputs={inputs} setInputs={setInputs} size={size} setSize={setSize} />
