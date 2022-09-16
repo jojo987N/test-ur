@@ -100,10 +100,7 @@ export default function AddFood() {
       <View style={{ marginVertical: 30, marginHorizontal: 20, marginTop: 20 }}>
         <Button title="Pick an image from camera roll" onPress={() => openImagePickerAsync(setImage, setUrl)} color="#841584" />
       </View>
-      <View style={{
-        marginTop: 10,
-        marginHorizontal: 20,
-      }}>
+      <View style={styles.button}>
         <Button title='Add' onPress={
           () => {
             if (url)
@@ -148,5 +145,10 @@ const styles = StyleSheet.create({
   inputText: {
     padding: 10,
     fontSize: 17
+  },
+  button: {
+    marginTop: 10,
+    marginHorizontal: 20,
+    marginBottom: 10
   }
 })
