@@ -91,6 +91,7 @@ export default function AddFood() {
           return item
         }}
         defaultButtonText="Select Category"
+        buttonStyle={{width: "100%"}}
 
       />
       </View>
