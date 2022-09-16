@@ -32,7 +32,7 @@ export default function AddFood() {
   useEffect(() => {
     getCategories().then((categories) => {
       setCategories(categories)
-    })
+    }), [])
   return (
     <ScrollView style={{ marginTop: 20 }}>
       <View style={{
