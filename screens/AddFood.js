@@ -1,6 +1,6 @@
 import { View, Text, TextInput, StyleSheet, Button, Image, ScrollView } from 'react-native'
 import React, { useContext, useState } from 'react'
-import { addFood, addProduct } from '../firebase'
+import { addFood, addProduct, getCategories } from '../firebase'
 import { useNavigation } from '@react-navigation/native';
 import { CheckBox } from 'react-native-elements'
 import AddInput from '../components/AddInput';
@@ -8,9 +8,12 @@ import { AntDesign } from '@expo/vector-icons';
 import Size from '../components/Size';
 import { openImagePickerAsync } from '../utils';
 import { FoodsContext } from '../context/FoodsContext';
+import SelectDropdown from 'react-native-select-dropdown'
+
 
 export default function AddFood() {
   const { foods, setFoods } = useContext(FoodsContext)
+  const [categories, setCategories] = useState()
   const [name, setName] = useState("")
   const [description, setDescription] = useState("")
   const [price, setPrice] = useState()
@@ -26,6 +29,10 @@ export default function AddFood() {
   const [url, setUrl] = useState()
   const pickImage = async () => {
   }
+  useEffect(() => {
+    getCategories().then((categories) => {
+      setCategories(categories)
+    })
   return (
     <ScrollView style={{ marginTop: 20 }}>
       <View style={{
@@ -63,6 +70,24 @@ export default function AddFood() {
             onChangeText={(text) => setDPrice(text)} />
         </View>
       </View>
+
+      <SelectDropdown
+        data={categories}
+        onSelect={(selectedItem, index) => {
+          console.log(selectedItem, index)
+        }}
+        buttonTextAfterSelection={(selectedItem, index) => {
+          // text represented after item is selected
+          // if data array is an array of objects then return selectedItem.property to render after item is selected
+          return selectedItem
+        }}
+        rowTextForSelection={(item, index) => {
+          // text represented for each item in dropdown
+          // if data array is an array of objects then return item.property to represent item in dropdown
+          return item
+        }}
+      />
+
       <Size title="Size" inputs={inputs} setInputs={setInputs} size={size} setSize={setSize} />
       <View style={{ marginVertical: 30, marginHorizontal: 20, marginTop: 20 }}>
         <Button title="Pick an image from camera roll" onPress={() => openImagePickerAsync(setImage, setUrl)} color="#841584" />
