@@ -31,7 +31,7 @@ export default function AddFood() {
   }
 
   useEffect(()=>{
-    getCategories().then(()=>{
+    getCategories().then((categories)=>{
       setCategories(categories)
     })
   }, [])
@@ -87,7 +87,6 @@ export default function AddFood() {
         }}
         rowTextForSelection={(item, index) => {
 
-          console.log(item)
           // text represented for each item in dropdown
           // if data array is an array of objects then return item.property to represent item in dropdown
           return item
