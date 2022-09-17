@@ -9,9 +9,11 @@ import Size from '../components/Size';
 import { openImagePickerAsync } from '../utils';
 import { FoodsContext } from '../context/FoodsContext';
 import SelectDropdown from 'react-native-select-dropdown'
+import { RestaurantContext } from '../context/RestaurantContext';
 
 
 export default function AddFood() {
+  const {restaurantData} = useContext(RestaurantContext)
   const { foods, setFoods } = useContext(FoodsContext)
   const [categories, setCategories] = useState()
   const [name, setName] = useState("")
@@ -103,7 +105,7 @@ export default function AddFood() {
         <Button title='Add' onPress={
           () => {
             if (url)
-              addFood(name, description, url, price, dPrice, size, category)
+              addFood(name, description, url, price, dPrice, size, category, restaurantData.id)
                 .then(() => setFoods([
                   ...foods,
                   {
@@ -112,7 +114,8 @@ export default function AddFood() {
                     image: url,
                     price,
                     size,
-                    category
+                    category,
+                    restaurantId: restaurantData.id
                   }
                 ])).then(() => navigation.navigate('Foods'))
           }

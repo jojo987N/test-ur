@@ -110,7 +110,7 @@ export const addCategory = (name, description, image, restaurantId) => {
     createdAt: serverTimestamp()
   })
 }
-export const addFood = (name, description, url, price, dPrice, size, category) => {
+export const addFood = (name, description, url, price, dPrice, size, category, restaurantId) => {
   return addDoc(foodsCol, {
     name,
     description,
@@ -118,6 +118,7 @@ export const addFood = (name, description, url, price, dPrice, size, category) =
     price,
     size,
     category,
+    restaurantId,
     createdAt: serverTimestamp()
   })
 }
