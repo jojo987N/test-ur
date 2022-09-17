@@ -17,7 +17,7 @@ export default function Foods() {
   const navigation = useNavigation()
 
   useEffect(() => {
-    const q = query(foodsCol, where('restaurantId', '==', restaurantId), orderBy('createdAt', 'desc'))
+    const q = query(foodsCol, where('restaurantId', '==', restaurantData.id), orderBy('createdAt', 'desc'))
 
     const unsuscribe = onSnapshot(q, (snapshot) => {
       let foods = []
