@@ -19,7 +19,10 @@ export default function Foods() {
   useEffect(() => {
 
     console.log("------------------",restaurantData.id)
-    const q = query(foodsCol, where('name', '==', "jean"))
+    const q = query(foodsCol, where("name", "==", "jean"))
+
+    // const q = query(userRef, where("id", "==", uid))
+
 
     const unsuscribe = onSnapshot(q, (snapshot) => {
       let foods = []
