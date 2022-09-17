@@ -21,7 +21,7 @@ export default function Foods() {
     console.log("",restaurantData.id)
     // const q = query(foodsCol, where('restaurantId', '==', restaurantData.id), orderBy('createdAt', 'desc'))
 
-    const unsuscribe = onSnapshot(q, (snapshot) => {
+    const unsuscribe = onSnapshot(foodsCol, (snapshot) => {
       let foods = []
 
       snapshot.docs.filter(doc => doc.data().restaurantId === restaurantData.id).forEach((doc) => {
