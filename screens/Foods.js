@@ -6,7 +6,7 @@ import { useNavigation } from '@react-navigation/native';
 import MenuNavigation from '../components/MenuNavigation';
 import Loading from '../components/Loading';
 import { FoodsContext } from '../context/FoodsContext';
-import { onSnapshot } from 'firebase/firestore';
+import { onSnapshot, query } from 'firebase/firestore';
 import { RestaurantContext } from '../context/RestaurantContext';
 
 
