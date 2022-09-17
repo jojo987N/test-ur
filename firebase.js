@@ -50,9 +50,9 @@ export const getOrders = (setOrders) => {
 }
 export const productsCol = collection(db, 'products')
 export const foodsCol = collection(db, 'foods')
-export const getFoods = () => {
+export const getFoods = (restaurantId) => {
   const foods = []
-  const q = query(foodsCol, orderBy('createdAt', 'desc'))
+  const q = query(foodsCol, where('restaurantId', '==', restaurantId), orderBy('createdAt', 'desc'))
   return getDocs(q).then(snapshot => {
     snapshot.docs.forEach((doc) => {
       foods.push({ ...doc.data(), id: doc.id })

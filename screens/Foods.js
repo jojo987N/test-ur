@@ -7,17 +7,19 @@ import MenuNavigation from '../components/MenuNavigation';
 import Loading from '../components/Loading';
 import { FoodsContext } from '../context/FoodsContext';
 import { onSnapshot } from 'firebase/firestore';
+import { RestaurantContext } from '../context/RestaurantContext';
 
 
 export default function Foods() {
 
-
+  const {restaurantData} = useContext(RestaurantContext)
   const { foods, setFoods } = useContext(FoodsContext)
   const navigation = useNavigation()
 
   useEffect(() => {
+    const q = query(foodsCol, where('restaurantId', '==', restaurantId), orderBy('createdAt', 'desc'))
 
-    const unsuscribe = onSnapshot(foodsCol, (snapshot) => {
+    const unsuscribe = onSnapshot(q, (snapshot) => {
       let foods = []
 
       snapshot.docs.forEach((doc) => {
