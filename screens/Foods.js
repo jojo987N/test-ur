@@ -19,12 +19,12 @@ export default function Foods() {
   useEffect(() => {
 
     console.log("",restaurantData.id)
-    const q = query(foodsCol, where('restaurantId', '==', restaurantData.id), orderBy('createdAt', 'desc'))
+    // const q = query(foodsCol, where('restaurantId', '==', restaurantData.id), orderBy('createdAt', 'desc'))
 
     const unsuscribe = onSnapshot(q, (snapshot) => {
       let foods = []
 
-      snapshot.docs.forEach((doc) => {
+      snapshot.docs.filter(doc => doc.data().restaurantId === restaurantData.id).forEach((doc) => {
 
         foods.push({ ...doc.data(), id: doc.id })
 
