@@ -18,9 +18,7 @@ export default function Foods() {
 
   useEffect(() => {
 
-    console.log("",restaurantData.id)
-    // const q = query(foodsCol, where('restaurantId', '==', restaurantData.id), orderBy('createdAt', 'desc'))
-
+    
     const unsuscribe = onSnapshot(foodsCol, (snapshot) => {
       let foods = []
 
