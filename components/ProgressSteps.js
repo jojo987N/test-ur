@@ -3,7 +3,7 @@ import React from 'react'
 import { AntDesign } from '@expo/vector-icons'
 import OrderCountDown from './OrderCountDown'
 
-export default function ProgressSteps({route}) {
+export default function ProgressSteps({route, remainingTime}) {
     const {order} = route.params
   return (
     <View>
@@ -15,7 +15,7 @@ export default function ProgressSteps({route}) {
          </View>
          <View style={{...styles.col, }}>
 
-             <OrderCountDown remainingTime={order.remainingTime} style={{backgroundColor: "white", height:49, color:"black"}}/>
+             <OrderCountDown remainingTime={remainingTime} style={{backgroundColor: "white", height:49, color:"black"}}/>
         </View>
          <View style={styles.col}>
              <View style={{height: 20, aspectRatio: 1, backgroundColor: "#e6e6e6", borderRadius: 50, borderColor:"grey", borderWidth:0.5}}></View>
