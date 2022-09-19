@@ -141,7 +141,7 @@ export const getRestaurantId = (uid) => {
 }
 export const updateOrder = (order_Id, status, deliveryTime) => {
   const docRef = doc(db, 'orders', order_Id)
-  updateDoc(docRef, {
+  return updateDoc(docRef, {
     status: status,
     deliveryTime: deliveryTime
   })
