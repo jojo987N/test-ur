@@ -6,6 +6,7 @@ import { useNavigation } from '@react-navigation/native'
 
 export default function ConfirmModal({ order, modalVisible, setModalVisible }) {
   const [deliveryTime, setDeliveryTime] = useState()
+  const [cookingTime, setCookingTime] = useState()
   const navigation = useNavigation()
   return (
     <Modal
@@ -20,11 +21,11 @@ export default function ConfirmModal({ order, modalVisible, setModalVisible }) {
           <View style={styles.label_input}>
             <Text style={styles.label}>Delivery Time : </Text>
             <TextInput style={styles.TextInput} placeholder="30 min"
-              onChangeText={(text) => setDeliveryTime(text)} />
+              onChangeText={(text) => setCookingTime(text)} />
           </View>
           <TouchableOpacity style={styles.button} onPress={() => {
             setModalVisible(false)
-            updateOrder(order.id, APP_CONSTANT.IN_PROGRESS, deliveryTime)
+            updateOrder(order.id, APP_CONSTANT.IN_PROGRESS, cookingTime)
             .then(()=> navigation.navigate(screen.ORDERS_IN_PROGRESS))
 
           }}>
