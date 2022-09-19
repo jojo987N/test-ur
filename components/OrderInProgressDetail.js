@@ -7,7 +7,7 @@ import { ArrowBack } from './ArrowBack'
 import { AntDesign } from '@expo/vector-icons'
 
 export default function OrderInProgressDetail({ route, navigation }) {
-  const { order } = route.params
+  const { order, remainingTime} = route.params
   console.log(order.Restaurant.lat, order.Restaurant.lng)
   return (
     <View style={{ flex: 1 }}>
@@ -27,7 +27,7 @@ export default function OrderInProgressDetail({ route, navigation }) {
           />
         </TouchableOpacity>
       </View>
-      <ProgressSteps route={route} />
+      <ProgressSteps route={route} remainingTime={remainingTime}/>
       <View style={styles.mapContainer}>
       </View>
       <View style={styles.customer_courier_Infos}>
