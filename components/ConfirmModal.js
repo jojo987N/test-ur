@@ -21,6 +21,8 @@ export default function ConfirmModal({ order, modalVisible, setModalVisible }) {
           </View>
           <TouchableOpacity style={styles.button} onPress={() => {
             setModalVisible(false)
+            updateOrder(order.id, APP_CONSTANT.CONFIRMED, deliveryTime)
+
           }}>
             <Text style={styles.textButton}>Accept & Confirm</Text>
           </TouchableOpacity>
