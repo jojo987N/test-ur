@@ -10,6 +10,10 @@ export const APP_CONSTANT = {
     IN_PROGRESS: "InProgress"
 }
 
+export const screen = {
+    ORDERS_IN_PROGRESS : "OrdersInProgress"
+}
+
  
 
 
