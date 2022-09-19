@@ -24,7 +24,7 @@ export default function OrderCountDown({remainingTime, style}) {
       strokeWidth={3}
     >
       {({remainingTime}) => <View style={style?{...styles.container, backgroundColor: style.backgroundColor, height: style.height, aspectRatio: 1, borderRadius: 50}:styles.container}>
-        <Text style={style?{...styles.text, color: style.color}:styles.text}>{remainingTime}</Text>
+        <Text style={style?{...styles.text, color: style.color}:styles.text}>{remainingTime/60}</Text>
         <Text style={style?{...styles.text1, color: style.color}:styles.text1}>min </Text>
       </View>}
     </CountdownCircleTimer>
