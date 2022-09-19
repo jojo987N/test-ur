@@ -8,7 +8,7 @@ import UserDetails from '../components/UserDetails'
 import ConfirmModal from '../components/ConfirmModal'
 import {ButtonFoodDone} from '../components/OrderInProgressDetail'
 
-export default function OrderDetails({route}) {
+export default function OrderDetails({route, navigation}) {
     const {order} = route.params 
     const [modalVisible, setModalVisible] = useState(false)
 
