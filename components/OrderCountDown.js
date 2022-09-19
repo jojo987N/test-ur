@@ -11,8 +11,8 @@ export default function OrderCountDown({remainingTime, style}) {
   return (
     <CountdownCircleTimer
     isPlaying
-        duration={30}
-      // duration={Number(remainingTime)}
+        // duration={30}
+      duration={Number(remainingTime)*60}
       colors={['#348ac7', '#F7B801', '#A30000', '#A30000']}
        colorsTime={[23, 17, 8, 0]}
       // initialRemainingTime={remainingTime}
