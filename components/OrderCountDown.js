@@ -10,7 +10,8 @@ export default function OrderCountDown({remainingTime, style}) {
   const navigation = useNavigation()
   return (
     <CountdownCircleTimer
-       duration={30}
+      //  duration={30}
+      duration={remainingTime}
       colors={['#348ac7', '#F7B801', '#A30000', '#A30000']}
        colorsTime={[23, 17, 8, 0]}
       initialRemainingTime={remainingTime}
