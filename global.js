@@ -6,8 +6,11 @@ export const APP_CONSTANT = {
     CONFIRMED: "confirmed",
     STATUS: "Status",
     PENDING: "pending",
-    PRICE: "price"
+    PRICE: "price",
+    IN_PROGRESS: "InProgress"
 }
+
+ 
 
 
 export const language = "en"
