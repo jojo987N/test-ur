@@ -15,6 +15,7 @@ import Loading from '../components/Loading'
 export default function Orders({route}) {
   const navigation = useNavigation() 
  const [orders, setOrders] = useState()
+ const [remainingTime, setRemainingTime] = useState()
   useEffect(()=>{
     AsyncStorage.getItem("managerId").
     then((value)=>{
@@ -34,14 +35,14 @@ export default function Orders({route}) {
           <View style={styles.container}>
          {orders?<> 
          {(route.params && route.params.orderStatus === "new") || route.params.orderStatus === "all" ?<DisplayOrders orders={orders} status="new" navigation={navigation}/>:<></>}
-         {(route.params && route.params.orderStatus === "ordersInProgress") || route.params.orderStatus === "all" ?<DisplayOrders orders={orders} status="InProgress" navigation={navigation}/>:<></>}
+         {(route.params && route.params.orderStatus === "ordersInProgress") || route.params.orderStatus === "all" ?<DisplayOrders orders={orders} status="InProgress" navigation={navigation} remainingTime={remainingTime} setRemainingTime={setRemainingTime}/>:<></>}
          {(route.params && route.params.orderStatus === "readyForPickup") || route.params.orderStatus === "all" ?<DisplayOrders orders={orders} status="ready" navigation={navigation}/>:<></>}
          </>:<Loading />}
       </View>
      </>
   )
 }
-const DisplayOrders = ({orders, status, navigation}) => {
+const DisplayOrders = ({orders, status, navigation, remainingTime, setRemainingTime}) => {
     const render = {
         "new": "New",
         "InProgress": "In Progress",
@@ -59,19 +60,20 @@ const DisplayOrders = ({orders, status, navigation}) => {
             keyExtractor={(item, index) => index}
             renderItem={({ item, index }) => {
                 return (
-                 <RenderingOrder order={item} navigation={navigation}/>
+                 <RenderingOrder order={item} navigation={navigation} remainingTime={remainingTime} 
+                 setRemainingTime={setRemainingTime}/>
                 )
             }}
                 />
         </View>
     )
 }
-const RenderingOrder = ({order, navigation})=>{
+const RenderingOrder = ({order, navigation, remainingTime, setRemainingTime})=>{
     return (
         <TouchableOpacity style={{ ...styles.row, 
             backgroundColor: "black"
              }}
-                onPress={() => routeOrder(order, navigation)}
+                onPress={() => routeOrder(order, navigation, remainingTime, setRemainingTime)}
             >
                 {order.status === "new" && <Image style={{position: "absolute", width: "100%"}} source={require("../assets/images/pending.jpg")} />}
                 <Text style={styles.col}>{order.orderId.toUpperCase()}</Text>
@@ -97,7 +99,10 @@ const RenderingOrder = ({order, navigation})=>{
                     speed={1}
                     loop
                 />}
-                  {order.status === "InProgress" && <OrderCountDown remainingTime={order.remainingTime}/> }
+                  {order.status === "InProgress" && <OrderCountDown remainingTime={
+                      //order.remainingTime
+                      remainingTime
+                      } setRemainingTime={setRemainingTime}/> }
                 {order.status === "ready" && 
                     <Image style={styles.avatarImage} source={{uri: order.User.image}} />
                 }
@@ -105,11 +110,11 @@ const RenderingOrder = ({order, navigation})=>{
             </TouchableOpacity>
     )
 }
-const routeOrder = (order, navigation) => {
+const routeOrder = (order, navigation, remainingTime, setRemainingTime) => {
     if(order.status === "new")
     navigation.navigate("OrderDetails", { order: order })
     if(order.status === "InProgress")
-    navigation.navigate("OrderInProgressDetail", { order: order })
+    navigation.navigate("OrderInProgressDetail", { order: order , remainingTime, setRemainingTime})
     if(order.status === "ready")
     navigation.navigate("OrderDetails", { order: order, orderStatus: "ready"})
 }
