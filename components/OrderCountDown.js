@@ -19,7 +19,7 @@ export default function OrderCountDown({order, remainingTime, style}) {
       // initialRemainingTime={remainingTime}
       onUpdate={(remainingTime) => {
         // setRemainingTime(Math.round(remainingTime/60))
-        console.log(remainingTime)
+        // console.log(remainingTime)
           //  updateRemainingTime(order.id, remainingTime)
         //  console.log(remainingTime)
       }}
