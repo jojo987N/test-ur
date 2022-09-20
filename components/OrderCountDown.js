@@ -8,6 +8,10 @@ import { APP_CONSTANT } from '../global';
 
 export default function OrderCountDown({order, remainingTime, style}) {
   const navigation = useNavigation()
+  const [time, setTime] = useState()
+  useEffect(() => {
+    setTime(remainingTime)
+  }, [])
   return (
     <CountdownCircleTimer
      isPlaying
