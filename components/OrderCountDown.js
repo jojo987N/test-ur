@@ -28,8 +28,8 @@ export default function OrderCountDown({order, remainingTime, style}) {
       size={55}
       strokeWidth={3}
     >
-      {() => <View style={style?{...styles.container, backgroundColor: style.backgroundColor, height: style.height, aspectRatio: 1, borderRadius: 50}:styles.container}>
-        <Text style={style?{...styles.text, color: style.color}:styles.text}>{Math.round(remainingTime/60)}</Text>
+      {({remainingTime}) => <View style={style?{...styles.container, backgroundColor: style.backgroundColor, height: style.height, aspectRatio: 1, borderRadius: 50}:styles.container}>
+        <Text style={style?{...styles.text, color: style.color}:styles.text}>{Math.round(remainingTime)}</Text>
         <Text style={style?{...styles.text1, color: style.color}:styles.text1}>min </Text>
       </View>}
     </CountdownCircleTimer>
