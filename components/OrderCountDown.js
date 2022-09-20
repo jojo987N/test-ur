@@ -23,12 +23,12 @@ export default function OrderCountDown({order, remainingTime, style}) {
       // initialRemainingTime={remainingTime}
       onUpdate={(remainingTime) => {
         // setRemainingTime(Math.round(remainingTime/60))
-        const wait = new Promise(resolve => setTimeout(resolve, 1000));
-        wait.then(() => {
+        // const wait = new Promise(resolve => setTimeout(resolve, 1000));
+        // wait.then(() => {
           console.log(remainingTime)
           if (Number(remainingTime) >=0)
             updateRemainingTime(order.id, remainingTime)
-        })
+        // })
           
            
         //  console.log(remainingTime)
