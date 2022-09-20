@@ -1,5 +1,5 @@
 import { View, Text, StyleSheet, ScrollView, TouchableOpacity, ImageBackground, Image} from 'react-native'
-import React, {useState, useEffect, useCallback} from 'react'
+import React, {useState, useEffect} from 'react'
 import { collection, onSnapshot, query, where} from 'firebase/firestore'
 import { db, ordersCol} from '../firebase'
 import AsyncStorage from '@react-native-async-storage/async-storage'
@@ -98,7 +98,7 @@ const RenderingOrder = ({order, navigation})=>{
                     speed={1}
                     loop
                 />}
-                  {order.status === "InProgress" && useCallback(() => <OrderCountDown order={order} remainingTime={order.remainingTime} />, []) }
+                  {order.status === "InProgress" && <OrderCountDown order={order} remainingTime={order.remainingTime} /> }
                 {order.status === "ready" && 
                     <Image style={styles.avatarImage} source={{uri: order.User.image}} />
                 }
