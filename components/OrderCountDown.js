@@ -6,7 +6,7 @@ import { useNavigation } from '@react-navigation/native';
 import { auth, updateOrder } from '../firebase';
 import { APP_CONSTANT } from '../global';
 
-export default function OrderCountDown({remainingTime, style, setRemainingTime}) {
+export default function OrderCountDown({remainingTime, style}) {
   const navigation = useNavigation()
   return (
     <CountdownCircleTimer
@@ -17,7 +17,7 @@ export default function OrderCountDown({remainingTime, style, setRemainingTime})
        colorsTime={[23, 17, 8, 0]}
       // initialRemainingTime={remainingTime}
       onUpdate={(remainingTime) => {
-        setRemainingTime(Math.round(remainingTime/60))
+        // setRemainingTime(Math.round(remainingTime/60))
       }}
       onComplete={() => {
       }}
