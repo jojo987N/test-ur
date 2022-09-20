@@ -8,7 +8,8 @@ import { AntDesign } from '@expo/vector-icons'
 
 export default function OrderInProgressDetail({ route, navigation }) {
   const { order, remainingTime} = route.params
-  console.log(order.Restaurant.lat, order.Restaurant.lng)
+  // console.log(order.Restaurant.lat, order.Restaurant.lng)
+  console.log(remainingTime)
   return (
     <View style={{ flex: 1 }}>
       <View style={styles.header}>
