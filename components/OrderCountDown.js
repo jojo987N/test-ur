@@ -10,7 +10,7 @@ export default function OrderCountDown({order, remainingTime, style}) {
   const navigation = useNavigation()
   return (
     <CountdownCircleTimer
-    isPlaying
+    // isPlaying
         // duration={30}
       // duration={Number(remainingTime)*60}
       duration={Number(remainingTime)}
