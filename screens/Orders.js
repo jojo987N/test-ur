@@ -98,7 +98,7 @@ const RenderingOrder = ({order, navigation})=>{
                     speed={1}
                     loop
                 />}
-                  {order.status === "InProgress" && <OrderCountDown order={order} remainingTime={order.remainingTime} /> }
+                  {order.status === "InProgress" && React.memo(()=> <OrderCountDown order={order} remainingTime={order.remainingTime} />) }
                 {order.status === "ready" && 
                     <Image style={styles.avatarImage} source={{uri: order.User.image}} />
                 }
