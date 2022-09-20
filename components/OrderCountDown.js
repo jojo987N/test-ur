@@ -26,7 +26,7 @@ export default function OrderCountDown({order, remainingTime, style}) {
         const wait = new Promise(resolve => setTimeout(resolve, 1000));
         wait.then(() => {
           console.log(remainingTime)
-          if (Number(remainingTime) > 0)
+          if (Number(remainingTime) >=0)
             updateRemainingTime(order.id, remainingTime)
         })
           
