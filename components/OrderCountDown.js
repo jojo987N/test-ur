@@ -19,9 +19,14 @@ export default function OrderCountDown({order, remainingTime, style}) {
       // initialRemainingTime={remainingTime}
       onUpdate={(remainingTime) => {
         // setRemainingTime(Math.round(remainingTime/60))
-         console.log(remainingTime)
-         if(remainingTime > 0)
-          updateRemainingTime(order.id, remainingTime)
+        const wait = new Promise(resolve => setTimeout(resolve, 1000));
+        wait.then(() => {
+          console.log(remainingTime)
+          if (remainingTime > 0)
+            updateRemainingTime(order.id, remainingTime)
+        })
+          
+           
         //  console.log(remainingTime)
       }}
       onComplete={() => {
