@@ -3,10 +3,10 @@ import React, { useEffect, useState } from 'react'
 import { CountdownCircleTimer } from 'react-native-countdown-circle-timer'
 import { MaterialIcons } from '@expo/vector-icons'
 import { useNavigation } from '@react-navigation/native';
-import { auth, updateOrder } from '../firebase';
+import { auth, updateOrder, updateRemainingTime } from '../firebase';
 import { APP_CONSTANT } from '../global';
 
-export default function OrderCountDown({remainingTime, style}) {
+export default function OrderCountDown({order, remainingTime, style}) {
   const navigation = useNavigation()
   return (
     <CountdownCircleTimer
@@ -18,6 +18,7 @@ export default function OrderCountDown({remainingTime, style}) {
       // initialRemainingTime={remainingTime}
       onUpdate={(remainingTime) => {
         // setRemainingTime(Math.round(remainingTime/60))
+        updateRemainingTime(order.id, remainingTime)
       }}
       onComplete={() => {
       }}

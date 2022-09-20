@@ -68,12 +68,11 @@ const DisplayOrders = ({orders, status, navigation}) => {
     )
 }
 const RenderingOrder = ({order, navigation})=>{
-    const [remainingTime, setRemainingTime] = useState()
     return (
         <TouchableOpacity style={{ ...styles.row, 
             backgroundColor: "black"
              }}
-                onPress={() => routeOrder(order, navigation, remainingTime)}
+                onPress={() => routeOrder(order, navigation)}
             >
                 {order.status === "new" && <Image style={{position: "absolute", width: "100%"}} source={require("../assets/images/pending.jpg")} />}
                 <Text style={styles.col}>{order.orderId.toUpperCase()}</Text>
@@ -99,7 +98,7 @@ const RenderingOrder = ({order, navigation})=>{
                     speed={1}
                     loop
                 />}
-                  {order.status === "InProgress" && <OrderCountDown remainingTime={order.remainingTime} setRemainingTime={setRemainingTime}/> }
+                  {order.status === "InProgress" && <OrderCountDown order={order} remainingTime={order.remainingTime} /> }
                 {order.status === "ready" && 
                     <Image style={styles.avatarImage} source={{uri: order.User.image}} />
                 }
@@ -111,7 +110,7 @@ const routeOrder = (order, navigation) => {
     if(order.status === "new")
     navigation.navigate("OrderDetails", { order: order })
     if(order.status === "InProgress")
-    navigation.navigate("OrderInProgressDetail", { order: order , remainingTime: remainingTime})
+    navigation.navigate("OrderInProgressDetail", { order: order , remainingTime: order.remainingTime})
     if(order.status === "ready")
     navigation.navigate("OrderDetails", { order: order, orderStatus: "ready"})
 }

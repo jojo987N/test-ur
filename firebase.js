@@ -148,6 +148,16 @@ export const updateOrder = (order_Id, status, remainingTime) => {
   })
     .then(() => console.log('good'))
 }
+
+export const updateRemainingTime = (order_Id, remainingTime) => {
+  const docRef = doc(db, 'orders', order_Id)
+  return updateDoc(docRef, {
+    remainingTime
+  })
+    .then(() => console.log('updated'))
+}
+
+
 export const updateProduct = (product_id, image) => {
   const docRef = doc(db, 'products', product_id)
   updateDoc(docRef, {
