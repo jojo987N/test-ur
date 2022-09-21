@@ -13,7 +13,8 @@ export const APP_CONSTANT = {
 }
 
 export const screen = {
-    ORDERS_IN_PROGRESS : "OrdersInProgress"
+    ORDERS_IN_PROGRESS : "OrdersInProgress",
+    ORDERS_ACCEPTED : "ordersAccepted"
 }
 
  
