@@ -9,7 +9,12 @@ export const APP_CONSTANT = {
     PRICE: "price",
     IN_PROGRESS: "InProgress",
     READY: "ready",
-    ACCEPTED: "accepted"
+    ACCEPTED: "accepted",
+    FOOD_IS_DONE: "FOOD IS DONE",
+}
+
+export const button = {
+    READY: "Ready"
 }
 
 export const screen = {

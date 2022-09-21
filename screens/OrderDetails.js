@@ -9,7 +9,7 @@ import ConfirmModal from '../components/ConfirmModal'
 import {ButtonFoodDone} from '../components/OrderReadyDetails'
 
 export default function OrderDetails({route}) {
-    const {order} = route.params 
+    const {order, orderStatus} = route.params 
     const [modalVisible, setModalVisible] = useState(false)
 
   return (

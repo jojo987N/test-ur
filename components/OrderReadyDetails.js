@@ -5,6 +5,7 @@ import MapView, { Callout, Marker } from 'react-native-maps'
 import Divider from './Divider'
 import { ArrowBack } from './ArrowBack'
 import { AntDesign } from '@expo/vector-icons'
+import { APP_CONSTANT } from '../global'
 
 export default function OrderReadyDetails({ route, navigation }) {
   const { order, remainingTime} = route.params
@@ -48,8 +49,9 @@ export default function OrderReadyDetails({ route, navigation }) {
   )
 }
 export const ButtonFoodDone = () => <TouchableOpacity style={styles.button}>
-  <Text style={styles.buttonText}>FOOD IS DONE</Text>
+  <Text style={styles.buttonText}>{APP_CONSTANT.FOOD_IS_DONE}</Text>
 </TouchableOpacity>
+
 const styles = StyleSheet.create({
   header: {
     flexDirection: "row",
