@@ -21,7 +21,8 @@ export const button = {
 
 export const screen = {
     ORDERS_IN_PROGRESS : "OrdersInProgress",
-    ORDERS_ACCEPTED : "ordersAccepted"
+    ORDERS_ACCEPTED : "ordersAccepted",
+    READY_FOR_PICKUP: "ReadyForPickup"
 }
 
  
