@@ -3,6 +3,7 @@ import React, { useEffect, useState } from 'react'
 import { AntDesign } from '@expo/vector-icons'
 import OrderCountDown from './OrderCountDown'
 import { onSnapshot } from 'firebase/firestore'
+import { ordersCol } from '../firebase'
 
 export default function ProgressSteps({route, remainingTime}) {
      const {order} = route.params
