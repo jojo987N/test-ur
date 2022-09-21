@@ -110,7 +110,7 @@ const routeOrder = (order, navigation) => {
     if(order.status === "new")
     navigation.navigate("OrderDetails", { order: order })
     if(order.status === "InProgress")
-    navigation.navigate("OrderDetails", { order: order, orderStatus: "InProgress"})
+    navigation.navigate("OrderDetails", { order: order, orderStatus: "inProgress"})
     if(order.status === "ready")
     navigation.navigate("OrderReadyDetails", { order: order , remainingTime: order.remainingTime})
 
