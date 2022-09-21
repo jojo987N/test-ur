@@ -9,11 +9,12 @@ import { CategoriesNavigator, OrdersNavigator } from './Staks';
 import SignIn from '../screens/authScreens/SignIn';
 import Upload from '../screens/Upload';
 import { RestaurantContext } from '../context/RestaurantContext';
-import OrderInProgressDetail from '../components/OrderInProgressDetail';
+// import OrderInProgressDetail from '../components/OrderInProgressDetail';
 import OrderDetails from '../screens/OrderDetails';
 import SignUp from '../screens/authScreens/SignUp';
 import { CategoriesContextProvider } from '../context/CategoriesContext';
 import { FoodsContextProvider } from '../context/FoodsContext';
+import OrderReadyDetails from '../components/OrderReadyDetails';
 
 export default function RootNavigation() {
     const Stack = createStackNavigator();
@@ -29,7 +30,7 @@ export default function RootNavigation() {
         <Stack.Screen name="SignUp" component={SignUp}/>
         <Stack.Screen name="DrawerNavigator" component={DrawerNavigator}/>
         <Stack.Screen name="Upload" component={Upload}/>
-        <Stack.Screen name="OrderInProgressDetail" component={OrderInProgressDetail}/>
+        <Stack.Screen name="OrderReadyDetail" component={OrderReadyDetails}/>
         <Stack.Screen name="OrderDetails" component={OrderDetails}/>
         </Stack.Navigator>
         </FoodsContextProvider>
