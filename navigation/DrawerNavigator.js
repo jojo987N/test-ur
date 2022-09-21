@@ -72,11 +72,11 @@ export default function DrawerNavigator() {
             }}
         />
         <Drawer.Screen 
-            name = "OrderReadyDetails"
+            name = "OrdersInProgress"
             component={Orders}
-            initialParams={{orderStatus: "OrderReady"}}
+            initialParams={{orderStatus: "ordersInProgress"}}
             options={{
-                title: "Orders Ready",
+                title: "Orders in progress",
                 headerShown: false,
                 drawerIcon: ({focussed, size}) =>(
                   <FontAwesome 
