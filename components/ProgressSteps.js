@@ -13,6 +13,7 @@ export default function ProgressSteps({route, remainingTime}) {
         onSnapshot(ordersCol, (snapshot)=>{
             setOrderData({...snapshot.docs.find(doc => doc.id === order.id).data(), id: snapshot.docs.find(doc => doc.id === order.id).id})
             // setOrders(snapshot.docs.map((doc)=> ({...doc.data(), id: doc.id })))
+           console.log(snapshot.docs.find(doc => doc.id === order.id).id)
         })
     }, [])
   return (
