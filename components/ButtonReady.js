@@ -9,7 +9,7 @@ const ButtonReady = ({ order }) => {
         <TouchableOpacity style={styles.button}
             onPress={() =>{
                 updateStatus(order.id, APP_CONSTANT.READY)
-                .then(()=> navigation.navigate("OrderReadyDetails", { order }))
+                .then(()=> navigation.navigate("ReadyForPickup", { order }))
                  
             }}
         >
