@@ -1,6 +1,6 @@
 import { useNavigation } from "@react-navigation/native";
 import { StyleSheet, Text, TouchableOpacity } from "react-native"
-import { updateStatus } from "../firebase";
+import { readyForPickup, updateStatus, updateTimeForPickup } from "../firebase";
 import { APP_CONSTANT, button, screen } from "../global";
 
 const ButtonReady = ({ order }) => {
@@ -8,7 +8,7 @@ const ButtonReady = ({ order }) => {
     return (
         <TouchableOpacity style={styles.button}
             onPress={() =>{
-                updateStatus(order.id, APP_CONSTANT.READY)
+                readyForPickup(order.id, APP_CONSTANT.READY)
                 .then(()=> navigation.navigate(screen.READY_FOR_PICKUP))
                  
             }}

@@ -163,7 +163,22 @@ export const updateStatus = (order_Id, status) => {
   })
     .then(() => console.log('updated'))
 }
+export const updateTimeForPickup = (order_Id, pickupTime) => {
+  const docRef = doc(db, 'orders', order_Id)
+  return updateDoc(docRef, {
+    pickupTime
+  })
+    .then(() => console.log('updated'))
+}
 
+export const readyForPickup = (order_Id, status) => {
+  const docRef = doc(db, 'orders', order_Id)
+  return updateDoc(docRef, {
+    status,
+    pickupTime: 40
+  })
+    .then(() => console.log('updated'))
+}
 
 export const updateProduct = (product_id, image) => {
   const docRef = doc(db, 'products', product_id)
