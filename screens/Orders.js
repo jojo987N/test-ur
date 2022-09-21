@@ -35,7 +35,6 @@ export default function Orders({route}) {
           <View style={styles.container}>
          {orders?<> 
          {(route.params && route.params.orderStatus === "new") || route.params.orderStatus === "all" ?<DisplayOrders orders={orders} status="new" navigation={navigation}/>:<></>}
-         {(route.params && route.params.orderStatus === "ordersAccepted") || route.params.orderStatus === "all" ?<DisplayOrders orders={orders} status="accepted" navigation={navigation}/>:<></>}
          {(route.params && route.params.orderStatus === "ordersInProgress") || route.params.orderStatus === "all" ?<DisplayOrders orders={orders} status="InProgress" navigation={navigation} />:<></>}
          {(route.params && route.params.orderStatus === "readyForPickup") || route.params.orderStatus === "all" ?<DisplayOrders orders={orders} status="ready" navigation={navigation}/>:<></>}
          </>:<Loading />}
