@@ -2,6 +2,7 @@ import { View, Text, StyleSheet} from 'react-native'
 import React, { useEffect, useState } from 'react'
 import { AntDesign } from '@expo/vector-icons'
 import OrderCountDown from './OrderCountDown'
+import { onSnapshot } from 'firebase/firestore'
 
 export default function ProgressSteps({route, remainingTime}) {
      const {order} = route.params
