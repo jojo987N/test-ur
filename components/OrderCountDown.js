@@ -3,7 +3,7 @@ import React, { useEffect, useState } from 'react'
 import { CountdownCircleTimer } from 'react-native-countdown-circle-timer'
 import { MaterialIcons } from '@expo/vector-icons'
 import { useNavigation } from '@react-navigation/native';
-import { auth, updateOrder, updateRemainingTime } from '../firebase';
+import { auth, updateOrder, updateRemainingTime, updateTimeForPickup } from '../firebase';
 import { APP_CONSTANT } from '../global';
 
 export default function OrderCountDown({order, remainingTime, style}) {
@@ -29,7 +29,8 @@ export default function OrderCountDown({order, remainingTime, style}) {
           // if(Number(remainingTime) == 7)
           // updateOrder(order.id, APP_CONSTANT.READY, remainingTime)
           if (Number(remainingTime) >=0)
-            updateRemainingTime(order.id, remainingTime)
+            // updateRemainingTime(order.id, remainingTime)
+            updateTimeForPickup(order.id, remainingTime)
         // })
           
            
