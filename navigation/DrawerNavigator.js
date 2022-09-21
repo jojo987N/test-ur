@@ -1,7 +1,7 @@
 import React from 'react'
 import {createDrawerNavigator} from '@react-navigation/drawer'
 import Settings from '../screens/Settings';
-import { Ionicons, MaterialIcons, FontAwesome, Entypo} from "@expo/vector-icons";
+import { Ionicons, MaterialIcons, FontAwesome, Entypo, AntDesign} from "@expo/vector-icons";
 import Categories from '../screens/Categories';
 import Orders from '../screens/Orders';
 import Foods from '../screens/Foods';
