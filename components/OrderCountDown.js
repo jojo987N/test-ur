@@ -28,7 +28,7 @@ export default function OrderCountDown({order, remainingTime, style}) {
           // console.log(remainingTime)
           if(Number(remainingTime) == 7)
           updateOrder(order.id, APP_CONSTANT.READY, remainingTime)
-          if (Number(remainingTime) >=0)
+          // if (Number(remainingTime) >=0)
             // updateRemainingTime(order.id, remainingTime)
         // })
           
