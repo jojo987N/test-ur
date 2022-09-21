@@ -7,7 +7,8 @@ import Foods from '../screens/Foods'
 import AddFood from '../screens/AddFood'
 import Orders from '../screens/Orders'
 import OrderDetails from '../screens/OrderDetails'
-import OrderInProgressDetail from '../components/OrderInProgressDetail'
+// import OrderInProgressDetail from '../components/OrderInProgressDetail'
+import OrderReadyDetails from '../components/OrderReadyDetails'
 import AddCategory from "../screens/AddCategory"
 import {CategoriesContextProvider } from '../context/CategoriesContext'
 
