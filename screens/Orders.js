@@ -110,9 +110,11 @@ const routeOrder = (order, navigation) => {
     if(order.status === "new")
     navigation.navigate("OrderDetails", { order: order })
     if(order.status === "InProgress")
-    navigation.navigate("OrderInProgressDetail", { order: order , remainingTime: order.remainingTime})
+    navigation.navigate("OrderDetails", { order: order, orderStatus: "InProgress"})
     if(order.status === "ready")
-    navigation.navigate("OrderDetails", { order: order, orderStatus: "ready"})
+    navigation.navigate("OrderReady", { order: order , remainingTime: order.remainingTime})
+
+     
 }
 const pendingBackground = ()=>{
     return (
