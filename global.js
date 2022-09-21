@@ -7,7 +7,8 @@ export const APP_CONSTANT = {
     STATUS: "Status",
     PENDING: "pending",
     PRICE: "price",
-    IN_PROGRESS: "InProgress"
+    IN_PROGRESS: "InProgress",
+    READY: "ready"
 }
 
 export const screen = {
