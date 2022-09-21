@@ -139,12 +139,12 @@ export const getRestaurantId = (uid) => {
   const q = query(restaurantsCol, where('ownerId', '==', uid))
   return getDocs(q)
 }
-export const updateOrder = (order_Id, status, remainingTime) => {
+export const updateOrder = (order_Id, status, cookingTime) => {
   const docRef = doc(db, 'orders', order_Id)
   return updateDoc(docRef, {
     status: status,
     // deliveryTime: deliveryTime
-    remainingTime
+    cookingTime
   })
     .then(() => console.log('good'))
 }
