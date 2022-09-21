@@ -6,7 +6,7 @@ import Menus from '../components/Menus'
 import Divider from '../components/Divider'
 import UserDetails from '../components/UserDetails'
 import ConfirmModal from '../components/ConfirmModal'
-import {ButtonFoodDone} from '../components/OrderInProgressDetail'
+import {ButtonFoodDone} from '../components/OrderReadyDetails'
 
 export default function OrderDetails({route}) {
     const {order} = route.params 
