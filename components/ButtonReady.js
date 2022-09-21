@@ -22,7 +22,7 @@ const styles = StyleSheet.create({
         padding: 15,
         textAlign: "center",
         fontWeight: "bold",
-        fontSize: 15,
+        fontSize: 20,
         letterSpacing: 2,
       }
       
