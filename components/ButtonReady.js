@@ -1,7 +1,7 @@
 import { StyleSheet, Text, TouchableOpacity } from "react-native"
 import { APP_CONSTANT, button } from "../global";
 
-const ButtonFoodDone = ({order}) => {
+const ButtonReady = ({order}) => {
 return (
 <TouchableOpacity style={styles.button}
  onPress={()=> navigation.navigate("OrderReadyDetails", {order})}
@@ -27,4 +27,4 @@ const styles = StyleSheet.create({
       }
       
 })
-export default ButtonFoodDone; 
+export default ButtonReady; 
