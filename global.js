@@ -14,7 +14,8 @@ export const APP_CONSTANT = {
 }
 
 export const button = {
-    READY: "Ready"
+    READY: "Ready",
+    CONFIRM: "Confirm"
 }
 
 export const screen = {
