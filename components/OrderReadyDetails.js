@@ -2,11 +2,11 @@ import { View, Text, StyleSheet, Image, TouchableOpacity } from 'react-native'
 import React from 'react'
 import ProgressSteps from './ProgressSteps'
 import MapView, { Callout, Marker } from 'react-native-maps'
-import Divider from '../components/Divider'
+import Divider from './Divider'
 import { ArrowBack } from './ArrowBack'
 import { AntDesign } from '@expo/vector-icons'
 
-export default function OrderInProgressDetail({ route, navigation }) {
+export default function OrderReadyDetails({ route, navigation }) {
   const { order, remainingTime} = route.params
   // console.log(order.Restaurant.lat, order.Restaurant.lng)
   console.log(remainingTime)
