@@ -12,7 +12,7 @@ return (
 
 const styles = StyleSheet.create({
     button: {
-        backgroundColor: "#A30000",
+        backgroundColor: "#6600ff",
         marginHorizontal: 10,
         borderRadius: 5,
         marginTop: 20,
