@@ -29,8 +29,8 @@ export default function OrderCountDown({order, remainingTime, style}) {
           // if(Number(remainingTime) == 7)
           // updateOrder(order.id, APP_CONSTANT.READY, remainingTime)
           if (Number(remainingTime) >=0)
-            // updateRemainingTime(order.id, remainingTime)
-            updateTimeForPickup(order.id, remainingTime)
+             updateRemainingTime(order.id, remainingTime)
+            // updateTimeForPickup(order.id, remainingTime)
         // })
           
            
