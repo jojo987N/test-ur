@@ -30,7 +30,7 @@ export default function RootNavigation() {
         <Stack.Screen name="SignUp" component={SignUp}/>
         <Stack.Screen name="DrawerNavigator" component={DrawerNavigator}/>
         <Stack.Screen name="Upload" component={Upload}/>
-        <Stack.Screen name="OrderReadyDetail" component={OrderReadyDetails}/>
+        <Stack.Screen name="OrderReadyDetails" component={OrderReadyDetails}/>
         <Stack.Screen name="OrderDetails" component={OrderDetails}/>
         </Stack.Navigator>
         </FoodsContextProvider>
