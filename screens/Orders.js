@@ -80,8 +80,8 @@ const RenderingOrder = ({order, navigation})=>{
                             style: "currency",
                             currency: currency
                         })}</Text> }
-                {order.status === "ready" && <Text style={styles.col}>{order.User.name}</Text>}
-               {order.status === "InProgress" && 
+                {order.status === "InProgress" && <Text style={styles.col}>{order.User.name}</Text>}
+               {order.status === "ready" && 
                 <View style={styles.quantity}>
                     <Text style={styles.quantityText}>
                     {Object.entries(order.User.items.map(item => item.name).reduce((acc, curr) => (acc[curr] = (acc[curr] || 0) + 1, acc), {}))
@@ -98,8 +98,8 @@ const RenderingOrder = ({order, navigation})=>{
                     speed={1}
                     loop
                 />}
-                  {order.status === "InProgress" && <OrderCountDown order={order} remainingTime={order.remainingTime} /> }
-                {order.status === "ready" && 
+                  {order.status === "ready" && <OrderCountDown order={order} remainingTime={order.remainingTime} /> }
+                {order.status === "InProgress" && 
                     <Image style={styles.avatarImage} source={{uri: order.User.image}} />
                 }
                 </View>
