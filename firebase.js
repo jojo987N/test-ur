@@ -175,7 +175,7 @@ export const readyForPickup = (order_Id, status) => {
   const docRef = doc(db, 'orders', order_Id)
   return updateDoc(docRef, {
     status,
-    pickupTime: 40
+    remainingTime: 40
   })
     .then(() => console.log('updated'))
 }
