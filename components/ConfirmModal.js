@@ -1,6 +1,6 @@
 import { View, Text, StyleSheet, TextInput, Modal, TouchableOpacity } from 'react-native'
 import React, { useState } from 'react'
-import { updateOrder } from '../firebase'
+import { updateOrder, updateStatus } from '../firebase'
 import { APP_CONSTANT, screen } from '../global'
 import { useNavigation } from '@react-navigation/native'
 
@@ -25,7 +25,8 @@ export default function ConfirmModal({ order, modalVisible, setModalVisible }) {
           </View>
           <TouchableOpacity style={styles.button} onPress={() => {
             setModalVisible(false)
-            updateOrder(order.id, APP_CONSTANT.IN_PROGRESS, remainingTime)
+            // updateOrder(order.id, APP_CONSTANT.IN_PROGRESS, remainingTime)
+            updateStatus(order.id, APP_CONSTANT.IN_PROGRESS)
             .then(()=> navigation.navigate(screen.ORDERS_IN_PROGRESS))
 
           }}>
