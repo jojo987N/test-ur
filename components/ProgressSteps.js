@@ -26,7 +26,7 @@ export default function ProgressSteps({route, remainingTime}) {
          </View>
          <View style={{...styles.col, }}>
 
-             <OrderCountDown order={orderData} remainingTime={remainingTime} style={{backgroundColor: "white", height:49, color:"black"}}/>
+            {orderData?<OrderCountDown order={orderData} remainingTime={remainingTime} style={{backgroundColor: "white", height:49, color:"black"}}/>:<></>}
         </View>
          <View style={styles.col}>
              <View style={{height: 20, aspectRatio: 1, backgroundColor: "#e6e6e6", borderRadius: 50, borderColor:"grey", borderWidth:0.5}}></View>
