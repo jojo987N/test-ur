@@ -7,15 +7,6 @@ import { ordersCol } from '../firebase'
 
 export default function ProgressSteps({route, remainingTime}) {
      const {order} = route.params
-    const[orders, setOrders] = useState()
-    const [orderData, setOrderData] = useState()
-    useEffect(()=> {
-        onSnapshot(ordersCol, (snapshot)=>{
-            setOrderData({...snapshot.docs.find(doc => doc.id === order.id).data(), id: snapshot.docs.find(doc => doc.id === order.id).id})
-            // setOrders(snapshot.docs.map((doc)=> ({...doc.data(), id: doc.id })))
-        //  console.log(snapshot.docs.find(doc => doc.id === order.id).id)
-        })
-    }, [])
   return (
     <View>
         <View style={styles.container1}>
