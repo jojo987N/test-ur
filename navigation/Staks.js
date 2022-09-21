@@ -80,8 +80,8 @@ export  function FoodNavigator() {
           options={{ headerShown: true, }} />
 
         <OrdersStack.Screen
-          name="OrderInProgressDetail"
-          component={OrderInProgressDetail}
+          name="OrderReadyDetails"
+          component={OrderReadyDetails}
           options={{ headerShown: false, }} />
 
       </OrdersStack.Navigator>
