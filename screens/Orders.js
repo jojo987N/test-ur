@@ -61,7 +61,11 @@ const DisplayOrders = ({orders, status, navigation}) => {
                 </Text>
             </View>
             <FlatList
-            data={orders.filter(order => order.status === status)}
+            data={orders.filter(order =>{
+                if(order.status === "STARTED" && status === "ready")
+                return true
+                return order.status === status
+                })}
             keyExtractor={(item, index) => index}
             renderItem={({ item, index }) => {
                 return (
