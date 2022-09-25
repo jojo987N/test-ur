@@ -37,7 +37,7 @@ export default function Orders({route}) {
          {(route.params && route.params.orderStatus === "new") || route.params.orderStatus === "all" ?<DisplayOrders orders={orders} status="new" navigation={navigation}/>:<></>}
          {(route.params && route.params.orderStatus === "ordersInProgress") || route.params.orderStatus === "all" ?<DisplayOrders orders={orders} status="InProgress" navigation={navigation} />:<></>}
          {(route.params && route.params.orderStatus === "readyForPickup") || route.params.orderStatus === "all" ?<DisplayOrders orders={orders} status="ready" navigation={navigation}/>:<></>}
-         {(route.params && route.params.orderStatus === "readyForPickup") || route.params.orderStatus === "all" ?<DisplayOrders orders={orders} status="STARTED" navigation={navigation}/>:<></>}
+         {/* {(route.params && route.params.orderStatus === "readyForPickup") || route.params.orderStatus === "all" ?<DisplayOrders orders={orders} status="STARTED" navigation={navigation}/>:<></>} */}
          </>:<Loading />}
       </View>
      </>
@@ -53,7 +53,11 @@ const DisplayOrders = ({orders, status, navigation}) => {
         <View>
             <View>
                 <Text style={styles.title}>
-                    {`${render[status]} (${orders.filter(order => order.status === status).length})`}
+                    {`${render[status]} (${orders.filter(order => {
+                        if(order.status === "STARTED" && status === "ready")
+                        return true
+                        return order.status === status
+                    }).length})`}
                 </Text>
             </View>
             <FlatList
