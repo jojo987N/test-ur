@@ -98,7 +98,7 @@ const RenderingOrder = ({order, navigation})=>{
                     speed={1}
                     loop
                 />}
-                  {order.status === "ACCEPTED" && <OrderCountDown order={order} remainingTime={order.remainingTime} /> }
+                  {order.status === "STARTED" && <OrderCountDown order={order} remainingTime={order.remainingTime} /> }
                 {order.status === "InProgress" && 
                     <Image style={styles.avatarImage} source={{uri: order.User.image}} />
                 }
