@@ -9,7 +9,8 @@ export const APP_CONSTANT = {
     PRICE: "price",
     IN_PROGRESS: "InProgress",
     READY: "ready",
-    ACCEPTED: "accepted",
+    // ACCEPTED: "accepted",
+    ACCEPTED: "ACCEPTED",
     FOOD_IS_DONE: "FOOD IS DONE",
 }
 
