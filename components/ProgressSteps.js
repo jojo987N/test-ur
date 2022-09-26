@@ -25,7 +25,7 @@ export default function ProgressSteps({route, remainingTime}) {
              </View>
         </View>
          <View style={{borderWidth: 0.5, position: "relative",
-          top: -27, zIndex: -1, borderColor: "grey"
+          top: -20, zIndex: -1, borderColor: "grey"
           }}></View>
         <View style={styles.container3}>
          <View style={styles.col}>
