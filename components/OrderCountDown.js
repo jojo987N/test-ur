@@ -17,7 +17,7 @@ export default function OrderCountDown({order, remainingTime, style}) {
      isPlaying
         // duration={30}
       // duration={Number(remainingTime)*60}
-      duration={Number(time)}
+      duration={Number(time*60)}
       colors={['#348ac7', '#F7B801', '#A30000', '#A30000']}
        colorsTime={[23, 17, 8, 0]}
       // initialRemainingTime={remainingTime}
@@ -42,7 +42,7 @@ export default function OrderCountDown({order, remainingTime, style}) {
       strokeWidth={3}
     >
       {({remainingTime}) => <View style={style?{...styles.container, backgroundColor: style.backgroundColor, height: style.height, aspectRatio: 1, borderRadius: 50}:styles.container}>
-        <Text style={style?{...styles.text, color: style.color}:styles.text}>{Math.round(remainingTime)}</Text>
+        <Text style={style?{...styles.text, color: style.color}:styles.text}>{Math.round(remainingTime/60)}</Text>
         <Text style={style?{...styles.text1, color: style.color}:styles.text1}>min </Text>
       </View>}
     </CountdownCircleTimer>
