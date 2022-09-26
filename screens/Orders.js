@@ -77,7 +77,7 @@ const DisplayOrders = ({orders, status, navigation}) => {
     )
 }
 const RenderingOrder = ({order, navigation})=>{
-    const [remainingTimeForPickup, setRemainingTimeForPickup] = useState(remainingTime)
+    const [remainingTimeForPickup, setRemainingTimeForPickup] = useState(order.remainingTime)
     return (
         <TouchableOpacity style={{ ...styles.row, 
             backgroundColor: "black"
