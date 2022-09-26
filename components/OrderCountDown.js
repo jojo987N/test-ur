@@ -17,7 +17,7 @@ export default function OrderCountDown({order, remainingTime, style}) {
      isPlaying
         // duration={30}
       // duration={Number(remainingTime)*60}
-      duration={Number(time*60)}
+      duration={Number(time)}
       colors={['#348ac7', '#F7B801', '#A30000', '#A30000']}
        colorsTime={[23, 17, 8, 0]}
       // initialRemainingTime={remainingTime}
