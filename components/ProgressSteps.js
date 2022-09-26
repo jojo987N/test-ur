@@ -17,7 +17,8 @@ export default function ProgressSteps({route, remainingTime}) {
          </View>
          <View style={{...styles.col, }}>
 
-            <OrderCountDown order={order} remainingTime={remainingTime} style={{backgroundColor: "white", height:49, color:"black"}}/>
+            {remainingTime?<OrderCountDown order={order} remainingTime={remainingTime} style={{backgroundColor: "white", height:49, color:"black"}}/>
+            :<AntDesign name='checkcircle' color="green" size={24} />}
         </View>
          <View style={styles.col}>
              <View style={{height: 20, aspectRatio: 1, backgroundColor: "#e6e6e6", borderRadius: 50, borderColor:"grey", borderWidth:0.5}}></View>
