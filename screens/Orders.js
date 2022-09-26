@@ -77,6 +77,7 @@ const DisplayOrders = ({orders, status, navigation}) => {
     )
 }
 const RenderingOrder = ({order, navigation})=>{
+    const [remainingTimeForPickup, setRemainingTimeForPickup] = useState(remainingTime)
     return (
         <TouchableOpacity style={{ ...styles.row, 
             backgroundColor: "black"
@@ -107,7 +108,7 @@ const RenderingOrder = ({order, navigation})=>{
                     speed={1}
                     loop
                 />}
-                  {order.status === "STARTED" && <OrderCountDown order={order} remainingTime={order.remainingTime} /> }
+                  {order.status === "STARTED" && <OrderCountDown order={order} remainingTime={order.remainingTime} setRemainingTimeForPickup={setRemainingTimeForPickup}/> }
                 {order.status === "InProgress" && 
                     <Image style={styles.avatarImage} source={{uri: order.User.image}} />
                 }

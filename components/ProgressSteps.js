@@ -7,7 +7,7 @@ import { ordersCol } from '../firebase'
 
 export default function ProgressSteps({route, remainingTime}) {
      const {order} = route.params
-     const [remainTime, setRemainTime] = useState(remainingTime)
+     const [remainingTimeForPickup, setRemainingTimeForPickup] = useState(remainingTime)
   return (
     <View>
         <View style={styles.container1}>
@@ -18,8 +18,8 @@ export default function ProgressSteps({route, remainingTime}) {
          </View>
          <View style={{...styles.col, }}>
 
-            {remainTime?<OrderCountDown order={order} remainingTime={remainingTime} style={{backgroundColor: "white", height:49, color:"black"}} 
-            setRemainTime={setRemainTime}/>
+            {remainingTimeForPickup?<OrderCountDown order={order} remainingTime={remainingTime} style={{backgroundColor: "white", height:49, color:"black"}} 
+            setRemainingTimeForPickup={setRemainingTimeForPickup}/>
             :
             <View style={{backgroundColor: "white", borderRadius: 50}}>
             <AntDesign name='checkcircle' color="green" size={24} />
@@ -31,7 +31,7 @@ export default function ProgressSteps({route, remainingTime}) {
              </View>
         </View>
          <View style={{borderWidth: 0.5, position: "relative",
-          top: remainingTime?-27:-12, zIndex: -1, borderColor: "grey"
+          top: remainingTimeForPickup?-27:-12, zIndex: -1, borderColor: "grey"
           }}></View>
         <View style={styles.container3}>
          <View style={styles.col}>

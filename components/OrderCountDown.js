@@ -6,7 +6,7 @@ import { useNavigation } from '@react-navigation/native';
 import { auth, updateOrder, updateRemainingTime, updateTimeForPickup } from '../firebase';
 import { APP_CONSTANT } from '../global';
 
-export default function OrderCountDown({order, remainingTime, style, setRemainTime}) {
+export default function OrderCountDown({order, remainingTime, style, setRemainingTimeForPickup}) {
   const navigation = useNavigation()
   const [time, setTime] = useState()
   useEffect(() => {
@@ -37,7 +37,7 @@ export default function OrderCountDown({order, remainingTime, style, setRemainTi
         //  console.log(remainingTime)
       }}
       onComplete={() => {
-        setRemainTime(0)
+        setRemainingTimeForPickup(0)
       }}
       size={55}
       strokeWidth={3}
