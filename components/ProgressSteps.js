@@ -7,6 +7,7 @@ import { ordersCol } from '../firebase'
 
 export default function ProgressSteps({route, remainingTime}) {
      const {order} = route.params
+     const [remainTime, setRemainTime] = useState(remainingTime)
   return (
     <View>
         <View style={styles.container1}>
@@ -17,7 +18,8 @@ export default function ProgressSteps({route, remainingTime}) {
          </View>
          <View style={{...styles.col, }}>
 
-            {remainingTime?<OrderCountDown order={order} remainingTime={remainingTime} style={{backgroundColor: "white", height:49, color:"black"}}/>
+            {remainTime?<OrderCountDown order={order} remainingTime={remainingTime} style={{backgroundColor: "white", height:49, color:"black"}} 
+            setRemainTime={setRemainTime}/>
             :
             <View style={{backgroundColor: "white", borderRadius: 50}}>
             <AntDesign name='checkcircle' color="green" size={24} />
