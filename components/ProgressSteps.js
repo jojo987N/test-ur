@@ -38,9 +38,9 @@ export default function ProgressSteps({route, remainingTime}) {
              <View style={{height: 20, aspectRatio: 1, backgroundColor: "#e6e6e6", borderRadius: 50, borderColor:"grey", borderWidth:0.5}}></View>
              </View>
         </View>
-         <View style={{borderWidth: 0.5, position: "relative",
+        {_order?<View style={{borderWidth: 0.5, position: "relative",
           top: _order.status === "STARTED" && remainingTimeForPickup?-27:-12, zIndex: -1, borderColor: "grey"
-          }}></View>
+          }}></View>:<></>}
         <View style={styles.container3}>
          <View style={styles.col}>
              <Text style={styles.statusProgressText}>ORDER ACCEPTED</Text>
