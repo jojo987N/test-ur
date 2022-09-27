@@ -6,11 +6,17 @@ import { onSnapshot } from 'firebase/firestore'
 import { ordersCol } from '../firebase'
 
 export default function ProgressSteps({route, remainingTime}) {
-     const {order} = route.params
-
-     console.log(order.status)
+    //  const {order} = route.params
+     const [orders, setOrders] = useState()
      const [remainingTimeForPickup, setRemainingTimeForPickup] = useState(remainingTime)
-  return (
+     
+    useEffect(() => {
+        onSnapshot(ordersCol, (snapshot) => {
+            setOrders(snapshot.docs.map((doc) => ({ ...doc.data(), id: doc.id })))
+        })
+    }, [])
+     
+     return (
     <View>
         <View style={styles.container1}>
          <View style={{...styles.col, }}>
