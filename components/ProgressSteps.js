@@ -7,6 +7,8 @@ import { ordersCol } from '../firebase'
 
 export default function ProgressSteps({route, remainingTime}) {
      const {order} = route.params
+
+     console.log(order.status)
      const [remainingTimeForPickup, setRemainingTimeForPickup] = useState(remainingTime)
   return (
     <View>
