@@ -6,13 +6,13 @@ import { onSnapshot } from 'firebase/firestore'
 import { ordersCol } from '../firebase'
 
 export default function ProgressSteps({route, remainingTime}) {
-    //  const {order} = route.params
-     const [orders, setOrders] = useState()
+     const {order} = route.params
+     const [_order, setOrder] = useState()
      const [remainingTimeForPickup, setRemainingTimeForPickup] = useState(remainingTime)
      
     useEffect(() => {
         onSnapshot(ordersCol, (snapshot) => {
-            setOrders(snapshot.docs.map((doc) => ({ ...doc.data(), id: doc.id })))
+            setOrder(snapshot.docs.map((doc) => ({ ...doc.data(), id: doc.id })).filter(o => o.id === order.id)[0])
         })
     }, [])
      
@@ -26,7 +26,7 @@ export default function ProgressSteps({route, remainingTime}) {
          </View>
          <View style={{...styles.col, }}>
 
-            {order.status === "STARTED" && remainingTimeForPickup?<OrderCountDown order={order} remainingTime={remainingTime} style={{backgroundColor: "white", height:49, color:"black"}} 
+            {_order.status === "STARTED" && remainingTimeForPickup?<OrderCountDown order={order} remainingTime={remainingTime} style={{backgroundColor: "white", height:49, color:"black"}} 
             setRemainingTimeForPickup={setRemainingTimeForPickup}/>
             :
             <View style={{backgroundColor: "white", borderRadius: 50}}>
