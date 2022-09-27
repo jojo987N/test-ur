@@ -18,7 +18,7 @@ export default function ProgressSteps({route, remainingTime}) {
          </View>
          <View style={{...styles.col, }}>
 
-            {remainingTimeForPickup?<OrderCountDown order={order} remainingTime={remainingTime} style={{backgroundColor: "white", height:49, color:"black"}} 
+            {order.status === "STARTED" && remainingTimeForPickup?<OrderCountDown order={order} remainingTime={remainingTime} style={{backgroundColor: "white", height:49, color:"black"}} 
             setRemainingTimeForPickup={setRemainingTimeForPickup}/>
             :
             <View style={{backgroundColor: "white", borderRadius: 50}}>
