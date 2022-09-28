@@ -1,6 +1,6 @@
 import { View, Text, ScrollView, TouchableOpacity, StyleSheet, Image } from 'react-native'
 import React, { useContext, useEffect, useState } from 'react'
-import { addCategoryRestaurant, categoriesRestaurantsCol, deleteCategoriesRestaurants, getCategories, getCategoriesRestaurants } from '../firebase'
+import { addCategoryRestaurant, categoriesCol, categoriesRestaurantsCol, deleteCategoriesRestaurants, getCategories, getCategoriesRestaurants } from '../firebase'
 import { AntDesign, Ionicons } from "@expo/vector-icons";
 import { useNavigation } from '@react-navigation/native';
 import MenuNavigation from '../components/MenuNavigation';
@@ -15,13 +15,23 @@ export default function Categories({ navigation }) {
   const [addButtons, setAddButtons] = useState()
   const [categoriesRestaurants, setCategoriesRestaurants] = useState()
   useEffect(() => {
-    getCategories().then((categories) => {
-      setCategories(categories.sort((a,b) => b.createdAt.seconds - a.createdAt.seconds))
-      setAddButtons(new Array(categories.length).fill({
+    // getCategories().then((categories) => {
+    //   setCategories(categories.sort((a,b) => b.createdAt.seconds - a.createdAt.seconds))
+    //   setAddButtons(new Array(categories.length).fill({
+    //     text: "Add",
+    //     backgroundColor: "blue",
+    //   }))
+    // })
+
+    onSnapshot(categoriesCol, (snapshot) => {
+      let _categories = snapshot.docs.map((doc) => ({ ...doc.data(), id: doc.id })).sort((a,b) => b.createdAt.seconds - a.createdAt.seconds)
+      setCategories(_categories)
+      setAddButtons(new Array(_categories.length).fill({
         text: "Add",
         backgroundColor: "blue",
       }))
-    })
+  })
+
     const unsuscribe = onSnapshot(categoriesRestaurantsCol, (snapshot) => {
       const c = []
       snapshot.docs.forEach((doc) => {
