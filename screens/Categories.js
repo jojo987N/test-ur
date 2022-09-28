@@ -16,7 +16,7 @@ export default function Categories({ navigation }) {
   const [categoriesRestaurants, setCategoriesRestaurants] = useState()
   useEffect(() => {
     getCategories().then((categories) => {
-      setCategories(categories)
+      setCategories(categories.sort((a,b) => b.createdAt.seconds - a.createdAt.seconds))
       setAddButtons(new Array(categories.length).fill({
         text: "Add",
         backgroundColor: "blue",
