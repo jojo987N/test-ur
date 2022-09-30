@@ -1,91 +1,79 @@
-import { View, Text} from 'react-native'
-import React from 'react'
-import {createStackNavigator} from '@react-navigation/stack'
-import Categories from '../screens/Categories'
-import UpdateCategory from '../screens/UpdateCategory'
-import Foods from '../screens/Foods'
-import AddFood from '../screens/AddFood'
-import Orders from '../screens/Orders'
-import OrderDetails from '../screens/OrderDetails'
-// import OrderInProgressDetail from '../components/OrderInProgressDetail'
-import OrderReadyDetails from '../components/OrderReadyDetails'
-import AddCategory from "../screens/AddCategory"
-import {CategoriesContextProvider } from '../context/CategoriesContext'
+import { View, Text } from "react-native";
+import React from "react";
+import { createStackNavigator } from "@react-navigation/stack";
+import Categories from "../screens/Categories";
+import UpdateCategory from "../screens/UpdateCategory";
+import Foods from "../screens/Foods";
+import AddFood from "../screens/AddFood";
+import Orders from "../screens/Orders";
+import OrderDetails from "../screens/OrderDetails";
 
-const  CategoriesStack = createStackNavigator()
+import OrderReadyDetails from "../components/OrderReadyDetails";
+import AddCategory from "../screens/AddCategory";
+import { CategoriesContextProvider } from "../context/CategoriesContext";
 
-export  function CategoriesNavigator() {
-    return (
-       
-      <CategoriesStack.Navigator>
+const CategoriesStack = createStackNavigator();
 
-          <CategoriesStack.Screen 
-          name="Categories"
-          component={Categories}
-          options={{headerShown: false}}/>
+export function CategoriesNavigator() {
+  return (
+    <CategoriesStack.Navigator>
+      <CategoriesStack.Screen
+        name="Categories"
+        component={Categories}
+        options={{ headerShown: false }}
+      />
 
-           {/* <CategoriesStack.Screen 
-          name="UpdateCategory"
-          component={UpdateCategory}
-          options={{headerShown: false}}/> */}
+      <CategoriesStack.Screen
+        name="AddCategory"
+        component={AddCategory}
+        options={{ title: "Add Category", headerShown: true }}
+      />
+    </CategoriesStack.Navigator>
+  );
+}
 
-       <CategoriesStack.Screen 
-          name="AddCategory"
-          component={AddCategory}
-          options={{title: "Add Category", headerShown: true}}/>
-      </CategoriesStack.Navigator>
-       
-    )
-  }
+const FoodStack = createStackNavigator();
 
-const  FoodStack = createStackNavigator()
+export function FoodNavigator() {
+  return (
+    <FoodStack.Navigator>
+      <FoodStack.Screen
+        name="Foods"
+        component={Foods}
+        options={{ headerShown: false }}
+      />
 
-export  function FoodNavigator() {
-    return (
-      <FoodStack.Navigator
-      
-      >
+      <FoodStack.Screen
+        name="AddFood"
+        component={AddFood}
+        options={{ headerShown: true }}
+      />
+    </FoodStack.Navigator>
+  );
+}
 
-          <FoodStack.Screen 
-          name="Foods"
-          component={Foods}
-          //options={{headerShown: true, headerLeft: null}} 
-          options={{headerShown: false}}/>
+const OrdersStack = createStackNavigator();
 
-           <FoodStack.Screen 
-          name="AddFood"
-          component={AddFood}
-          options={{headerShown: true }}/>
+export function OrdersNavigator() {
+  return (
+    <OrdersStack.Navigator>
+      <OrdersStack.Screen
+        name="Orders"
+        component={Orders}
+        options={{ headerShown: false, headerLeft: null }}
+      />
 
-      </FoodStack.Navigator>
-    )
-  }
+      <OrdersStack.Screen
+        name="OrderDetails"
+        component={OrderDetails}
+        options={{ headerShown: true }}
+      />
 
-  
-
-  const  OrdersStack = createStackNavigator()
-
-  export  function OrdersNavigator() {
-    return (
-      <OrdersStack.Navigator>
-
-        <OrdersStack.Screen
-          name="Orders"
-          component={Orders}
-          options={{ headerShown: false, headerLeft: null }} />
-
-        <OrdersStack.Screen
-          name="OrderDetails"
-          component={OrderDetails}
-          options={{ headerShown: true, }} />
-
-        <OrdersStack.Screen
-          name="OrderReadyDetails"
-          component={OrderReadyDetails}
-          options={{ headerShown: false, }} />
-
-      </OrdersStack.Navigator>
-    )
-  }
-
- 
+      <OrdersStack.Screen
+        name="OrderReadyDetails"
+        component={OrderReadyDetails}
+        options={{ headerShown: false }}
+      />
+    </OrdersStack.Navigator>
+  );
+}

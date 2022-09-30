@@ -1,40 +1,39 @@
-import { View, Text, ScrollView, TouchableOpacity, StyleSheet, Image } from 'react-native'
-import React, { useContext, useEffect, useState } from 'react'
-import { foodsCol, getFoods } from '../firebase'
+import {
+  View,
+  Text,
+  ScrollView,
+  TouchableOpacity,
+  StyleSheet,
+  Image,
+} from "react-native";
+import React, { useContext, useEffect, useState } from "react";
+import { foodsCol, getFoods } from "../firebase";
 import { AntDesign, Ionicons } from "@expo/vector-icons";
-import { useNavigation } from '@react-navigation/native';
-import MenuNavigation from '../components/MenuNavigation';
-import Loading from '../components/Loading';
-import { FoodsContext } from '../context/FoodsContext';
-import { onSnapshot, orderBy, query, where } from 'firebase/firestore';
-import { RestaurantContext } from '../context/RestaurantContext';
-
+import { useNavigation } from "@react-navigation/native";
+import MenuNavigation from "../components/MenuNavigation";
+import Loading from "../components/Loading";
+import { FoodsContext } from "../context/FoodsContext";
+import { onSnapshot, orderBy, query, where } from "firebase/firestore";
+import { RestaurantContext } from "../context/RestaurantContext";
 
 export default function Foods() {
-
-  const {restaurantData} = useContext(RestaurantContext)
-  const { foods, setFoods } = useContext(FoodsContext)
-  const navigation = useNavigation()
+  const { restaurantData } = useContext(RestaurantContext);
+  const { foods, setFoods } = useContext(FoodsContext);
+  const navigation = useNavigation();
 
   useEffect(() => {
-
-    
     const unsuscribe = onSnapshot(foodsCol, (snapshot) => {
-      let foods = []
+      let foods = [];
 
-      snapshot.docs.filter(doc => doc.data().restaurantId === restaurantData.id).forEach((doc) => {
+      snapshot.docs
+        .filter((doc) => doc.data().restaurantId === restaurantData.id)
+        .forEach((doc) => {
+          foods.push({ ...doc.data(), id: doc.id });
+        });
 
-        foods.push({ ...doc.data(), id: doc.id })
-
-      })
-
-      setFoods(foods)
-    })
-
-
-
-    // getFoods().then((foods) => setFoods(foods))
-  }, [])
+      setFoods(foods);
+    });
+  }, []);
   return (
     <>
       <View>
@@ -43,48 +42,56 @@ export default function Foods() {
           <Text style={styles.title}>Foods</Text>
         </View>
         <ScrollView>
+          {foods ? (
+            <View>
+              {foods.map((food, index) => {
+                return (
+                  <View
+                    key={index}
+                    style={{
+                      borderBottomWidth: 0.5,
+                      padding: 30,
 
-          {foods ? <View>
-            {foods.map((food, index) => {
-
-              return (
-                <View key={index} style={{
-                  borderBottomWidth: 0.5,
-                  padding: 30,
-
-                  flexDirection: "row"
-                }}>
-                  <View style={{ flex: 1 }}>
-                    <Image style={styles.image} source={{ uri: food.image }} />
+                      flexDirection: "row",
+                    }}
+                  >
+                    <View style={{ flex: 1 }}>
+                      <Image
+                        style={styles.image}
+                        source={{ uri: food.image }}
+                      />
+                    </View>
+                    <View style={{ flex: 2 }}>
+                      <Text
+                        style={{
+                          fontSize: 20,
+                        }}
+                      >
+                        {food.name}
+                      </Text>
+                    </View>
                   </View>
-                  <View style={{ flex: 2 }}>
-                    <Text style={{
-                      fontSize: 20
-                    }}>{food.name}</Text>
-                  </View>
-
-                </View>
-              )
-            })}
-
-          </View> : <Loading />}
+                );
+              })}
+            </View>
+          ) : (
+            <Loading />
+          )}
         </ScrollView>
-
       </View>
-      <TouchableOpacity style={{
-        position: "absolute",
-        bottom: 0,
-        right: 0,
-        margin: 30
-      }}
-        onPress={() => navigation.navigate("AddFood")}>
+      <TouchableOpacity
+        style={{
+          position: "absolute",
+          bottom: 0,
+          right: 0,
+          margin: 30,
+        }}
+        onPress={() => navigation.navigate("AddFood")}
+      >
         <AntDesign name="pluscircle" size={44} color="blue" />
-
-
-
       </TouchableOpacity>
     </>
-  )
+  );
 }
 
 const styles = StyleSheet.create({
@@ -97,11 +104,11 @@ const styles = StyleSheet.create({
   title: {
     marginLeft: 10,
     fontSize: 20,
-    fontWeight: "bold"
+    fontWeight: "bold",
   },
   image: {
     height: 40,
     aspectRatio: 1,
-    borderRadius: 40
-  }
-})
+    borderRadius: 40,
+  },
+});

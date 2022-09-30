@@ -9,7 +9,6 @@ export const APP_CONSTANT = {
     PRICE: "price",
     IN_PROGRESS: "InProgress",
     READY: "ready",
-    // ACCEPTED: "accepted",
     ACCEPTED: "ACCEPTED",
     FOOD_IS_DONE: "FOOD IS DONE",
 }
@@ -31,7 +30,7 @@ export const screen = {
 
 export const language = "en"
 export const currency = "USD"
-export const apikey = "AIzaSyAwLZyznRMu86EDLO-fsRL8BgrCT7hXq7g" //{/*  Your Google api here*/}
+export const apikey = {/*  Your Google api here*/}
 
 
 

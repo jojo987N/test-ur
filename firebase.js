@@ -143,7 +143,6 @@ export const updateOrder = (order_Id, status, cookingTime) => {
   const docRef = doc(db, 'orders', order_Id)
   return updateDoc(docRef, {
     status: status,
-    // deliveryTime: deliveryTime
     cookingTime
   })
     .then(() => console.log('good'))
